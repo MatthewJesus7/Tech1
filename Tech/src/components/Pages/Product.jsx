@@ -86,10 +86,6 @@ function Product() {
             
             <ProductSection items={productItems}></ProductSection>
 
-            {/* <Section>
-                <TypeItems></TypeItems>
-            </Section> */}
-
         </div>
     )
 }
