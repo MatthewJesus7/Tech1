@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .carousel_button{
+
+        @apply absolute;
+        @apply top-1/2;
+        @apply -translate-y-1/2;
+        @apply rounded-full;
+        @apply size-14;
+        @apply text-3xl;
+        @apply ease-in-out; 
+        @apply duration-300;
+        @apply bg-gray-200;
+        @apply hover:bg-gray-300;
+        @apply active:bg-gray-400;
+        @apply text-gray-700;
+    }
+
+    .partner{
+        @apply w-24; 
+        @apply h-10; 
+        @apply shadow-md; 
+        @apply border rounded-md; 
+        @apply mr-5;
+        @apply cursor-pointer;
+        @apply ease-out; 
+        @apply duration-300; 
+        @apply hover:scale-105; 
+    }
+
+    .big_card {
+        @apply w-full;
+        @apply max-w-[808px];
+        @apply h-96; 
+        @apply shadow-lg; 
+        @apply border rounded-xl; 
+        @apply p-5;
+        @apply ease-out; 
+        @apply duration-300; 
+        @apply hover:scale-105; 
+    }
+
+    .card {
+        @apply w-64; 
+        @apply h-96; 
+        @apply shadow-lg; 
+        @apply border rounded-xl; 
+        @apply mx-2.5; 
+        @apply p-5; 
+        @apply ease-out; 
+        @apply duration-300; 
+        @apply hover:scale-105; 
+    }
+
+    /* Mude o tamanho dos medium cards ate a largura 500px -> full */
+
+    .medium_card {
+        @apply max-[500px]:w-full; 
+        @apply w-52;
+        @apply h-72;
+        @apply shadow-lg; 
+        @apply border rounded-xl;
+        @apply mx-0.5; 
+        @apply p-5;
+        @apply ease-out; 
+        @apply duration-300; 
+        @apply hover:scale-105; 
+    }
+
+    .small_card {
+        @apply size-16;
+        @apply shadow-lg; 
+        @apply border rounded-md; 
+        @apply mr-5; 
+        @apply mb-5;
+        @apply p-px;
+    }
+
+    .small_card h3{
+        @apply mt-16;
+        @apply text-sm;
+    }
+
+    h2 {
+        @apply text-3xl;
+        @apply font-bold;
+    }
+
+    .product { 
+        @apply flex;
+        @apply flex-col;
+        @apply justify-end;
+        /* background-color: rgba(0, 0, 0, 0.200); */
+    }
+
+    .carousel-hide-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    .carousel-hide-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .glass {
+        background: rgba( 255, 255, 255, 0.85 );
+        backdrop-filter: blur( 20px );
+        -webkit-backdrop-filter: blur( 20px );
+    }
+
+    /* .blur-background {
+        filter: blur(5px);
+    } */
+}
