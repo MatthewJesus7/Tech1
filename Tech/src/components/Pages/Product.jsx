@@ -52,7 +52,7 @@ function Product() {
 
             <Section>
                 <h2>Selecionados a Dedo</h2>
-            <ProductSection items={productItems}/>
+                <ProductSection items={productItems}/>
             </Section>
 
             <PartnersSection></PartnersSection>

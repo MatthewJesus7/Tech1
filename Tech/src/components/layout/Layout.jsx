@@ -85,8 +85,8 @@ function Layout({ children }) {
                 customclass={`transform transition-all duration-1000 ${
                     aparecerMenu
                         ? isAnimating
-                            ? 'translate-y-0 glass h-full sm:h-96'
-                            : 'translate-y-0 h-96'
+                            ? 'translate-y-0 glass h-full sm:h-[500px]'
+                            : 'translate-y-0 h-[500px]'
                         : isAnimating
                         ? 'h-10 border-none -translate-y-1'
                         : '-translate-y-1 glass h-0 border-none'
