@@ -1,44 +1,14 @@
 import HalfHeroSection from "../sections/HalfHeroSection"
+import HeroSection from "../sections/HeroSection";
+import CardSection from "../sections/CardSection";
 import TypeItems from "../sections/TypeItems";
+import PartnersSection from "../sections/PartnersSection";
+
 import Section from "../sections/Section";
 import Carousel from "../layout/Carousel"
 import ProductSection from "../sections/ProductSection";
 
 function Product() {
-
-    const carouselItems = [
-        {
-            link: "../Pages/Product",
-            type: "card",
-            title: "celular x",
-            price: "a partir de $10.00",
-            backgroundImage: "url('/path/to/image1.jpg')"
-        },
-        {
-            type: "card",
-            title: "Item 2",
-            price: "$20.00",
-            backgroundImage: "url('/path/to/image2.jpg')"
-        },
-        {
-            type: "card",
-            title: "Item 3",
-            price: "$30.00",
-            backgroundImage: "url('/path/to/image3.jpg')"
-        },
-        {
-            type: "card",
-            title: "Item 4",
-            price: "$40.00",
-            backgroundImage: "url('/path/to/image4.jpg')"
-        },
-        {
-            type: "card",
-            title: "Item 5",
-            price: "$50.00",
-            backgroundImage: "url('/path/to/image5.jpg')"
-        }
-    ];
 
     const productItems = [
         {
@@ -75,16 +45,22 @@ function Product() {
     ];
 
     return(
-        <div className="center">
+        <div className="center bg-gray-50">
 
-            <HalfHeroSection></HalfHeroSection>
+            {/* <HalfHeroSection></HalfHeroSection> */}
 
-            <Section>
+            <HeroSection></HeroSection>
+
+            {/* <Section>
                 <Carousel items={carouselItems}>
                 </Carousel>
-            </Section>
+            </Section> */}
+
+            <CardSection></CardSection>
             
-            <ProductSection items={productItems}></ProductSection>
+            <ProductSection items={productItems}/>
+
+            <PartnersSection></PartnersSection>
 
         </div>
     )

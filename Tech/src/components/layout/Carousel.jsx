@@ -39,13 +39,13 @@ function Carousel({ items, customclass }) {
 
     return (
         <Container
-        customclass={` w-110 overflow-x-hidden p-5 px-2.5 -ml-5 ${customclass}`}>
+        customclass={` w-[114%] overflow-x-hidden p-5 px-2.5 -ml-[30px] ${customclass}`}>
             <div
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
                 className="w-full relative cursor-pointer">
                 <div
-                    className="flex transition-transform duration-500 p-2.5 pb-6 w-full
+                    className="flex transition-transform duration-500 p-2.5 pb-7 w-full
                     overflow-x-auto snap-x snap-mandatory carousel-hide-scrollbar"
                     ref={carouselRef}
                     onTouchStart={handleTouchStart}
@@ -72,12 +72,12 @@ function Carousel({ items, customclass }) {
                 {showButton && (
                     <>
                         <CarouselButton
-                        customclass="left-5 cPrev"
+                        customclass=" left-5 cPrev "
                         text={<IoIosArrowBack />}
                         onLeft={() => scrollByOneCard('left')} />
 
                         <CarouselButton
-                        customclass="right-5 cNext"
+                        customclass=" right-5 cNext "
                         text={<IoIosArrowForward />} onRight={() => scrollByOneCard('right')} />
                     </>
                 )}

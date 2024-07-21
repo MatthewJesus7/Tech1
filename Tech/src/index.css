@@ -35,7 +35,8 @@
         @apply w-full;
         @apply max-w-[808px];
         @apply h-96; 
-        @apply shadow-lg; 
+        @apply shadow-md; 
+        @apply hover:shadow-lg;
         @apply border rounded-xl; 
         @apply p-5;
         @apply ease-out; 
@@ -46,7 +47,8 @@
     .card {
         @apply w-64; 
         @apply h-96; 
-        @apply shadow-lg; 
+        @apply shadow-md;
+        @apply hover:shadow-lg;
         @apply border rounded-xl; 
         @apply mx-2.5; 
         @apply p-5; 
@@ -61,7 +63,8 @@
         @apply max-[500px]:w-full; 
         @apply w-52;
         @apply h-72;
-        @apply shadow-lg; 
+        @apply shadow-md;
+        @apply hover:shadow-lg;
         @apply border rounded-xl;
         @apply mx-0.5; 
         @apply p-5;

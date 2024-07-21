@@ -38,9 +38,9 @@ function CardSection() {
     ];
 
     return( 
-        <Section customclass=" bg-gray-50 py-3 -mt-28 ">
+        <Section customclass=" ml-2 py-3 -mt-28 ">
 
-            <h2>Veja Nossos Favoritos</h2>
+            <h2 >Veja Nossos Favoritos</h2>
 
             <Carousel items={carouselItems}
             ></Carousel>

@@ -5,14 +5,15 @@ import Card from "../layout/Card";
 
 function PartnersSection() {
     return(
-        <Section customclass=" mb-10 ">
-            <Container customclass=" justify-around ">
+        <Section customclass=" py-5 ">
+
+            <h2>Nossas Afiliações</h2>
+
+            <Container customclass=" justify-around p-5 ">
+
                 <Card customclass="partner "
                 ></Card>
-                <Card customclass="partner"
-                ></Card>
-                <Card customclass="partner"
-                ></Card>
+
             </Container>
         </Section>
     )

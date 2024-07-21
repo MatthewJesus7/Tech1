@@ -4,7 +4,7 @@ import BigCard from "../layout/BigCard";
 
 function ProductSection({ items }) {
     return(
-        <Section customclass=" flex flex-wrap ">
+        <Section customclass=" flex flex-wrap justify-center items-center ">
 
                 <BigCard></BigCard>
 
