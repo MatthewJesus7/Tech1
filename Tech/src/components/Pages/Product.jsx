@@ -50,7 +50,7 @@ function Product() {
 
             <CardSection></CardSection>
 
-            <Section>
+            <Section id="product_section">
                 <h2>Selecionados a Dedo</h2>
                 <ProductSection items={productItems}/>
             </Section>

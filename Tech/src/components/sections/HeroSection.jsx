@@ -22,11 +22,13 @@ function HeroSection({ customclass }) {
                     style={{ backgroundImage: "url('/imagens/celulares.jpg')", backgroundSize: 'cover', backgroundPosition: 'center',
                     }}
                     >
-                        <button className=" mt-32 p-3 px-4 rounded-3xl border text-white
-                        hover:bg-white hover:text-black
-                        hover:scale-110 hover:ease-in-out hover:duration-300">
-                            saiba mais
-                        </button>
+                        <a href="">
+                            <button className=" mt-32 p-3 px-4 rounded-3xl border text-white
+                            hover:bg-white hover:text-black
+                            hover:scale-110 hover:ease-in-out hover:duration-300">
+                                Saiba Mais
+                            </button>
+                        </a>
                     </div>
                 </div>
                 
