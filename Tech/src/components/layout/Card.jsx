@@ -13,7 +13,8 @@ const Card = ({ link, target, rel, type, customclass, backgroundImage, typeInner
     <a href={link} target={target} rel={rel}>
       <div
         className={`${type} bg-white ${customclass}`}
-        style={{ backgroundImage: backgroundImage, backgroundSize: 'cover', backgroundPosition: 'center' }}
+
+        style={{ backgroundImage: backgroundImage, backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}
       >
         <div className={typeInner}>
           {typeInnerCard()}

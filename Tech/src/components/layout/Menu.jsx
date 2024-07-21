@@ -3,7 +3,7 @@ import Container from "./Container"
 
 function Menu({  handleOnClick, customclass, children }) {
     return(
-            <menu className={`fixed top-11 left-0 w-110 z-10 border shadow-xl overflow-hidden ${customclass}`}>
+            <menu className={`fixed top-11 left-0 w-110 z-50 border shadow-xl overflow-hidden ${customclass}`}>
                 <Container customclass=" px-[5%] py-[2.5%] flex-col ">
 
                     <div className=" w-full h-9">
