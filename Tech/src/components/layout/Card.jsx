@@ -12,15 +12,19 @@ const Card = ({ link, target, rel, type, customclass, backgroundImage, typeInner
   return (
     <a href={link} target={target} rel={rel}>
       <div
-        className={`${type} bg-white ${customclass}`}
-
-        style={{ backgroundImage: backgroundImage, backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}
+        className={`${type} bg-white flex-col-reverse justify-end ${customclass}`}
       >
-        <div className={typeInner}>
-          {typeInnerCard()}
-          <h3 className="text-xl">{title}</h3>
-          <p className="text-lg mt-1.5">{price}</p>
+
+        <div className={`${typeInner} `}>
+            {typeInnerCard()}
+            <h3 className="text-xl">{title}</h3>
+            <p className="text-lg mt-1.5">{price}</p>
         </div>
+        
+        <div className=' w-full h-full '
+        style={{ backgroundImage: backgroundImage, backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}
+        ></div>
+
       </div>
     </a>
   );

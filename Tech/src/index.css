@@ -34,11 +34,12 @@
     .big_card {
         @apply w-full;
         @apply max-w-[808px];
-        @apply h-96; 
+        @apply h-96;
         @apply shadow-md; 
         @apply hover:shadow-lg;
         @apply border rounded-xl; 
         @apply p-5;
+        @apply pb-20;
         @apply ease-out; 
         @apply duration-300; 
         @apply hover:scale-105; 
@@ -51,7 +52,7 @@
         @apply hover:shadow-lg;
         @apply border rounded-xl; 
         @apply mx-2.5; 
-        @apply p-5; 
+        @apply p-5;
         @apply ease-out; 
         @apply duration-300; 
         @apply hover:scale-105; 

@@ -6,7 +6,7 @@ import { IoIosSearch } from "react-icons/io";
 function NavBar({ handleOnClickSearch, handleOnClickCart }) {
 
     return(
-        <nav className="fixed h-10 justify-center content-center border w-full glass z-10">
+        <nav className="fixed h-10 justify-center content-center border w-full glass z-50">
 
             <Container customclass=" px-[5%] ">
 

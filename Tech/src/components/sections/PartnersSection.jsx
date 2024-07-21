@@ -11,7 +11,9 @@ function PartnersSection() {
 
             <Container customclass=" justify-around p-5 ">
 
-                <Card customclass="partner "
+                <Card
+                type="partner p-2"
+                backgroundImage="url('https://upload.wikimedia.org/wikipedia/commons/4/41/Amazon_PNG6.png')"
                 ></Card>
 
             </Container>

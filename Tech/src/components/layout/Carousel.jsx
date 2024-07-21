@@ -55,6 +55,8 @@ function Carousel({ items, customclass }) {
                     {items.map((item, index) => (
                         <div key={index}>
                             <Card
+                            customclass='pb-20'
+                            
                                 type={item.type}
                                 typeInner={item.typeInner}
                                 link={item.link}
