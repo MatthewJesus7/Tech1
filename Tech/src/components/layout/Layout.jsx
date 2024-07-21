@@ -85,11 +85,11 @@ function Layout({ children }) {
                 customclass={`transform transition-all duration-1000 ${
                     aparecerMenu
                         ? isAnimating
-                            ? 'translate-y-0 bg-white h-96'
+                            ? 'translate-y-0 glass h-full sm:h-96'
                             : 'translate-y-0 h-96'
                         : isAnimating
                         ? 'h-10 border-none -translate-y-1'
-                        : '-translate-y-1 bg-white h-0 border-none'
+                        : '-translate-y-1 glass h-0 border-none'
                 }`}
             >
                 {selectedMenuItem === 'search' && <Search />}

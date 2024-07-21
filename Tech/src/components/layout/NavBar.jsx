@@ -2,6 +2,7 @@ import Link from '../items/Link'
 import Container from './Container'
 
 import { IoIosSearch } from "react-icons/io";
+import { FaCartFlatbed, FaInfo } from "react-icons/fa6"
 
 function NavBar({ handleOnClickSearch, handleOnClickCart }) {
 
@@ -16,24 +17,24 @@ function NavBar({ handleOnClickSearch, handleOnClickCart }) {
                         <Link href="#" text="DLM"></Link>
                     </li>
 
-                    <div className='w-1/6'></div>
+                    <div className='w-1/3 sm:w-1/2'></div>
 
-                    <li>
-                        <Link href="#" target="_blank" text="Sobre"></Link>
-                    </li>
+                    {/* <li>
+                        <Link href="#" target="_blank" text={<FaInfo/>}
+                        textCustom=" text-lg pt-0.5 "
+                        ></Link>
+                    </li> */}
                     
-                    <li>
-                        <Link onClick={handleOnClickCart
-                        // && cCart
-                        }
-                        text="Carrinho">
+                    {/* <li>
+                        <Link onClick={handleOnClickCart}
+                        text={<FaCartFlatbed/>}
+                        textCustom=" text-lg pt-1 "
+                        >
                         </Link>
-                    </li>
+                    </li> */}
 
                     <li>
-                        <Link onClick={handleOnClickSearch
-                        // && cSearch
-                    }
+                        <Link onClick={handleOnClickSearch}
                         text={<IoIosSearch/>}
                         textCustom=" text-lg pt-1 "
                         ></Link>
