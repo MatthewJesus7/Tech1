@@ -55,7 +55,7 @@ function Carousel({ items, customclass }) {
                     {items.map((item, index) => (
                         <div key={index}>
                             <Card
-                            customclass='pb-20'
+                            customclass='pb-24'
                             
                                 type={item.type}
                                 typeInner={item.typeInner}
