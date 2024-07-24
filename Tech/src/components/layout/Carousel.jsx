@@ -39,7 +39,7 @@ function Carousel({ items, customclass }) {
 
     return (
         <Container
-        customclass={` w-[114%] overflow-x-hidden p-5 px-2.5 -ml-[30px] ${customclass}`}>
+        customclass={`w-[115%] xl:w-[128%] overflow-x-hidden p-5 px-2.5 -ml-[30px] ${customclass}`}>
             <div
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
