@@ -90,12 +90,12 @@
 
     h2 {
         @apply text-3xl;
-        @apply font-bold;
+        @apply font-semibold;
     }
 
     h3 {
         @apply text-xl;
-        @apply font-bold;
+        @apply font-semibold;
     }
 
     .product { 

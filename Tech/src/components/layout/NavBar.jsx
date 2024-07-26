@@ -1,8 +1,19 @@
-import Link from '../items/Link'
+import Link from "../items/Link"
+
+// import React, { Suspense, lazy } from 'react';
+
+// const Home = lazy(() => import('./Home'));
+// const About = lazy(() => import('./About'));
+// const Contact = lazy(() => import('./Contact'));
+
 import Container from './Container'
 
 import { IoIosSearch } from "react-icons/io";
 import { FaCartFlatbed, FaInfo } from "react-icons/fa6"
+
+function navigateTo(url) {
+    window.location.href = url;
+  }
 
 function NavBar({ handleOnClickSearch, handleOnClickCart }) {
 
@@ -12,9 +23,11 @@ function NavBar({ handleOnClickSearch, handleOnClickCart }) {
             <Container customclass=" px-[5%] ">
 
                 <ul className="flex justify-between w-full">
-
+                    
                     <li>
-                        <Link href="#" text="DLM"></Link>
+                        <Link onClick={() => navigateTo('/')}
+                        text="DLM"
+                        ></Link>
                     </li>
 
                     <div className='w-1/3 sm:w-1/2'></div>

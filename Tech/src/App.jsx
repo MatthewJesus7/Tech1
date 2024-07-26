@@ -1,17 +1,14 @@
 import Layout from "./components/layout/Layout";
-import Main from "./components/Pages/Main";
-import Product from "./components/Pages/Product";
+
+import { Outlet } from "react-router-dom"
 
 function App() {
 
     return (
         <div className={`App overflow-x-hidden`}>
-
           <Layout>
-            {/* <Main></Main> */}
-            <Product></Product>
+            <Outlet/>
           </Layout>
-          
         </div>
     );
 }

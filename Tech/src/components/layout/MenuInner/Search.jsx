@@ -1,8 +1,15 @@
 import React, { useState } from 'react';
 
 import { IoIosSearch } from "react-icons/io";
+import Link from "../../items/Link"
 import Carousel from '../Carousel';
 import Card from '../Card';
+
+import About from "../../Pages/About"
+
+function navigateTo(url) {
+    window.location.href = url;
+  }
 
 function Search() {
     const [searchTerm, setSearchTerm] = useState('');
@@ -87,7 +94,7 @@ function Search() {
 
     return (
         <>
-            <form className="mb-10" onSubmit={submit}>
+            <form onSubmit={submit}>
                 <div>
                     <label htmlFor="iSearchBar">
                         <input
@@ -109,6 +116,13 @@ function Search() {
                     </span>
                 </div>
             </form>
+
+            <div className='flex'>
+                <Link onClick={() => navigateTo('/about')}
+                text="About"
+                textCustom="my-3 py-2 text-lg font-semibold"
+                ></Link>
+            </div>
             
             <h2>Talvez você esteja procurando:</h2>
 

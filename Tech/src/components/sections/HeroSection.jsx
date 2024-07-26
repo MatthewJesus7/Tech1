@@ -1,5 +1,9 @@
 import Section from "./Section"
 
+function navigateTo(url) {
+    window.location.href = url;
+  }
+
 function HeroSection({ customclass }) {
     return(
         <Section customclass={` block md:flex h-[600px] pt-10 ${customclass}`}>
@@ -25,7 +29,10 @@ function HeroSection({ customclass }) {
                         <a href="">
                             <button className=" mt-32 p-3 px-4 rounded-3xl border text-white
                             hover:bg-white hover:text-black
-                            hover:scale-110 hover:ease-in-out hover:duration-300">
+                            hover:scale-110 hover:ease-in-out hover:duration-300"
+
+                            onClick={() => navigateTo('/about')}
+                            >
                                 Saiba Mais
                             </button>
                         </a>

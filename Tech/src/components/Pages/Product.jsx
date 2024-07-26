@@ -9,6 +9,7 @@ import Carousel from "../layout/Carousel"
 import ProductSection from "../sections/ProductSection";
 
 function Product() {
+    
 
     const productItems = [
         {
