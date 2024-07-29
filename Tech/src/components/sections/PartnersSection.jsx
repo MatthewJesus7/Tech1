@@ -15,6 +15,11 @@ function PartnersSection() {
                 type="partner p-2"
                 backgroundImage="url('https://upload.wikimedia.org/wikipedia/commons/4/41/Amazon_PNG6.png')"
                 ></Card>
+                
+                <Card
+                type="partner bg-[#FFE700] pb-1.5 "
+                backgroundImage="url('https://www.otabuleiro.com.br/storage/images/cache/62c277460851cdb2.png')"
+                ></Card>
 
             </Container>
         </Section>
