@@ -23,18 +23,18 @@ function HeroSection({ customclass }) {
             <aside>
 
                 <Img
+                customclass="top-10 right-0"
                 backgroundImage="url('/imagens/celulares.jpg')"
                 >
-                <a href="">
-                        <button className=" mt-32 p-3 px-4 rounded-3xl border text-white
-                        hover:bg-white hover:text-black
-                        hover:scale-110 hover:ease-in-out hover:duration-300"
+                    <button className=" mt-32 p-3 px-4 rounded-3xl border text-white
+                    hover:bg-white hover:text-black
+                    hover:scale-110 hover:ease-in-out hover:duration-300"
 
-                        onClick={() => navigateTo('/about')}
-                        >
-                            Saiba Mais
-                        </button>
-                    </a>
+                    onClick={() => navigateTo('/about')}
+                    >
+                        Saiba Mais
+                    </button>
+                    
                 </Img>
                 
             </aside>
