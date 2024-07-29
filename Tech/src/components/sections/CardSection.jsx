@@ -1,7 +1,7 @@
 import Section from "./Section"
 import Carousel from "../layout/Carousel"
 
-function CardSection() {
+function CardSection({ customclass, customclassinner }) {
 
     const carouselItems = [
         {
@@ -42,9 +42,9 @@ function CardSection() {
     ];
 
     return( 
-        <Section customclass=" ml-2 py-3 -mt-28 ">
+        <Section customclass={` ml-2 py-3 -mt-28 ${customclass}`}>
 
-            <h2 className="relative text-white sm:text-black">Veja Nossos Favoritos</h2>
+            <h2 className={`relative text-white lg:text-black ${customclassinner}`}>Veja Nossos Favoritos</h2>
 
             <Carousel items={carouselItems}
             ></Carousel>

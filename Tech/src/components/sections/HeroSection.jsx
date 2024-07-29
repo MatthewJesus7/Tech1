@@ -9,7 +9,7 @@ function HeroSection({ customclass }) {
     return(
         <Section customclass={` block md:flex h-[600px] pt-10 ${customclass}`}>
 
-            <article className="relative z-10 p-[10%] bg-transparent text-white sm:text-black">
+            <article className="relative z-10 p-[10%] bg-transparent text-white lg:text-black">
 
             {/* mix-blend-difference */}
 

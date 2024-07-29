@@ -1,7 +1,11 @@
 import Section from "../sections/Section";
-import PartnersSection from "../sections/PartnersSection"
-import Container from "../layout/Container";
+import CardSection from  "../sections/CardSection"
+import PartnersSection from "../sections/PartnersSection";
 import Img from "../layout/Img";
+
+function navigateTo(url) {
+    window.location.href = url;
+  }
 
 function About() {
     return(
@@ -93,6 +97,15 @@ function About() {
 
             <PartnersSection></PartnersSection>
 
+            <CardSection
+            customclass="mt-0"
+            customclassinner=" text-black "
+            ></CardSection>
+
+            <p className="text-center text-lg font-semibold cursor-pointer underline mb-10"
+            onClick={() => navigateTo('/')}
+            >
+                Confira também a nossa loja!</p>
         </article>
     )
 }

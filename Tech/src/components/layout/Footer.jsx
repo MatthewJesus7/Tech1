@@ -6,11 +6,14 @@ function Footer() {
         <footer className="bg-[#818284] text-white p-5">
             <Section>
                 <Container >
-                    <ul className=" flex justify-between w-full">
+                    <ul className=" flex justify-between flex-wrap w-full">
                         <h3>
                             <a href="">
+                                <li>Home</li>
+                            </a>
+                            <a href="">
                                 <li>Sobre nós</li>
-                            <a href=""></a></a>
+                            </a>
                         </h3>
                         <li>
                             <ul>
