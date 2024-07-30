@@ -6,16 +6,16 @@ function CardSection({ customclass, customclassinner }) {
     const carouselItems = [
         {
             type: " card ",
-            link: "https://amzn.to/3LBFG5h",
+            link: "https://amzn.to/3ylNZPO",
             title: "Xiaomi Redmi Note 11",
-            price: "R$ 849,95",
+            price: "R$ 844,95",
             backgroundImage: "url('https://m.media-amazon.com/images/I/61sJSKeJExL._AC_SX569_.jpg')"
         },
         {
             type: " card ",
-            link: "https://amzn.to/3LSa63z",
+            link: "https://amzn.to/4dmSl8a",
             title: "Motorola Moto G34",
-            price: "R$ 850,90",
+            price: "R$ 849,00",
             backgroundImage: "url('https://m.media-amazon.com/images/I/51ezdcOv0qL._AC_SX679_.jpg')",
         },
         {
@@ -27,16 +27,23 @@ function CardSection({ customclass, customclassinner }) {
         },
         {
             type: " card ",
-            link: "https://amzn.to/3WbGLWu",
+            link: "https://amzn.to/3LKfrcY",
             title: "Galaxy A05s",
-            price: "R$ 979,00",
+            price: "R$ 969,00",
             backgroundImage: "url('https://m.media-amazon.com/images/I/51oGirlz2xL._AC_SX569_.jpg')",
         },
         {
             type: " card ",
-            link: "https://amzn.to/3y9mPvj",
+            link: "https://amzn.to/3LLC3K1",
+            title: "Samsung Galaxy A14 5G",
+            price: "R$ 1.012,00",
+            backgroundImage: "url('https://m.media-amazon.com/images/I/61ezr50FpsL._AC_SX569_.jpg')",
+        },
+        {
+            type: " card ",
+            link: "https://amzn.to/3Sui0DD",
             title: "Redmi Note 12",
-            price: "R$ 1.129,99",
+            price: "R$ 1.098,00",
             backgroundImage: "url('https://m.media-amazon.com/images/I/516d7C9LrtL._AC_SX569_.jpg')",
         },
     ];

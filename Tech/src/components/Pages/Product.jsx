@@ -45,17 +45,31 @@ function Product() {
         },
         {
             type: "sm:card medium_card sm:mb-5 mb-1 product",
-            link: "https://amzn.to/3WbGLWu",
-            title: "https://amzn.to/3LKfrcY",
+            link: "https://amzn.to/3LKfrcY",
+            title: "Galaxy A05s",
             price: "R$ 969,00",
             backgroundImage: "url('https://m.media-amazon.com/images/I/51oQc-4fAeL.__AC_SX300_SY300_QL70_ML2_.jpg')",
         },
         {
             type: "sm:card medium_card sm:mb-5 mb-1 product",
-            link: "https://amzn.to/3y9mPvj",
+            link: "https://amzn.to/3LLC3K1",
+            title: "Samsung Galaxy A14 5G",
+            price: "R$ 1.012,00",
+            backgroundImage: "url('https://m.media-amazon.com/images/I/61ezr50FpsL._AC_SX569_.jpg')",
+        },
+        {
+            type: "sm:card medium_card sm:mb-5 mb-1 product",
+            link: "https://amzn.to/3Sui0DD",
             title: "Redmi Note 12",
-            price: "R$ 1.129,99",
+            price: "R$ 1.098,00",
             backgroundImage: "url('https://m.media-amazon.com/images/I/516d7C9LrtL._AC_SX569_.jpg')",
+        },
+        {
+            type: "sm:card medium_card sm:mb-5 mb-1 product",
+            link: "https://amzn.to/3YwZZs6",
+            title: "Redmi Note 13 4G",
+            price: "R$ 1.187,00",
+            backgroundImage: "url('https://m.media-amazon.com/images/I/41zK0DZZNRL._AC_SX569_.jpg')",
         },
         {
             type: "sm:card medium_card sm:mb-5 mb-1 product",
@@ -66,10 +80,10 @@ function Product() {
         },
         {
             type: "sm:card medium_card sm:mb-5 mb-1 product",
-            link: "https://amzn.to/3zNe6PL",
-            title: "Xiaomi Redmi Note 13 4G",
-            price: "R$ 1.209,90",
-            backgroundImage: "url('https://a-static.mlcdn.com.br/350x350/smartphone-xiaomi-redmi-note-13-4g-azul-256gb-tela-667-8gb-de-ram-camera-traseira-tripla-android-13-e-processador-octa-core/soldemariabrasil/6941812762196c/d817089f4e5491d1ed636e17705c1887.jpeg')",
+            link: "https://amzn.to/3WtLIKc",
+            title: "Celular Samsung Galaxy A25 5G",
+            price: "R$ 1.199,00",
+            backgroundImage: "url('https://m.media-amazon.com/images/I/51Cc4iXUumL._AC_SX679_.jpg')",
         },
     ];
 
