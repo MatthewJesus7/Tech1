@@ -18,8 +18,7 @@ function Search() {
     // type: "medium_card sm:mb-5 mb-1 product",
     
     const items = [
-
-            
+        
             {
                 type: "medium_card sm:mb-5 mb-1 product",
                 link: "https://amzn.to/3LBFG5h",

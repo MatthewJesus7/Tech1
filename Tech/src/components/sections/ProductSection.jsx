@@ -1,26 +1,8 @@
 import Card from "../layout/Card";
 import BigCard from "../layout/BigCard";
 
-function ProductSection({ items }) {  
-
-    const topCard = [
-            {
-            link: "https://amzn.to/3LBFG5h",
-            title: "Xiaomi Redmi Note 11",
-            price: "R$ 849,95",
-            backgroundImage: "url('https://m.media-amazon.com/images/I/61sJSKeJExL._AC_SX569_.jpg')"
-        },
-        ]
-
-        const bottomCard = [
-            {
-            link: "https://amzn.to/3SjGJKY",
-            title: "Redmi Note 12 Pro 4G",
-            price: "R$ 1.359,11",
-            backgroundImage: "url('https://m.media-amazon.com/images/I/5142s1BuATL._AC_SX569_.jpg')"
-        },
-        ]
-
+function ProductSection({ items, topCard, bottomCard }) {  
+    
     return(
         <div className="flex flex-wrap justify-center items-center mt-5">
 

@@ -9,14 +9,31 @@ import Carousel from "../layout/Carousel"
 import ProductSection from "../sections/ProductSection";
 
 function Product() {
-    
 
+    const topCard = [
+        {
+        link: "https://amzn.to/3ylNZPO",
+        title: "Xiaomi Redmi Note 11",
+        price: "R$ 844,95",
+        backgroundImage: "url('https://m.media-amazon.com/images/I/61sJSKeJExL._AC_SX569_.jpg')"
+    },
+    ]
+
+    const bottomCard = [
+        {
+        link: "https://amzn.to/3A6Vcnm",
+        title: "Redmi Note 12 Pro 4G",
+        price: "R$ 1.394,99",
+        backgroundImage: "url('https://m.media-amazon.com/images/I/5142s1BuATL._AC_SX569_.jpg')"
+    },
+    ]
+    
     const productItems = [
         {
             type: "sm:card medium_card sm:mb-5 mb-1 product",
-            link: "https://amzn.to/3LSa63z",
+            link: "https://amzn.to/4dmSl8a",
             title: "Motorola Moto G34",
-            price: "R$ 850,90",
+            price: "R$ 849,00",
             backgroundImage: "url('https://m.media-amazon.com/images/I/51ezdcOv0qL._AC_SX679_.jpg')",
         },
         {
@@ -29,9 +46,9 @@ function Product() {
         {
             type: "sm:card medium_card sm:mb-5 mb-1 product",
             link: "https://amzn.to/3WbGLWu",
-            title: "Sansung Galaxy A05s",
-            price: "R$ 979,00",
-            backgroundImage: "url('https://m.media-amazon.com/images/I/51oGirlz2xL._AC_SX569_.jpg')",
+            title: "https://amzn.to/3LKfrcY",
+            price: "R$ 969,00",
+            backgroundImage: "url('https://m.media-amazon.com/images/I/51oQc-4fAeL.__AC_SX300_SY300_QL70_ML2_.jpg')",
         },
         {
             type: "sm:card medium_card sm:mb-5 mb-1 product",
@@ -72,7 +89,11 @@ function Product() {
 
             <Section id="product_section">
                 <h2>Selecionados a Dedo</h2>
-                <ProductSection items={productItems}/>
+                <ProductSection
+                items={productItems}
+                topCard={topCard}
+                bottomCard={bottomCard}
+                />
             </Section>
 
             <PartnersSection></PartnersSection>
