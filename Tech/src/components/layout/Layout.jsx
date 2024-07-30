@@ -92,9 +92,7 @@ function Layout({ children }) {
                         : '-translate-y-1 glass h-0 border-none'
                 }`}
             >
-                {selectedMenuItem === 'search' && <Search
-                items={items}
-                />}
+                {selectedMenuItem === 'search' && <Search/>}
                 {selectedMenuItem === 'cart' && <Cart />}
             </Menu>
             {children}
