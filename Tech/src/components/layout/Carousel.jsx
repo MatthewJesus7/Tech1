@@ -39,7 +39,7 @@ function Carousel({ items, customclass }) {
 
     return (
         <Container
-        customclass={`w-[115%] xl:w-[128%] overflow-x-hidden p-5 px-2.5 -ml-[30px] ${customclass}`}>
+        customclass={` w-[100vw] xl:w-[111%] -ml-5  overflow-x-hidden ${customclass}`}>
             <div
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
@@ -74,7 +74,7 @@ function Carousel({ items, customclass }) {
                 {showButton && (
                     <>
                         <CarouselButton
-                        customclass=" left-5 cPrev "
+                        customclass=" left-8 cPrev "
                         text={<IoIosArrowBack />}
                         onLeft={() => scrollByOneCard('left')} />
 

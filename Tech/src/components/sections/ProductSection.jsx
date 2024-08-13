@@ -4,11 +4,14 @@ import BigCard from "../layout/BigCard";
 function ProductSection({ items, topCard, bottomCard }) {  
     
     return(
-        <div className="flex flex-wrap justify-center items-center mt-5">
+        <div className="flex flex-wrap"
+        // justify-center items-center
+        >
 
             <BigCard items={topCard}></BigCard>
             {items.map((item, index) => (
-                    <div key={index}>
+                    <div key={index}
+                    className="max-[500px]:w-full">
                         <Card
                             type={item.type}
                             typeInner={item.typeInner}

@@ -49,9 +49,9 @@ function CardSection({ customclass, customclassinner }) {
     ];
 
     return( 
-        <Section customclass={` ml-2 py-3 -mt-28 ${customclass}`}>
+        <Section customclass={` py-3 -mt-28 ${customclass}`}>
 
-            <h2 className={`relative text-white lg:text-black ${customclassinner}`}>Veja Nossos Favoritos</h2>
+            <h2 className={`relative text-white lg:text-black pb-4 ${customclassinner}`}>Veja Nossos Favoritos</h2>
 
             <Carousel items={carouselItems}
             ></Carousel>

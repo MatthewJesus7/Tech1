@@ -101,6 +101,10 @@ function Product() {
 
             <CardSection></CardSection>
 
+            {/* <Section>
+                <div className="bg-red-500 size-12"></div>
+            </Section> */}
+
             <Section id="product_section">
                 <h2>Selecionados a Dedo</h2>
                 <ProductSection

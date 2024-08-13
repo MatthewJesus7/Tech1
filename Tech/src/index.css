@@ -61,6 +61,21 @@
     /* Mude o tamanho dos medium cards ate a largura 500px -> full */
 
     .medium_card {
+        @apply max-[500px]:w-full;
+        @apply min-w-52;
+        @apply min-[501px]:max-w-52;
+        @apply h-72;
+        @apply shadow-md;
+        @apply hover:shadow-lg;
+        @apply border rounded-xl;
+        @apply mx-0.5; 
+        @apply p-5;
+        @apply ease-out; 
+        @apply duration-300; 
+        @apply hover:scale-105; 
+    }
+
+    /* .medium_card {
         @apply max-[500px]:w-full; 
         @apply w-52;
         @apply h-72;
@@ -72,7 +87,8 @@
         @apply ease-out; 
         @apply duration-300; 
         @apply hover:scale-105; 
-    }
+    } */
+
 
     .small_card {
         @apply size-16;
@@ -89,6 +105,7 @@
     }
 
     h2 {
+        @apply pb-5;
         @apply text-3xl;
         @apply font-semibold;
     }
