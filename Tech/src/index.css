@@ -58,12 +58,9 @@
         @apply hover:scale-105; 
     }
 
-    /* Mude o tamanho dos medium cards ate a largura 500px -> full */
-
     /* .medium_card {
-        @apply max-[500px]:w-full;
-        @apply min-w-52;
-        @apply min-[501px]:max-w-52;
+        @apply max-[500px]:w-full; 
+        @apply min-[501px]:max-sm:w-52;
         @apply h-72;
         @apply shadow-md;
         @apply hover:shadow-lg;
@@ -75,9 +72,9 @@
         @apply hover:scale-105; 
     } */
 
-    .medium_card {
+     .medium_card {
         @apply max-[500px]:w-full; 
-        @apply w-52;
+        @apply min-[501px]:max-sm:w-52;
         @apply h-72;
         @apply shadow-md;
         @apply hover:shadow-lg;
