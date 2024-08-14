@@ -1,8 +1,8 @@
 import Card from "./Card"
 
-function BigCard({ items }) {
+function BigCard({ items, customclass }) {
     return(
-    <div className="w-full max-w-[808px] ml-2 mr-5 sm:mb-5 mb-1">
+    <div className={`w-full max-w-[808px] sm:mb-5 mb-1 ${customclass}`}>
         {items.map((item, index) => (
                     <div key={index}>
                         <Card customclass=" big_card "

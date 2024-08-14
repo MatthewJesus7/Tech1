@@ -51,7 +51,7 @@
         @apply shadow-md;
         @apply hover:shadow-lg;
         @apply border rounded-xl; 
-        @apply mx-2.5; 
+        @apply mr-5; 
         @apply p-5;
         @apply ease-out; 
         @apply duration-300; 
@@ -79,7 +79,20 @@
         @apply shadow-md;
         @apply hover:shadow-lg;
         @apply border rounded-xl;
-        @apply mx-0.5; 
+        @apply mr-1; 
+        @apply p-5;
+        @apply ease-out; 
+        @apply duration-300; 
+        @apply hover:scale-105; 
+    }
+
+    .search_card {
+        @apply w-52;
+        @apply h-72;
+        @apply shadow-md;
+        @apply hover:shadow-lg;
+        @apply border rounded-xl;
+        @apply mr-1; 
         @apply p-5;
         @apply ease-out; 
         @apply duration-300; 

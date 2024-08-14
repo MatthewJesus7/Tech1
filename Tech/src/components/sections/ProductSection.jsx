@@ -8,7 +8,10 @@ function ProductSection({ items, topCard, bottomCard }) {
         // justify-center items-center
         >
 
-            <BigCard items={topCard}></BigCard>
+            <BigCard items={topCard}
+            customclass="lg:mr-5"
+            ></BigCard>
+
             {items.map((item, index) => (
                     <div key={index}
                     className="max-[500px]:w-full">
