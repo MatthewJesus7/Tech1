@@ -1,7 +1,7 @@
 import React from 'react';
 import Colors from '../items/Colors'
 
-const Card = ({ link, target, rel, type, customclass, backgroundImage, typeInner, title, price, colors }) => {
+const Card = ({ link, target, rel, type, customclass, backgroundImage, typeInner, title, price, priceFull, colors }) => {
 
   const typeInnerCard = () => {
     if (typeInner === 'product') {
@@ -17,11 +17,13 @@ const Card = ({ link, target, rel, type, customclass, backgroundImage, typeInner
 
         <div className={`${typeInner} `}>
             {typeInnerCard()}
-            <h3 className="text-xl">{title}</h3>
+            <h3 className="text-xl text-gray-800">{title}</h3>
             <p className="text-lg mt-1.5">{price}</p>
+            <p className="text-lg mt-1.5 text-gray-600">{priceFull}</p>
         </div>
         
         <div className=' w-full h-full '
+
         style={{ backgroundImage: backgroundImage, backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}
         ></div>
 
