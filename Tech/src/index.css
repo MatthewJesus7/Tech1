@@ -60,7 +60,7 @@
 
     /* Mude o tamanho dos medium cards ate a largura 500px -> full */
 
-    .medium_card {
+    /* .medium_card {
         @apply max-[500px]:w-full;
         @apply min-w-52;
         @apply min-[501px]:max-w-52;
@@ -73,9 +73,9 @@
         @apply ease-out; 
         @apply duration-300; 
         @apply hover:scale-105; 
-    }
+    } */
 
-    /* .medium_card {
+    .medium_card {
         @apply max-[500px]:w-full; 
         @apply w-52;
         @apply h-72;
@@ -87,7 +87,7 @@
         @apply ease-out; 
         @apply duration-300; 
         @apply hover:scale-105; 
-    } */
+    }
 
 
     .small_card {
