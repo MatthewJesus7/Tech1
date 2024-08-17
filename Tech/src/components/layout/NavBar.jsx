@@ -9,7 +9,7 @@ import Link from "../items/Link"
 import Container from './Container'
 
 import { IoIosSearch } from "react-icons/io";
-import { FaCartFlatbed, FaInfo } from "react-icons/fa6"
+// import { FaCartFlatbed, FaInfo } from "react-icons/fa6"
 
 function navigateTo(url) {
     window.location.href = url;

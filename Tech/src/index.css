@@ -56,21 +56,9 @@
         @apply ease-out; 
         @apply duration-300; 
         @apply hover:scale-105; 
-    }
 
-    /* .medium_card {
-        @apply max-[500px]:w-full; 
-        @apply min-[501px]:max-sm:w-52;
-        @apply h-72;
-        @apply shadow-md;
-        @apply hover:shadow-lg;
-        @apply border rounded-xl;
-        @apply mx-0.5; 
-        @apply p-5;
-        @apply ease-out; 
-        @apply duration-300; 
-        @apply hover:scale-105; 
-    } */
+        @apply overflow-hidden;
+    }
 
      .medium_card {
         @apply max-[500px]:w-full; 
@@ -84,6 +72,8 @@
         @apply ease-out; 
         @apply duration-300; 
         @apply hover:scale-105; 
+
+        @apply overflow-hidden;
     }
 
     .search_card {
@@ -109,7 +99,32 @@
         @apply p-px;
     }
 
-    .small_card h3{
+    .loading_card::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: 50%;
+        width: 200%;
+        height: 100%;
+        background-color: #ECECEC;
+        filter: blur(50px);
+        transform: translate(-50%, -50%);
+        animation: loading 2s infinite cubic-bezier(0.4, 0.0, 0.2, 1);
+    }
+
+    @keyframes loading {
+        0% {
+            top: -100%;
+        }
+        50% {
+            top: 160%;
+        }
+        100% {
+            top: -100%;
+        }
+    }
+
+    .small_card h3 {
         @apply mt-16;
         @apply text-sm;
     }
@@ -129,6 +144,8 @@
         @apply flex;
         @apply flex-col;
         @apply justify-end;
+        
+        @apply overflow-hidden;
         /* background-color: rgba(0, 0, 0, 0.200); */
     }
 

@@ -1,6 +1,6 @@
-import Section from "./Section"
+import Section from "./Section";
 import Container from "../layout/Container";
-import Carousel from "../layout/Carousel"
+import Carousel from "../layout/Carousel";
 import Card from "../layout/Card";
 
 import { useEffect } from "react";
@@ -32,11 +32,20 @@ function CardSection({ customclass, customclassinner }) {
 
             <h2 className={`relative text-white lg:text-black pb-4 ${customclassinner}`}>Veja Nossos Favoritos</h2>
 
+            { cards.length > 0 ? () => (
             <Carousel
                 items={cards}
                 type="card"
             ></Carousel>
 
+        ): <Container customclass="flex-nowrap mb-5">
+            <Card type="card relative z-10 loading_card"/>
+            <Card type="card relative z-10 loading_card"/>
+            <Card type="card relative z-10 loading_card"/>
+            <Card type="card relative z-10 loading_card"/>
+            <Card type="card relative z-10 loading_card"/>
+        </Container>
+    }
 
         </Section>
     )

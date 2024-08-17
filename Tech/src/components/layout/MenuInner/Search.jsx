@@ -34,8 +34,6 @@ function Search() {
     
     const [searchTerm, setSearchTerm] = useState('');
     const [filteredItems, setFilteredItems] = useState([]);
-    
-    // type: "medium_card sm:mb-5 mb-1 product",
 
     function submit(e) {
         e.preventDefault();
@@ -46,7 +44,7 @@ function Search() {
         const results = items.filter(item =>
             item.title.toLowerCase().includes(searchTerm.toLowerCase())
         );
-        setFilteredItems(results);
+        setFilteredItems(results)
     }
 
     return (
@@ -85,8 +83,10 @@ function Search() {
 
             <Carousel
             items={filteredItems}
-            type="medium_card sm:mb-5 mb-1 product"
+            type="search_card"
             ></Carousel>
+
+            
 
             <div className="cards-container">
                 {filteredItems.map((item, key) => (
