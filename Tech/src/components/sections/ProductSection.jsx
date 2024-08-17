@@ -8,15 +8,15 @@ function ProductSection({ items, topCard, bottomCard }) {
         // justify-center items-center
         >
 
-            <BigCard items={topCard}
+            {/* <BigCard items={topCard}
             customclass="lg:mr-5"
-            ></BigCard>
+            ></BigCard> */}
 
             {items.map((item, index) => (
                     <div key={index}
                     className="max-[500px]:w-full">
                         <Card
-                            type={item.type}
+                            type="sm:card medium_card sm:mb-5 mb-1 product"
                             typeInner={item.typeInner}
                             link={item.link}
                             target={item.target}
@@ -28,7 +28,7 @@ function ProductSection({ items, topCard, bottomCard }) {
                         />
                     </div>
                 ))}
-                <BigCard items={bottomCard}></BigCard>
+                {/* <BigCard items={bottomCard}></BigCard> */}
         </div>
     )
 }

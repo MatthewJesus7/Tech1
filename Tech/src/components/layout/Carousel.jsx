@@ -5,7 +5,7 @@ import Container from '../layout/Container';
 import Card from './Card';
 import CarouselButton from "../items/Buttons/CarouselButton";
 
-function Carousel({ items, customclass }) {
+function Carousel({ items, type, customclass }) {
     const itemWidth = 256;
     const marginWidth = 20;
     const carouselRef = useRef(null);
@@ -57,7 +57,7 @@ function Carousel({ items, customclass }) {
                             <Card
                             customclass='pb-24'
                             
-                                type={item.type}
+                                type={type}
                                 typeInner={item.typeInner}
                                 link={item.link}
                                 target={item.target}

@@ -7,101 +7,38 @@ import Card from '../Card';
 
 import About from "../../Pages/About"
 
+import { useEffect } from 'react';
+
+
 function navigateTo(url) {
     window.location.href = url;
   }
 
 function Search() {
+
+    const [items, setItems] = useState([]);
+    const type = items.type
+
+    useEffect(() => {
+
+        fetch('http://localhost:8000/cards' , {
+            method: 'GET',
+            headers: {
+                'Content-type': 'application/json'
+            }
+        })
+          .then((resp) => resp.json())
+          .then((data) => {
+            setItems(data);
+            // assuming your JSON structure has an object with key 'categories'
+          })
+          .catch((err) => console.log(err));
+      }, []);
+    
     const [searchTerm, setSearchTerm] = useState('');
     const [filteredItems, setFilteredItems] = useState([]);
     
     // type: "medium_card sm:mb-5 mb-1 product",
-    
-    const items = [
-        
-            {
-                type: "search_card sm:mb-5 mb-1 product",
-                link: "https://amzn.to/3ylNZPO",
-                title: "Xiaomi Redmi Note 11",
-                price: "R$ 844,95",
-                priceFull: "R$ 1.098,00",
-                backgroundImage: "url('https://m.media-amazon.com/images/I/61sJSKeJExL._AC_SX569_.jpg')"
-            },
-
-            {
-                type: "search_card sm:mb-5 mb-1 product",
-                link: "https://amzn.to/4dmSl8a",
-                title: "Motorola Moto G34",
-                price: "R$ 849,00",
-                priceFull: "R$ 1.098,00",
-                backgroundImage: "url('https://m.media-amazon.com/images/I/51ezdcOv0qL._AC_SX679_.jpg')",
-            },
-            {
-                type: "search_card sm:mb-5 mb-1 product",
-                link: "https://amzn.to/4feRBDK",
-                title: "Motorola Moto G53 5G",
-                price: "R$ 899,00",
-                priceFull: "R$ 1.098,00",
-                backgroundImage: "url('https://m.media-amazon.com/images/I/51aNP7WdtcL._AC_SX679_.jpg')",
-            },
-            {
-                type: "search_card sm:mb-5 mb-1 product",
-                link: "https://amzn.to/3LKfrcY",
-                title: "Galaxy A05s",
-                price: "R$ 969,00",
-                priceFull: "R$ 1.098,00",
-                backgroundImage: "url('https://m.media-amazon.com/images/I/51oQc-4fAeL.__AC_SX300_SY300_QL70_ML2_.jpg')",
-            },
-            {
-                type: "search_card sm:mb-5 mb-1 product",
-                link: "https://amzn.to/3LLC3K1",
-                title: "Samsung Galaxy A14 5G",
-                price: "R$ 1.012,00",
-                priceFull: "R$ 1.098,00",
-                backgroundImage: "url('https://m.media-amazon.com/images/I/61ezr50FpsL._AC_SX569_.jpg')",
-            },
-            {
-                type: "search_card sm:mb-5 mb-1 product",
-                link: "https://amzn.to/3Sui0DD",
-                title: "Redmi Note 12",
-                price: "R$ 1.098,00",
-                priceFull: "R$ 1.098,00",
-                backgroundImage: "url('https://m.media-amazon.com/images/I/516d7C9LrtL._AC_SX569_.jpg')",
-            },
-            {
-                type: "search_card sm:mb-5 mb-1 product",
-                link: "https://amzn.to/3YwZZs6",
-                title: "Redmi Note 13 4G",
-                price: "R$ 1.187,00",
-                priceFull: "R$ 1.098,00",
-                backgroundImage: "url('https://m.media-amazon.com/images/I/41zK0DZZNRL._AC_SX569_.jpg')",
-            },
-            {
-                type: "search_card sm:mb-5 mb-1 product",
-                link: "https://amzn.to/3zNe6PL",
-                title: "Sansung Galaxy A25 5G",
-                price: "R$ 1.199,00",
-                priceFull: "R$ 1.098,00",
-                backgroundImage: "url('https://m.media-amazon.com/images/I/51oC7szmO8L._AC_SX569_.jpg')"
-            },
-            {
-                type: "search_card sm:mb-5 mb-1 product",
-                link: "https://amzn.to/3WtLIKc",
-                title: "Celular Samsung Galaxy A25 5G",
-                price: "R$ 1.199,00",
-                priceFull: "R$ 1.098,00",
-                backgroundImage: "url('https://m.media-amazon.com/images/I/51Cc4iXUumL._AC_SX679_.jpg')",
-            },
-            
-            {
-                type: "search_card sm:mb-5 mb-1 product",
-                link: "https://amzn.to/3A6Vcnm",
-                title: "Redmi Note 12 Pro 4G",
-                price: "R$ 1.394,99",
-                priceFull: "R$ 1.098,00",
-                backgroundImage: "url('https://m.media-amazon.com/images/I/5142s1BuATL._AC_SX569_.jpg')"
-            },
-    ];
 
     function submit(e) {
         e.preventDefault();
@@ -149,7 +86,10 @@ function Search() {
             
             <h2>Talvez você esteja procurando:</h2>
 
-            <Carousel items={filteredItems}></Carousel>
+            <Carousel
+            items={filteredItems}
+            type="medium_card sm:mb-5 mb-1 product"
+            ></Carousel>
 
             <div className="cards-container">
                 {filteredItems.map((item, index) => (
