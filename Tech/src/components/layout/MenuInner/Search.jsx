@@ -5,8 +5,6 @@ import Link from "../../items/Link"
 import Carousel from '../Carousel';
 import Card from '../Card';
 
-import About from "../../Pages/About"
-
 import { useEffect } from 'react';
 
 
@@ -17,7 +15,6 @@ function navigateTo(url) {
 function Search() {
 
     const [items, setItems] = useState([]);
-    const type = items.type
 
     useEffect(() => {
 
@@ -79,7 +76,7 @@ function Search() {
 
             <div className='flex'>
                 <Link onClick={() => navigateTo('/about')}
-                text="About"
+                text="Sobre nós"
                 textCustom="my-3 py-2 text-lg font-semibold"
                 ></Link>
             </div>
@@ -92,7 +89,7 @@ function Search() {
             ></Carousel>
 
             <div className="cards-container">
-                {filteredItems.map((item, index) => (
+                {filteredItems.map((item, key) => (
                     <Card/>
                 ))}
             </div>

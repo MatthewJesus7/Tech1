@@ -1,12 +1,10 @@
 import Card from "./Card"
 
-function BigCard({ items, customclass }) {
+function BigCard({ item, customclass }) {
     return(
     <div className={`w-full max-w-[808px] sm:mb-5 mb-1 ${customclass}`}>
-        {items.map((item, index) => (
-                    <div key={index}>
-                        <Card customclass=" big_card "
-                            type={item.type}
+                        <Card
+                            type="big_card"
                             typeInner={item.typeInner}
                             link={item.link}
                             target={item.target}
@@ -17,8 +15,6 @@ function BigCard({ items, customclass }) {
                             colors={item.colors}
                         />
                     </div>
-                ))}
-    </div>
     )
 }
 

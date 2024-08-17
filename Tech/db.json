@@ -1,10 +1,10 @@
 {
     "cards": [
-        
         {
             "link": "https://amzn.to/3ylNZPO",
             "title": "Xiaomi Redmi Note 11",
             "price": "R$ 844,95",
+            "totalPrice": "R$ 844,95",
             "backgroundImage": "url('https://m.media-amazon.com/images/I/61sJSKeJExL._AC_SX569_.jpg')"
         },
 
@@ -54,6 +54,9 @@
             "link": "https://amzn.to/3zNe6PL",
             "title": "Sansung Galaxy A25 5G",
             "price": "R$ 1.199,00",
+            "colors":[
+                "[#23232D]", "[#F7F8B4]"
+            ],
             "backgroundImage": "url('https://m.media-amazon.com/images/I/51oC7szmO8L._AC_SX569_.jpg')"
         },
 
@@ -61,6 +64,9 @@
             "link": "https://amzn.to/3WtLIKc",
             "title": "Celular Samsung Galaxy A25 5G",
             "price": "R$ 1.199,00",
+            "colors":[
+                "[#23232D]", "[#F7F8B4]"
+            ],
             "backgroundImage": "url('https://m.media-amazon.com/images/I/51Cc4iXUumL._AC_SX679_.jpg')"
         },
 

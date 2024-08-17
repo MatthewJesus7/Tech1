@@ -64,7 +64,7 @@ function Carousel({ items, type, customclass }) {
                                 rel={item.rel}
                                 title={item.title}
                                 price={item.price}
-                                priceFull={item.priceFull}
+                                totalPrice={item.totalPrice}
                                 backgroundImage={item.backgroundImage}
                                 colors={item.colors}
                             />

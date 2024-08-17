@@ -1,13 +1,15 @@
 import Section from "./Section"
+import Container from "../layout/Container";
 import Carousel from "../layout/Carousel"
+import Card from "../layout/Card";
 
 import { useEffect } from "react";
 import { useState } from "react";
 
+
 function CardSection({ customclass, customclassinner }) {
 
     const [cards, setCards] = useState([]);
-    const type = cards.type
 
     useEffect(() => {
 
@@ -31,9 +33,10 @@ function CardSection({ customclass, customclassinner }) {
             <h2 className={`relative text-white lg:text-black pb-4 ${customclassinner}`}>Veja Nossos Favoritos</h2>
 
             <Carousel
-            items={cards}
-            type="card"
+                items={cards}
+                type="card"
             ></Carousel>
+
 
         </Section>
     )

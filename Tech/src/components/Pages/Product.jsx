@@ -1,11 +1,12 @@
-import HalfHeroSection from "../sections/HalfHeroSection"
+// import HalfHeroSection from "../sections/HalfHeroSection"
 import HeroSection from "../sections/HeroSection";
 import CardSection from "../sections/CardSection";
-import TypeItems from "../sections/TypeItems";
+// import TypeItems from "../sections/TypeItems";
 import PartnersSection from "../sections/PartnersSection";
 
 import Section from "../sections/Section";
-import Carousel from "../layout/Carousel"
+// import Carousel from "../layout/Carousel"
+import Card from "../layout/Card"
 import ProductSection from "../sections/ProductSection";
 
 import { useEffect } from "react";
@@ -14,7 +15,6 @@ import { useState } from "react";
 function Product() {
 
     const [cards, setCards] = useState([]);
-    const type = cards.type
 
     useEffect(() => {
 
@@ -52,12 +52,20 @@ function Product() {
             </Section> */}
 
             <Section id="product_section">
+
                 <h2>Selecionados a Dedo</h2>
+                
+                {cards.length > 0 ? (
+
                 <ProductSection
-                items={cards}
-                // topCard={cards}
-                // bottomCard={cards}
+                items={cards.slice(1, cards.length - 1)}
+                topCard={cards[0]}
+                bottomCard={cards[cards.length - 1]}
                 />
+                ) : <Card
+                    type=" sm:card medium_card sm:mb-5 mb-1 product "
+                ></Card>}
+
             </Section>
 
             <PartnersSection></PartnersSection>
