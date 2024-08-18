@@ -2,9 +2,9 @@ import Card from "./Card"
 
 function BigCard({ item, customclass }) {
     return(
-    <div className={`w-full max-w-[808px] sm:mb-5 mb-1 ${customclass}`}>
+        <div className={`big_card sm:mb-5 mb-1 mr-1 sm:mr-5 p-0 ${customclass}`}>
                         <Card
-                            type="big_card"
+                            type="card big_card"
                             typeInner={item.typeInner}
                             link={item.link}
                             target={item.target}

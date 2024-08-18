@@ -36,15 +36,16 @@ function CardSection({ customclass, customclassinner }) {
 
             <Carousel
                 items={cards}
-                type="card"
+                type="card medium_card"
+                customtitle="text-nowrap text-ellipsis overflow-hidden "
             ></Carousel>
 
-        ): <Container customclass="flex-nowrap mb-5">
-            <Card type="card relative z-10 loading_card"/>
-            <Card type="card relative z-10 loading_card"/>
-            <Card type="card relative z-10 loading_card"/>
-            <Card type="card relative z-10 loading_card"/>
-            <Card type="card relative z-10 loading_card"/>
+        ): <Container customclass="flex-nowrap">
+            <Card type="card medium_card loading_card"/>
+            <Card type="card medium_card loading_card"/>
+            <Card type="card medium_card loading_card"/>
+            <Card type="card medium_card loading_card"/>
+            <Card type="card medium_card loading_card"/>
         </Container>
     }
 

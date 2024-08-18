@@ -1,10 +1,10 @@
 import React from 'react';
 import Colors from '../items/Colors'
 
-const Card = ({ link, target, rel, type, customclass, backgroundImage, title, price, totalPrice, colors }) => {
+const Card = ({ link, target, rel, type, customclass, customtitle, backgroundImage, title, price, totalPrice, colors }) => {
 
   const typeInnerCard = () => {
-    if (type == 'product') {
+    if (type === 'product') {
       return <Colors colors={colors}/>;
     }
   };
@@ -17,9 +17,11 @@ const Card = ({ link, target, rel, type, customclass, backgroundImage, title, pr
 
         <div>
             {typeInnerCard()}
-            <h3 className="text-xl text-gray-800">{title}</h3>
-            <p className="text-lg">{price}</p>
-            <p className="text-sm -mt- text-gray-500">{totalPrice}</p>
+            <h3 className={`text-xl text-gray-950 ${customtitle} `}>{title}</h3>
+
+            <p className="text-lg font-semibold text-gray-950">{price}</p>
+            
+            <p className="text-sm -mt-1 text-gray-500">{totalPrice}</p>
         </div>
         
         <div className=' w-full h-full '

@@ -12,12 +12,15 @@ function PartnersSection() {
             <Container customclass=" justify-around p-5 ">
 
                 <Card
-                type="partner p-2"
+                type="partner pt-3.5 p-1"
                 backgroundImage="url('https://upload.wikimedia.org/wikipedia/commons/4/41/Amazon_PNG6.png')"
                 ></Card>
+
+                <div></div>
                 
                 <Card
-                type="partner bg-[#FFE700] pb-1.5 "
+                customclass=" min-[1px]:bg-[#FFE700]"
+                type="partner pt-1 "
                 backgroundImage="url('https://www.otabuleiro.com.br/storage/images/cache/62c277460851cdb2.png')"
                 ></Card>
 

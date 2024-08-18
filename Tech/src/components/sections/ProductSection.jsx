@@ -5,7 +5,6 @@ function ProductSection({ items, topCard, bottomCard }) {
     
     return(
         <div className="flex flex-wrap"
-        // justify-center items-center
         >
 
             <BigCard
@@ -15,9 +14,10 @@ function ProductSection({ items, topCard, bottomCard }) {
 
             {items.map((item, index) => (
                     <div key={index}
-                    className="max-[500px]:w-full">
+                    className="product p-0 mb-1 mr-1 sm:mr-5 sm:mb-5"
+                    >
                         <Card
-                            type=" sm:card medium_card sm:mb-5 mb-1 product "
+                            type="product card"
                             link={item.link}
                             target={item.target}
                             rel={item.rel}

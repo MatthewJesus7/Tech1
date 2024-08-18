@@ -5,7 +5,7 @@ import Container from '../layout/Container';
 import Card from './Card';
 import CarouselButton from "../items/Buttons/CarouselButton";
 
-function Carousel({ items, type, customclass }) {
+function Carousel({ items, type, customtitle, customclass }) {
     const itemWidth = 256;
     const marginWidth = 20;
     const carouselRef = useRef(null);
@@ -55,14 +55,13 @@ function Carousel({ items, type, customclass }) {
                     {items.map((item, index) => (
                         <div key={index}>
                             <Card
-                            customclass='pb-24'
-                            
+                                customclass='pb-24'
                                 type={type}
-                                typeInner={item.typeInner}
                                 link={item.link}
                                 target={item.target}
                                 rel={item.rel}
                                 title={item.title}
+                                customtitle={customtitle}
                                 price={item.price}
                                 totalPrice={item.totalPrice}
                                 backgroundImage={item.backgroundImage}

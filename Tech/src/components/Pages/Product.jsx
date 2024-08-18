@@ -34,7 +34,7 @@ function Product() {
 
 
     return(
-        <div className="center bg-gray-50">
+        <div className=" bg-gray-50">
 
             {/* <HalfHeroSection></HalfHeroSection> */}
 
@@ -63,7 +63,7 @@ function Product() {
                 bottomCard={cards[cards.length - 1]}
                 />
                 ) : <Card
-                    type=" sm:card medium_card sm:mb-5 mb-1 product "
+                    type="card product loading_card"
                 ></Card>}
 
             </Section>

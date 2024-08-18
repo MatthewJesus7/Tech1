@@ -53,8 +53,9 @@ function Search() {
                 <div>
                     <label htmlFor="iSearchBar">
                         <input
-                            className="bg-gray-100 w-2/3 h-8 rounded-lg p-1 border border-gray-300"
-                            placeholder="Search..."
+                            className="bg-gray-100 w-2/3 h-8 rounded-lg p-1 border border-gray-300 "
+
+                            placeholder="Pesquisar..."
                             type="text"
                             name="searchBar"
                             id="iSearchBar"
@@ -83,7 +84,7 @@ function Search() {
 
             <Carousel
             items={filteredItems}
-            type="search_card"
+            type="card search_card"
             ></Carousel>
 
             

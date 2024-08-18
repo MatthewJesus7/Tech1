@@ -19,6 +19,28 @@
         @apply text-gray-700;
     }
 
+    /* 270pixels é largura minima */
+
+    .product {
+        @apply flex;
+        @apply flex-col;
+        @apply justify-end;
+
+        @apply flex-grow;
+        @apply flex-shrink-0;
+
+        @apply max-[440px]:h-[400px];
+
+        @apply basis-[190px];
+        @apply h-[300px];
+
+        @apply sm:basis-64;
+        @apply sm:h-96;
+
+        @apply p-5;
+       
+    }
+
     .partner{
         @apply w-24; 
         @apply h-10; 
@@ -32,61 +54,40 @@
     }
 
     .big_card {
-        @apply w-full;
-        @apply max-w-[808px];
-        @apply h-96;
-        @apply shadow-md; 
-        @apply hover:shadow-lg;
-        @apply border rounded-xl; 
         @apply p-5;
-        @apply pb-20;
-        @apply ease-out; 
-        @apply duration-300; 
-        @apply hover:scale-105; 
+        @apply pb-24;
+
+        @apply flex-grow;
+        @apply flex-shrink;
+        
+        @apply w-full;
+        @apply basis-[808px];
+        @apply h-96;
     }
 
     .card {
-        @apply w-64; 
-        @apply h-96; 
         @apply shadow-md;
         @apply hover:shadow-lg;
         @apply border rounded-xl; 
+        @apply ease-out; 
+        @apply duration-300; 
+        @apply hover:scale-105; 
+        @apply overflow-hidden;
+    }
+
+    .medium_card {
+        @apply w-64; 
+        @apply h-96;
         @apply mr-5; 
         @apply p-5;
-        @apply ease-out; 
-        @apply duration-300; 
-        @apply hover:scale-105; 
-
         @apply overflow-hidden;
     }
 
-     .medium_card {
-        @apply max-[500px]:w-full; 
-        @apply min-[501px]:max-sm:w-52;
-        @apply h-72;
-        @apply shadow-md;
-        @apply hover:shadow-lg;
-        @apply border rounded-xl;
-        @apply mr-1; 
-        @apply p-5;
-        @apply ease-out; 
-        @apply duration-300; 
-        @apply hover:scale-105; 
-
-        @apply overflow-hidden;
-    }
-
-    .search_card {
+     .search_card {
         @apply w-52;
         @apply h-72;
-        @apply shadow-md;
-        @apply hover:shadow-lg;
-        @apply border rounded-xl;
         @apply mr-1; 
         @apply p-5;
-        @apply ease-out; 
-        @apply duration-300; 
-        @apply hover:scale-105; 
     }
 
 
@@ -99,17 +100,22 @@
         @apply p-px;
     }
 
+    .loading_card {
+        @apply relative z-10 mb-5
+    }
+
     .loading_card::before {
         content: "";
-        position: absolute;
-        top: -50%;
-        left: 50%;
-        width: 200%;
-        height: 200%;
-        background-color: #ECECEC;
+        @apply absolute;
+        @apply top-1/2;
+        @apply left-1/2;
+        @apply w-[200%];
+        @apply h-[200%];
+        @apply bg-[#ECECEC];
         filter: blur(50px);
         transform: translate(-50%, -50%);
         animation: loading 2s infinite cubic-bezier(0.4, 0.0, 0.2, 1);
+        @apply overflow-hidden;
     }
 
     @keyframes loading {
@@ -140,15 +146,6 @@
         @apply font-semibold;
     }
 
-    .product { 
-        @apply flex;
-        @apply flex-col;
-        @apply justify-end;
-        
-        @apply overflow-hidden;
-        /* background-color: rgba(0, 0, 0, 0.200); */
-    }
-
     .carousel-hide-scrollbar {
         -ms-overflow-style: none;
         scrollbar-width: none;
@@ -166,6 +163,10 @@
     /* .blur-background {
         filter: blur(5px);
     } */
+
+    .footer > li {
+        @apply p-2.5;
+    }
 
     li {
         @apply mx-2;
