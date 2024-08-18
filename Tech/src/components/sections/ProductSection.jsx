@@ -18,7 +18,6 @@ function ProductSection({ items, topCard, bottomCard }) {
                     className="max-[500px]:w-full">
                         <Card
                             type=" sm:card medium_card sm:mb-5 mb-1 product "
-                            typeInner='product'
                             link={item.link}
                             target={item.target}
                             rel={item.rel}

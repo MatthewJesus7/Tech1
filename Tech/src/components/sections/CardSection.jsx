@@ -32,7 +32,8 @@ function CardSection({ customclass, customclassinner }) {
 
             <h2 className={`relative text-white lg:text-black pb-4 ${customclassinner}`}>Veja Nossos Favoritos</h2>
 
-            { cards.length > 0 ? () => (
+            { cards.length > 0 ? (
+
             <Carousel
                 items={cards}
                 type="card"
