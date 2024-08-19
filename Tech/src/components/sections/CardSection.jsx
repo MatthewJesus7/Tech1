@@ -13,7 +13,7 @@ function CardSection({ customclass, customclassinner }) {
 
     useEffect(() => {
 
-        fetch('/api/cards' , {
+        fetch('http://localhost:8000/cards' , {
             method: 'GET',
             headers: {
                 'Content-type': 'application/json'
