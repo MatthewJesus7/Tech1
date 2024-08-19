@@ -1,0 +1,13 @@
+{
+    "name": "tech-backend",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+      "json-server": "^1.0.0-beta.1",
+      "cors": "^2.8.5"
+    },
+    "scripts": {
+      "start": "node backend.js"
+    }
+  }
+  
