@@ -22,7 +22,7 @@ function CardSection({ customclass, customclassinner }) {
           .then((resp) => resp.json())
           .then((data) => {
             setCards(data);
-            // assuming your JSON structure has an object with key 'cards'
+            // assuming your JSON structure has an object with key 'categories'
           })
           .catch((err) => console.log(err));
       }, []);

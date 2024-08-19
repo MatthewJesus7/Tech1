@@ -1,12 +1,15 @@
 {
-    "name": "tech-backend",
-    "version": "0.1.0",
-    "private": true,
-    "dependencies": {
-        "cors": "^2.8.5",
-        "json-server": "^1.0.0-beta.1"
-    },
-    "scripts": {
-        "start": "node backend.js"
-    }
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "backend.js",
+  "scripts": {
+    "backend": "json-server --watch db.json --port 3001"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "json-server": "^1.0.0-beta.2"
+  }
 }
