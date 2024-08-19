@@ -13,7 +13,7 @@ function CardSection({ customclass, customclassinner }) {
 
     useEffect(() => {
 
-        fetch('http://localhost:8000/cards' , {
+        fetch('/api/cards' , {
             method: 'GET',
             headers: {
                 'Content-type': 'application/json'
@@ -22,7 +22,7 @@ function CardSection({ customclass, customclassinner }) {
           .then((resp) => resp.json())
           .then((data) => {
             setCards(data);
-            // assuming your JSON structure has an object with key 'categories'
+            // assuming your JSON structure has an object with key 'cards'
           })
           .catch((err) => console.log(err));
       }, []);

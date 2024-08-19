@@ -18,7 +18,7 @@ function Search() {
 
     useEffect(() => {
 
-        fetch('http://localhost:8000/cards' , {
+        fetch('/api/cards' , {
             method: 'GET',
             headers: {
                 'Content-type': 'application/json'
