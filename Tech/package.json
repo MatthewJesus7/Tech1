@@ -17,7 +17,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "backend": "json-server db.json --port 8000 ./cors.js",
+    "backend": "cd backend && npm start",
     "dev": "concurrently \"npm start\" \"npm run backend\"",
     "build": "react-scripts build",
     "test": "react-scripts test",

@@ -3,11 +3,10 @@
     "version": "0.1.0",
     "private": true,
     "dependencies": {
-      "json-server": "^1.0.0-beta.1",
-      "cors": "^2.8.5"
+        "cors": "^2.8.5",
+        "json-server": "^1.0.0-beta.1"
     },
     "scripts": {
-      "start": "node backend.js"
+        "start": "node backend.js"
     }
-  }
-  
+}
