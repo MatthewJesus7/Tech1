@@ -18,18 +18,31 @@ function Product() {
 
     useEffect(() => {
 
-        fetch('/api/cards' , {
+        fetch('/api/cards', {
             method: 'GET',
             headers: {
-                'Content-type': 'application/json'
+                'Content-Type': 'application/json'
             }
         })
-          .then((resp) => resp.json())
-          .then((data) => {
+        .then(response => {
+            console.log('Response status:', response.status);
+            console.log('Response headers:', response.headers.get('Content-Type'));
+        
+            // Verifica se o tipo de conteúdo é JSON
+            if (response.headers.get('Content-Type').includes('application/json')) {
+                return response.json();
+            } else {
+                throw new Error('Expected JSON but received ' + response.headers.get('Content-Type'));
+            }
+        })
+        .then(data => {
             setCards(data);
-            // assuming your JSON structure has an object with key 'categories'
-          })
-          .catch((err) => console.log(err));
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+        
+        
       }, []);
 
 
