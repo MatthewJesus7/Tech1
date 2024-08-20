@@ -2,8 +2,7 @@
     "routes": [
       {
         "src": "/api/(.*)",
-        "dest": "/backend/backend.js"
+        "dest": "Tech/backend/$1"
       }
     ]
   }
-  
