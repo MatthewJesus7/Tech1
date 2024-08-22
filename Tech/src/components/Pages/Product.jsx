@@ -12,39 +12,29 @@ import ProductSection from "../sections/ProductSection";
 import { useEffect } from "react";
 import { useState } from "react";
 
+import { collection, getDocs } from 'firebase/firestore';
+import { db } from '../../firebaseConfig';
+
 function Product() {
 
     const [cards, setCards] = useState([]);
 
     useEffect(() => {
-
-        fetch('/api/cards', {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-        .then(response => {
-            console.log('Response status:', response.status);
-            console.log('Response headers:', response.headers.get('Content-Type'));
-        
-            // Verifica se o tipo de conteúdo é JSON
-            if (response.headers.get('Content-Type').includes('application/json')) {
-                return response.json();
-            } else {
-                throw new Error('Expected JSON but received ' + response.headers.get('Content-Type'));
-            }
-        })
-        .then(data => {
-            setCards(data);
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
-        
-        
+        const fetchCards = async () => {
+          try {
+            const querySnapshot = await getDocs(collection(db, 'cards'));
+            const cardsData = querySnapshot.docs.map(doc => ({
+              id: doc.id,
+              ...doc.data()
+            }));
+            setCards(cardsData);
+          } catch (error) {
+            console.error('Erro ao buscar dados: ', error);
+          }
+        };
+    
+        fetchCards();
       }, []);
-
 
     return(
         <div className=" bg-gray-50">
