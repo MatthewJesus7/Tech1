@@ -1,5 +1,5 @@
-import Section from "../sections/Section"
-import Container from "./Container"
+import Section from "../sections/Section";
+import Container from "./Container";
 
 function Footer() {
     return(
@@ -10,10 +10,10 @@ function Footer() {
 
                         <li>
                             <ul>
-                                <a href="">
+                                <a href="#">
                                     <li><h3>Home</h3></li>
                                 </a>
-                                <a href="">
+                                <a href="#">
                                     <li><h3>Sobre nós</h3></li>
                                 </a>
                             </ul>
@@ -21,39 +21,39 @@ function Footer() {
                         
                         <li>
                             <ul>
-                                <a href="">
+                                <a href="#">
                                     <li>
                                         <h3>Samsung</h3>
                                     </li>
                                 </a>
-                                <a href="">
+                                <a href="#">
                                     <li>Galaxy A05s</li>
                                 </a>
-                                <a href="">
+                                <a href="#">
                                     <li>Galaxy A25 5G</li>
                                 </a>
                             </ul>
                         </li>
                         <li>
                             <ul>
-                                <a href="">
+                                <a href="#">
                                     <li>
                                         <h3>Motorola</h3>
                                     </li>
                                 </a>
-                                <a href="">
+                                <a href="#">
                                     <li>Moto G34</li>
                                 </a>
                             </ul>
                         </li>
                         <li>
                             <ul>
-                                <a href="">
+                                <a href="#">
                                     <li>
                                         <h3>xiaomi</h3>
                                     </li>
                                 </a>
-                                <a href="">
+                                <a href="#">
                                     <li>Redmi Note 13 4G</li>
                                 </a>
                             </ul>
@@ -63,12 +63,12 @@ function Footer() {
                                 <li>
                                     <h3>Nossas Afiliações</h3>
                                 </li>
-                                <a href="">
+                                <a href="#">
                                     <li>
                                         amazon
                                     </li>
                                 </a>
-                                <a href="">
+                                <a href="#">
                                     <li>
                                         Mercado livre
                                     </li>

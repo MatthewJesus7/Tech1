@@ -8,29 +8,32 @@ import Card from '../Card';
 import { useEffect } from 'react';
 
 
-function navigateTo(url) {
+  import { collection, getDocs } from 'firebase/firestore';
+  import { db } from '../../../firebaseConfig'; 
+
+  function navigateTo(url) {
     window.location.href = url;
   }
 
-function Search() {
-
+  function Search() {
     const [items, setItems] = useState([]);
-
+  
     useEffect(() => {
-
-        fetch('http://localhost:8000/cards' , {
-            method: 'GET',
-            headers: {
-                'Content-type': 'application/json'
-            }
-        })
-          .then((resp) => resp.json())
-          .then((data) => {
-            setItems(data);
-            // assuming your JSON structure has an object with key 'categories'
-          })
-          .catch((err) => console.log(err));
-      }, []);
+      const fetchCards = async () => {
+        try {
+          const querySnapshot = await getDocs(collection(db, 'cards'));
+          const cardsData = querySnapshot.docs.map(doc => ({
+            id: doc.id,
+            ...doc.data()
+          }));
+          setItems(cardsData);
+        } catch (error) {
+          console.error('Erro ao buscar dados: ', error);
+        }
+      };
+  
+      fetchCards();
+    }, []);
     
     const [searchTerm, setSearchTerm] = useState('');
     const [filteredItems, setFilteredItems] = useState([]);
