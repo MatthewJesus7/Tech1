@@ -6,25 +6,29 @@ import Card from "../layout/Card";
 import { useEffect } from "react";
 import { useState } from "react";
 
+import { collection, getDocs } from 'firebase/firestore';
+import { db } from '../../firebaseConfig';
+
 
 function CardSection({ customclass, customclassinner }) {
 
     const [cards, setCards] = useState([]);
 
     useEffect(() => {
-
-        fetch('http://localhost:8000/cards' , {
-            method: 'GET',
-            headers: {
-                'Content-type': 'application/json'
-            }
-        })
-          .then((resp) => resp.json())
-          .then((data) => {
-            setCards(data);
-            // assuming your JSON structure has an object with key 'categories'
-          })
-          .catch((err) => console.log(err));
+        const fetchCards = async () => {
+          try {
+            const querySnapshot = await getDocs(collection(db, 'cards'));
+            const cardsData = querySnapshot.docs.map(doc => ({
+              id: doc.id,
+              ...doc.data()
+            }));
+            setCards(cardsData);
+          } catch (error) {
+            console.error('Erro ao buscar dados: ', error);
+          }
+        };
+    
+        fetchCards();
       }, []);
 
     return( 
