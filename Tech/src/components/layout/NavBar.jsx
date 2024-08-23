@@ -1,11 +1,5 @@
 import Link from "../items/Link"
 
-// import React, { Suspense, lazy } from 'react';
-
-// const Home = lazy(() => import('./Home'));
-// const About = lazy(() => import('./About'));
-// const Contact = lazy(() => import('./Contact'));
-
 import Container from './Container'
 
 import { IoIosSearch } from "react-icons/io";
