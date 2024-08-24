@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 
 import Section from '../sections/Section';
+import Carousel from '../layout/Carousel';
+import Container from '../layout/Container';
+import Card from '../layout/Card';
 import XButton from '../items/Buttons/XButton';
+import BoxMark from './BoxMark';
 
 const Select = ({ onFilterChange }) => {
   const [selectedPrice, setSelectedPrice] = useState('');
@@ -22,44 +26,67 @@ const Select = ({ onFilterChange }) => {
 
       <Section>
 
-        <div className=" w-full h-9">
-            <XButton handleOnClick="">
-            </XButton>
+        <Container>
+          <Card></Card>
+        </Container>
+        
+        <div className="flex justify-between">
+
+          <h3>Filtrar Por:</h3>
+
+          <div >
+              <XButton handleOnClick=" "
+              customclass="-mt-2.5"
+              >
+              </XButton>
+          </div>
         </div>
 
-          <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="price">
+          <div className="mb-5">
+
+            <label htmlFor="price"
+            className="block text-gray-800 text-md font-semibold"
+            >
               Preço
             </label>
-            <select
-              id="price"
-              value={selectedPrice}
-              onChange={handlePriceChange}
-              className="w-full border border-gray-300 rounded-md p-2"
-            >
-              <option value="">Todos</option>
-              <option value="0-500">Até R$500</option>
-              <option value="500-1000">R$500 - R$1000</option>
-              <option value="1000-1500">R$1000 - R$1500</option>
-              <option value="1500">Acima de R$1500</option>
-            </select>
-          </div>
-          <div>
-            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="brand">
+
+            <form className='flex flex-col'>
+              
+              <BoxMark id="" value=""
+              text="Xiaomi"
+              />
+
+              <BoxMark id="" value=""
+              text="Samsung"
+              />
+
+              <BoxMark id="" value=""
+              text="Motorola"
+              />
+
+            </form>
+
+            
+            <label className="block text-gray-800 text-md font-semibold mt-3" htmlFor="brand">
               Marca
             </label>
-            <select
-              id="brand"
-              value={selectedBrand}
-              onChange={handleBrandChange}
-              className="w-full border border-gray-300 rounded-md p-2"
-            >
-              <option value="">Todas</option>
-              <option value="samsung">Samsung</option>
-              <option value="apple">Apple</option>
-              <option value="xiaomi">Xiaomi</option>
-              <option value="motorola">Motorola</option>
-            </select>
+
+            <form className='flex flex-col'>
+              
+              <BoxMark id="" value=""
+              text="Menor Preço"
+              />
+
+              <BoxMark id="" value=""
+              text="Maior Preço"
+              />
+
+              <BoxMark id="" value=""
+              text="Até R$1000,00"
+              />
+
+            </form>
+
           </div>
       </Section>
     </menu>
