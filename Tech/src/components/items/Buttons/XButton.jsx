@@ -1,8 +1,8 @@
 import { IoIosClose } from "react-icons/io";
 
-function XButton({ handleOnClick}) {
+function XButton({ handleOnClick, customclass }) {
     return(
-        <button onClick={handleOnClick} className=" absolute top-0 right-[10%] text-6xl ">
+        <button onClick={handleOnClick} className={` text-6xl ${customclass}`}>
             <p>
                 <IoIosClose />
             </p>

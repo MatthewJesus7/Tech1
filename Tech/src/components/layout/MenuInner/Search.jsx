@@ -87,14 +87,15 @@ import { useEffect } from 'react';
 
             <Carousel
             items={filteredItems}
-            type="card search_card"
+            type="card search_card pb-28"
             ></Carousel>
 
             
 
             <div className="cards-container">
                 {filteredItems.map((item, key) => (
-                    <Card/>
+                    <Card
+                    />
                 ))}
             </div>
         </>
