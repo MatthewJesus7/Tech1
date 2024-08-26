@@ -1,5 +1,6 @@
 import NavBar from "./NavBar";
 import Menu from "./Menu";
+import LayoutMenu from "../layout/LayoutMenu"
 import Footer from "./Footer";
 import Search from "./MenuInner/Search";
 import Cart from "./MenuInner/Cart";
@@ -71,13 +72,23 @@ function Layout({ children }) {
             }
         }
     };
+function Layout({ children, navBarRef }) {
 
     return (
         <div className={`overflow-x-hidden ${aparecerMenu ? 'blur-background' : ''}`}>
+        <div className={`overflow-x-hidden`}>
             <NavBar
                 ref={navBarRef}
                 handleOnClickSearch={() => toggleMenu('search')}
                 handleOnClickCart={() => toggleMenu('cart')}
+                handleOnClickSearch={() => ToggleMenu('search')}
+
+                handleOnClickCart={() => ToggleMenu('cart')}
+            />
+
+            <LayoutMenu
+            ref={navBarRef}
+            acao={toggleMenu}
             />
             <Menu
                 ref={menuRef}
@@ -95,6 +106,7 @@ function Layout({ children }) {
                 {selectedMenuItem === 'search' && <Search/>}
                 {selectedMenuItem === 'cart' && <Cart />}
             </Menu>
+            
             {children}
             <Footer />
         </div>
