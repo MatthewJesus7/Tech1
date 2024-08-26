@@ -44,13 +44,9 @@
     .partner{
         @apply w-24; 
         @apply h-10; 
-        @apply shadow-md; 
         @apply border rounded-md; 
         @apply mr-5;
         @apply cursor-pointer;
-        @apply ease-out; 
-        @apply duration-300; 
-        @apply hover:scale-105; 
     }
 
     .big_card {
@@ -170,5 +166,9 @@
 
     li {
         @apply mx-2;
+    }
+
+    .menu {
+        @apply fixed top-52 left-0 w-full h-full p-5 bg-white shadow-md rounded-md z-10 overflow-y-auto;
     }
 }

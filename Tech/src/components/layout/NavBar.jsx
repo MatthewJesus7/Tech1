@@ -5,11 +5,11 @@ import Container from './Container'
 import { IoIosSearch } from "react-icons/io";
 // import { FaCartFlatbed, FaInfo } from "react-icons/fa6"
 
-function navigateTo(url) {
-    window.location.href = url;
-  }
+    function navigateTo(url) {
+        window.location.href = url;
+    }
 
-function NavBar({ handleOnClickSearch, handleOnClickCart }) {
+    function NavBar({ handleOnClickSearch, handleOnClickCart }) {
 
     return(
         <nav className="fixed h-10 justify-center content-center border w-full glass z-50">
