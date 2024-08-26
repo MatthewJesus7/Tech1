@@ -7,6 +7,7 @@ function BoxMark({text, id, value}) {
             id={id}
             name="options"
             value={value}
+            className="size-4"
             />
             <span className="pl-1">{text}</span>
         </label>

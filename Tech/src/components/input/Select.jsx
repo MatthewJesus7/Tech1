@@ -7,7 +7,7 @@ import Card from '../layout/Card';
 import XButton from '../items/Buttons/XButton';
 import BoxMark from './BoxMark';
 
-const Select = ({ onFilterChange }) => {
+const Select = ({ onFilterChange, closeMenu }) => {
   const [selectedPrice, setSelectedPrice] = useState('');
   const [selectedBrand, setSelectedBrand] = useState('');
 
@@ -22,12 +22,15 @@ const Select = ({ onFilterChange }) => {
   };
 
   return (
-    <menu className="fixed top-9 left-0 w-full h-full p-5 bg-white shadow-md rounded-md z-10">
+    <menu className="menu">
 
-      <Section>
+      <Section >
 
         <Container>
-          <Card></Card>
+          <Card
+          type="partner rounded-md mb-2 shadow-sm hover:shadow-md pt-3"
+          totalPrice=""
+          ></Card>
         </Container>
         
         <div className="flex justify-between">
@@ -35,7 +38,7 @@ const Select = ({ onFilterChange }) => {
           <h3>Filtrar Por:</h3>
 
           <div >
-              <XButton handleOnClick=" "
+              <XButton handleOnClick={closeMenu}
               customclass="-mt-2.5"
               >
               </XButton>
@@ -52,28 +55,7 @@ const Select = ({ onFilterChange }) => {
 
             <form className='flex flex-col'>
               
-              <BoxMark id="" value=""
-              text="Xiaomi"
-              />
-
-              <BoxMark id="" value=""
-              text="Samsung"
-              />
-
-              <BoxMark id="" value=""
-              text="Motorola"
-              />
-
-            </form>
-
-            
-            <label className="block text-gray-800 text-md font-semibold mt-3" htmlFor="brand">
-              Marca
-            </label>
-
-            <form className='flex flex-col'>
-              
-              <BoxMark id="" value=""
+            <BoxMark id="" value=""
               text="Menor Preço"
               />
 
@@ -87,7 +69,27 @@ const Select = ({ onFilterChange }) => {
 
             </form>
 
+            
+            <label className="block text-gray-800 text-md font-semibold mt-3" htmlFor="brand">
+              Marca
+            </label>
+
+            <form className='flex flex-col'>
+              <BoxMark id="" value=""
+              text="Xiaomi"
+              />
+
+              <BoxMark id="" value=""
+              text="Samsung"
+              />
+
+              <BoxMark id="" value=""
+              text="Motorola"/>
+              
+            </form>
+
           </div>
+          <div className='w-10 h-[500px] '></div>
       </Section>
     </menu>
   );
