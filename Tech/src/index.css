@@ -169,6 +169,6 @@
     }
 
     .menu {
-        @apply fixed top-52 left-0 w-full h-full p-5 bg-white shadow-md rounded-md z-10 overflow-y-auto;
+        @apply fixed top-1 left-0 w-full p-5 bg-white shadow-md rounded-md z-20 overflow-y-auto;
     }
 }
