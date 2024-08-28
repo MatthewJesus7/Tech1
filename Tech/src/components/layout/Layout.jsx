@@ -72,24 +72,17 @@ function Layout({ children }) {
             }
         }
     };
-function Layout({ children, navBarRef }) {
+    
+    return(
+        <div className={`overflow-x-hidden ${aparecerMenu ? 'blur-background' : ''} `}>
 
-    return (
-        <div className={`overflow-x-hidden ${aparecerMenu ? 'blur-background' : ''}`}>
         <div className={`overflow-x-hidden`}>
             <NavBar
                 ref={navBarRef}
                 handleOnClickSearch={() => toggleMenu('search')}
                 handleOnClickCart={() => toggleMenu('cart')}
-                handleOnClickSearch={() => ToggleMenu('search')}
-
-                handleOnClickCart={() => ToggleMenu('cart')}
             />
 
-            <LayoutMenu
-            ref={navBarRef}
-            acao={toggleMenu}
-            />
             <Menu
                 ref={menuRef}
                 handleOnClick={closeMenu}
@@ -110,7 +103,8 @@ function Layout({ children, navBarRef }) {
             {children}
             <Footer />
         </div>
+    </div>
     );
-}
+};
 
 export default Layout

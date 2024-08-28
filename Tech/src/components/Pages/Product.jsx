@@ -1,82 +1,103 @@
-// import HalfHeroSection from "../sections/HalfHeroSection"
-import HeroSection from "../sections/HeroSection";
-import CardSection from "../sections/CardSection";
-// import TypeItems from "../sections/TypeItems";
-import PartnersSection from "../sections/PartnersSection";
-
-import Section from "../sections/Section";
-// import Carousel from "../layout/Carousel"
-import Card from "../layout/Card"
-import ProductSection from "../sections/ProductSection";
-import FilterMenu from "../layout/FilterMenu";
-
 import { useState, useEffect } from "react";
-
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../../firebaseConfig';
 
+import HeroSection from "../sections/HeroSection";
+import CardSection from "../sections/CardSection";
+import PartnersSection from "../sections/PartnersSection";
+import Section from "../sections/Section";
+import Card from "../layout/Card";
+import ProductSection from "../sections/ProductSection";
+import FilterMenu from "../layout/FilterMenu";
+
 function Product() {
 
-    const [cards, setCards] = useState([]);
+  const [cards, setCards] = useState([]);
 
-    useEffect(() => {
-        const fetchCards = async () => {
-          try {
-            const querySnapshot = await getDocs(collection(db, 'cards'));
-            const cardsData = querySnapshot.docs.map(doc => ({
-              id: doc.id,
-              ...doc.data()
-            }));
-            setCards(cardsData);
-          } catch (error) {
-            console.error('Erro ao buscar dados: ', error);
-          }
-        };
-    
-        fetchCards();
-      }, []);
+  const [filters, setFilters] = useState({ totalPrice: '', brand: '' });
+  const [filteredCards, setFilteredCards] = useState([]);
+  const [showCards, setShowCards] = useState(true);
 
-    return(
-        <div className=" bg-gray-50">
+  useEffect(() => {
+    const fetchCards = async () => {
+      try {
+        const querySnapshot = await getDocs(collection(db, 'cards'));
+        const cardsData = querySnapshot.docs.map(doc => ({
+          id: doc.id,
+          ...doc.data()
+        }));
+        setCards(cardsData);
+      } catch (error) {
+        console.error('Erro ao buscar dados: ', error);
+      }
+    };
 
-            {/* <HalfHeroSection></HalfHeroSection> */}
+    fetchCards();
+  }, []);
 
-            <HeroSection></HeroSection>
+  useEffect(() => {
+    const applyFilters = () => {
+      const filtered = cards.filter(card => {
+        const totalPrice = parseFloat(
+          card.totalPrice.replace(/[^\d,]/g, '').replace(',', '.').trim()
+        );
+  
+        const matchesPrice = (() => {
+          if (filters.totalPrice === 'low') return totalPrice < 1000;
+          if (filters.totalPrice === 'high') return totalPrice > 1000;
+          return true;
+        })();
+  
+        const matchesBrand = filters.brand ? card.brand === filters.brand : true;
+  
+        return matchesPrice && matchesBrand;
+      });
+  
+      // Use a função `setFilteredCards` somente se os resultados filtrados forem diferentes
+      if (JSON.stringify(filtered) !== JSON.stringify(filteredCards)) {
+        setFilteredCards(filtered);
+        setShowCards(false); // Esconde os cards
+      setTimeout(() => setShowCards(true), 0); // Força a re-renderização
+      }
+    };
+  
+    applyFilters();
+  }, [cards, filters]); // Dependências ajustadas, sem `filteredCards`
+  
+  const handleFilterChange = (newFilters) => {
+    // Verifique se os novos filtros são diferentes dos atuais
+    if (JSON.stringify(newFilters) !== JSON.stringify(filters)) {
+      setFilters(newFilters);
+    }
+  };
 
-            {/* <Section>
-                <Carousel items={carouselItems}>
-                </Carousel>
-            </Section> */}
+  // console.log(filteredCards)
 
-            <CardSection></CardSection>
+  return (
+    <div className="bg-gray-50">
+      <HeroSection />
 
-            {/* <Section>
-                <div className="bg-red-500 size-12"></div>
-            </Section> */}
+      <CardSection />
 
-            <Section id="product_section">
+      <Section id="product_section">
+        <h2>Selecionados a Dedo</h2>
+        
+        <FilterMenu onFilterChange={handleFilterChange} />
+        
+        {filteredCards.length > 0 ? (
+          <ProductSection
+            items={filteredCards.slice(1, filteredCards.length - 1)}
+            topCard={filteredCards[0]}
+            bottomCard={filteredCards[filteredCards.length - 1]}
+          />
+        ) : (
+          <Card type="card product loading_card" />
+        )}
+      </Section>
 
-                <h2>Selecionados a Dedo</h2>
-                
-                <FilterMenu></FilterMenu>
-                
-                {cards.length > 0 ? (
-
-                <ProductSection
-                items={cards.slice(1, cards.length - 1)}
-                topCard={cards[0]}
-                bottomCard={cards[cards.length - 1]}
-                />
-                ) : <Card
-                    type="card product loading_card"
-                ></Card>}
-
-            </Section>
-
-            <PartnersSection></PartnersSection>
-
-        </div>
-    )
+      <PartnersSection />
+    </div>
+  );
 }
 
-export default Product
+export default Product;

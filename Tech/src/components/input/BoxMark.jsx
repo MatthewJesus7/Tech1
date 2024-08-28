@@ -1,17 +1,22 @@
-function BoxMark({text, id, value}) {
+function BoxMark({text, id, value, onSelect}) {
+
+    const handleChange = (e) => {
+        onSelect(e.target.value);
+      };
+    
     return(
-        <>
-        <label for={id} className="my-1">
+        <label htmlFor={id} className="my-1">
             <input
             type="checkbox"
             id={id}
-            name="options"
+            name="filter"
             value={value}
             className="size-4"
+            onChange={handleChange}
             />
-            <span className="pl-1">{text}</span>
+            <span className="ml-1">{text}</span>
         </label>
-        </>
+
     )
 }
 
