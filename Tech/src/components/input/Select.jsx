@@ -17,7 +17,6 @@ const Select = ({ onFilterChange, closeMenu, customclass }) => {
 
   const handlePriceChange = (value) => {
     setSelectedPrice(value);
-    console.log(`O preço foi mudado para: ${value}`)
   };
 
   const handleBrandChange = (value) => {
@@ -28,7 +27,7 @@ const Select = ({ onFilterChange, closeMenu, customclass }) => {
     <menu className={`menu ${customclass}`}>
       <Section>
         <Container>
-          <Card
+            <Card 
             type="partner rounded-md mb-2 shadow-sm hover:shadow-md pt-3"
             totalPrice=""
           />
@@ -49,10 +48,12 @@ const Select = ({ onFilterChange, closeMenu, customclass }) => {
 
             <BoxMark id="high-price" value='high' text="Maior Preço" onSelect={handlePriceChange} />
 
-            <BoxMark id="price-1000" value="1000" text="Até R$1000,00" onSelect={handlePriceChange} />
+            <BoxMark id="price-1000" value='1000' text="Até R$1000,00" onSelect={handlePriceChange} />
+
+            <BoxMark id="no-price" value='0' text="Remover Todos os filtros" onSelect={handlePriceChange} />
           </form>
 
-          <label className="block text-gray-800 text-md font-semibold mt-3" htmlFor="brand">
+           {/* <label className="block text-gray-800 text-md font-semibold mt-3" htmlFor="brand">
             Marca
           </label>
           <form className="flex flex-col">
@@ -61,9 +62,9 @@ const Select = ({ onFilterChange, closeMenu, customclass }) => {
             <BoxMark id="brand-samsung" value="samsung" text="Samsung" onSelect={handleBrandChange} />
 
             <BoxMark id="brand-motorola" value="motorola" text="Motorola" onSelect={handleBrandChange} />
-          </form>
+          </form> */}
         </div>
-        <div className="w-10 h-[500px]"></div>
+
       </Section>
     </menu>
   );

@@ -16,7 +16,6 @@ function Product() {
 
   const [filters, setFilters] = useState({ totalPrice: '', brand: '' });
   const [filteredCards, setFilteredCards] = useState([]);
-  const [showCards, setShowCards] = useState(true);
 
   useEffect(() => {
     const fetchCards = async () => {
@@ -43,21 +42,34 @@ function Product() {
         );
   
         const matchesPrice = (() => {
-          if (filters.totalPrice === 'low') return totalPrice < 1000;
-          if (filters.totalPrice === 'high') return totalPrice > 1000;
+          
+          if (filters.totalPrice === 'low') return true;
+
+          if (filters.totalPrice === 'high') return true;
+
+          if (filters.totalPrice === '1000') return totalPrice <= 1000;
+
+          if (filters.totalPrice === '0') return true;
           return true;
         })();
+
   
         const matchesBrand = filters.brand ? card.brand === filters.brand : true;
   
         return matchesPrice && matchesBrand;
       });
+
+      // Ordena após a filtragem
+      if (filters.totalPrice === 'low') {
+        filtered.sort((a, b) => parseFloat(a.totalPrice.replace(/[^\d,]/g, '').replace(',', '.').trim()) - parseFloat(b.totalPrice.replace(/[^\d,]/g, '').replace(',', '.').trim()));
+
+      } else if (filters.totalPrice === 'high') {
+        filtered.sort((a, b) => parseFloat(b.totalPrice.replace(/[^\d,]/g, '').replace(',', '.').trim()) - parseFloat(a.totalPrice.replace(/[^\d,]/g, '').replace(',', '.').trim()));
+      }
   
       // Use a função `setFilteredCards` somente se os resultados filtrados forem diferentes
       if (JSON.stringify(filtered) !== JSON.stringify(filteredCards)) {
         setFilteredCards(filtered);
-        setShowCards(false); // Esconde os cards
-      setTimeout(() => setShowCards(true), 0); // Força a re-renderização
       }
     };
   
@@ -80,9 +92,12 @@ function Product() {
       <CardSection />
 
       <Section id="product_section">
-        <h2>Selecionados a Dedo</h2>
-        
-        <FilterMenu onFilterChange={handleFilterChange} />
+
+        <div className="flex justify-between">
+          <h2>Selecionados a Dedo</h2>
+
+          <FilterMenu onFilterChange={handleFilterChange} />
+        </div>
         
         {filteredCards.length > 0 ? (
           <ProductSection
