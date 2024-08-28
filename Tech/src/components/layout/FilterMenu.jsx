@@ -72,7 +72,9 @@ function FilterMenu({ onFilterChange }) {
 
         return(
         <>
-            <FilterButton handleOnClick={() => toggleMenu('filter')}></FilterButton>
+            <FilterButton handleOnClick={() => toggleMenu('filter')}>
+                
+            </FilterButton>
 
             <Select
 

@@ -7,7 +7,7 @@ function BoxMark({text, id, value, onSelect}) {
     return(
         <label htmlFor={id} className="my-1">
             <input
-            type="checkbox"
+            type="radio"
             id={id}
             name="filter"
             value={value}
