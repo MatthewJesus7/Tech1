@@ -26,12 +26,12 @@ const Select = ({ onFilterChange, closeMenu, customclass }) => {
   return (
     <menu className={`menu ${customclass}`}>
       <Section>
-        <Container>
+        {/* <Container>
             <Card 
             type="partner rounded-md mb-2 shadow-sm hover:shadow-md pt-3"
             totalPrice=""
           />
-        </Container>
+        </Container> */}
         
         <div className="flex justify-between">
           <h3>Filtrar Por:</h3>
