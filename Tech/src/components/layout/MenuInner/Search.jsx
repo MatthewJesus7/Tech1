@@ -52,11 +52,11 @@ import { useEffect } from 'react';
 
     return (
         <>
-            <form onSubmit={submit}>
+            <form onSubmit={submit} className='w-2/3'>
                 <div>
                     <label htmlFor="iSearchBar">
                         <input
-                            className="bg-gray-100 w-2/3 h-8 rounded-lg p-1 border border-gray-300 "
+                            className="bg-gray-100 w-full h-8 rounded-lg p-1 border border-gray-300 "
 
                             placeholder="Pesquisar..."
                             type="text"
@@ -79,7 +79,7 @@ import { useEffect } from 'react';
             <div className='flex'>
                 <Link onClick={() => navigateTo('/about')}
                 text="Sobre nós"
-                textCustom="my-3 py-2 text-lg font-semibold"
+                textCustom="my-3 py-1 text-lg font-semibold"
                 ></Link>
             </div>
             
