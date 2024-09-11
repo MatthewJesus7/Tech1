@@ -37,7 +37,7 @@
         @apply sm:basis-64;
         @apply sm:h-96;
 
-        @apply p-5;
+        @apply p-2.5;
        
     }
 
@@ -50,7 +50,7 @@
     }
 
     .big_card {
-        @apply p-5;
+        @apply p-2.5;
         @apply pb-24;
 
         @apply flex-grow;
@@ -75,7 +75,7 @@
         @apply w-64; 
         @apply h-96;
         @apply mr-5; 
-        @apply p-5;
+        @apply p-2.5;
         @apply overflow-hidden;
     }
 
@@ -135,10 +135,11 @@
         @apply pb-5;
         @apply text-3xl;
         @apply font-semibold;
+        @apply text-gray-800;
     }
 
     h3 {
-        @apply text-xl;
+        @apply text-lg;
         @apply font-semibold;
     }
 
