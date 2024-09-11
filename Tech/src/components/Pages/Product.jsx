@@ -36,18 +36,29 @@ function Product() {
 
   useEffect(() => {
     const applyFilters = () => {
+
       const filtered = cards.filter(card => {
         const totalPrice = parseFloat(
           card.totalPrice.replace(/[^\d,]/g, '').replace(',', '.').trim()
         );
-  
+        
         const matchesPrice = (() => {
-          
-          if (filters.totalPrice === 'low') return true;
 
-          if (filters.totalPrice === 'high') return true;
+          if (filters.config === 'custo-beneficio') return true
+          if (filters.config === 'hardware') return filtered.sort((a, b) => a.hardware - b.hardware);
+          // Segue no mesmo estilo acima
+          if (filters.config === 'tela') return true;
+          if (filters.config === 'camera') return true;
+          if (filters.config === 'desempenho') return true;
+          
+          if (filters.totalPrice === 'low') return filtered.sort((a, b) => a.totalPrice - b.totalPrice);
+          if (filters.totalPrice === 'high') return filtered.sort((a, b) => b.totalPrice - a.totalPrice);
 
           if (filters.totalPrice === '1000') return totalPrice <= 1000;
+          if (filters.totalPrice === '900') return totalPrice <= 900;
+          if (filters.totalPrice === '800') return totalPrice <= 800;
+          if (filters.totalPrice === '700') return totalPrice <= 700;
+          if (filters.totalPrice === '600') return totalPrice <= 600;
 
           if (filters.totalPrice === '0') return true;
           return true;
@@ -59,13 +70,7 @@ function Product() {
         return matchesPrice && matchesBrand;
       });
 
-      // Ordena após a filtragem
-      if (filters.totalPrice === 'low') {
-        filtered.sort((a, b) => parseFloat(a.totalPrice.replace(/[^\d,]/g, '').replace(',', '.').trim()) - parseFloat(b.totalPrice.replace(/[^\d,]/g, '').replace(',', '.').trim()));
-
-      } else if (filters.totalPrice === 'high') {
-        filtered.sort((a, b) => parseFloat(b.totalPrice.replace(/[^\d,]/g, '').replace(',', '.').trim()) - parseFloat(a.totalPrice.replace(/[^\d,]/g, '').replace(',', '.').trim()));
-      }
+      
   
       // Use a função `setFilteredCards` somente se os resultados filtrados forem diferentes
       if (JSON.stringify(filtered) !== JSON.stringify(filteredCards)) {

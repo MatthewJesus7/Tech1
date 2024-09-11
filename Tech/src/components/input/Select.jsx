@@ -7,16 +7,21 @@ import BoxMark from './BoxMark';
 
 const Select = ({ onFilterChange, closeMenu, customclass }) => {
   const [selectedPrice, setSelectedPrice] = useState('');
+  const [selectedConfig, setSelectedConfig] = useState('');
   const [selectedBrand, setSelectedBrand] = useState('');
+  
 
   useEffect(() => {
-    // Atualiza os filtros sempre que `selectedPrice` ou `selectedBrand` mudarem
-    onFilterChange({ totalPrice: selectedPrice, brand: selectedBrand });
+    onFilterChange({ totalPrice: selectedPrice, brand: selectedBrand, config: selectedConfig });
 
-  }, [selectedPrice, selectedBrand, onFilterChange]);
+  }, [selectedPrice, selectedBrand, selectedConfig, onFilterChange]);
 
   const handlePriceChange = (value) => {
     setSelectedPrice(value);
+  };
+
+  const handleConfigChange = (value) => {
+    setSelectedConfig(value);
   };
 
   const handleBrandChange = (value) => {
@@ -27,31 +32,134 @@ const Select = ({ onFilterChange, closeMenu, customclass }) => {
     <menu className={`menu ${customclass}`}>
       <Section>
         {/* <Container>
-            <Card 
-            type="partner rounded-md mb-2 shadow-sm hover:shadow-md pt-3"
-            totalPrice=""
-          />
+          //   <Card 
+          //   type="partner rounded-md mb-2 shadow-sm hover:shadow-md pt-3"
+          //   totalPrice=""
+          // />
         </Container> */}
         
         <div className="flex justify-between">
           <h3>Filtrar Por:</h3>
           <XButton handleOnClick={closeMenu} customclass="-mt-2.5" />
+          
         </div>
 
-        <div className="mb-5">
-          <label htmlFor="price" className="block text-gray-800 text-md font-semibold">
+        <div className="mb-14">
+
+          <label htmlFor="price"
+          className="block text-gray-800 text-md font-semibold mb-2.5">
+            Configurações
+          </label>
+
+          <form className="flex flex-col">
+
+            <BoxMark id="none-options"
+            value='0'
+            text="Nenhuma das Opções"
+            onSelect={handlePriceChange} />
+
+            <BoxMark 
+            id="custo-beneficio" 
+            value='custo-beneficio' 
+            text="Custo-beneficio" 
+            onSelect={handleConfigChange} />
+
+            <BoxMark 
+            id="hardware" 
+            value='hardware' 
+            text="Hardware" 
+            onSelect={handleConfigChange} />
+
+            <BoxMark 
+            id="tela" 
+            value='tela' 
+            text="Tela" 
+            onSelect={handleConfigChange} />
+
+            <BoxMark 
+            id="camera" 
+            value='camera' 
+            text="Camera" 
+            onSelect={handleConfigChange} />
+
+            <BoxMark 
+            id="desempenho" 
+            value='desempenho' 
+            text="Desempenho" 
+            onSelect={handleConfigChange} />
+
+          </form>
+
+          <label htmlFor="price" 
+          className="block text-gray-800 text-md font-semibold my-2.5">
             Preço
           </label>
           
           <form className="flex flex-col">
-            <BoxMark id="low-price" value='low' text="Menor Preço" onSelect={handlePriceChange} />
 
-            <BoxMark id="high-price" value='high' text="Maior Preço" onSelect={handlePriceChange} />
+            <BoxMark id="none-options"
+            value='0'
+            text="Nenhuma das Opções"
+            onSelect={handlePriceChange} />
 
-            <BoxMark id="price-1000" value='1000' text="Até R$1000,00" onSelect={handlePriceChange} />
+            <BoxMark 
+            id="low-price"
+            value='low'
+            text="Menor Preço"
+            onSelect={handlePriceChange} />
 
-            <BoxMark id="no-price" value='0' text="Remover Todos os filtros" onSelect={handlePriceChange} />
+            <BoxMark
+            id="high-price"
+            value='high'
+            text="Maior Preço"
+            onSelect={handlePriceChange} />
+
+            <label htmlFor="price" 
+            className="block text-gray-800 text-md font-semibold my-2.5">
+              Faixa de preço
+            </label>
+
+            <BoxMark id="none-options"
+            value='0'
+            text="Nenhuma das Opções"
+            onSelect={handlePriceChange} />
+
+            <BoxMark 
+            id="price-1000" 
+            value='1000' 
+            text="Menos de R$ 1000,00" 
+            onSelect={handlePriceChange} />
+
+            <BoxMark 
+            id="price-900" 
+            value='900' 
+            text="Menos de R$ 900,00" 
+            onSelect={handlePriceChange} />
+
+            <BoxMark 
+            id="price-800" 
+            value='800' 
+            text="Menos de R$ 800,00" 
+            onSelect={handlePriceChange} />
+
+            <BoxMark 
+            id="price-700" 
+            value='700' 
+            text="Menos de R$ 700,00" 
+            onSelect={handlePriceChange} />
+
+            <BoxMark 
+            id="price-600" 
+            value='600' 
+            text="Menos de R$ 600,00" 
+            onSelect={handlePriceChange} />
+
           </form>
+
+
+          
+          
+          
 
            {/* <label className="block text-gray-800 text-md font-semibold mt-3" htmlFor="brand">
             Marca
