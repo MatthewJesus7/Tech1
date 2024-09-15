@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, forwardRef } from 'react';
 import Section from '../sections/Section';
 import Container from '../layout/Container';
 import Card from '../layout/Card';
 import XButton from '../items/Buttons/XButton';
 import BoxMark from './BoxMark';
 
-const Select = ({ onFilterChange, closeMenu, customclass }) => {
+const Select = forwardRef(({ onFilterChange, closeMenu, customclass }, ref) => {
   const [selectedPrice, setSelectedPrice] = useState('');
   const [selectedConfig, setSelectedConfig] = useState('');
   const [selectedBrand, setSelectedBrand] = useState('');
@@ -20,16 +20,17 @@ const Select = ({ onFilterChange, closeMenu, customclass }) => {
     setSelectedPrice(value);
   };
 
-  const handleConfigChange = (value) => {
-    setSelectedConfig(value);
-  };
+  // const handleConfigChange = (value) => {
+  //   setSelectedConfig(value);
+  // };
 
-  const handleBrandChange = (value) => {
-    setSelectedBrand(value);
-  };
+  // const handleBrandChange = (value) => {
+  //   setSelectedBrand(value);
+  // };
+
 
   return (
-    <menu className={`menu ${customclass}`}>
+    <menu ref={ref} className={`menu ${customclass}`}>
       <Section>
         {/* <Container>
           //   <Card 
@@ -45,13 +46,13 @@ const Select = ({ onFilterChange, closeMenu, customclass }) => {
         </div>
 
         <div className="mb-14">
-
+{/* 
           <label htmlFor="price"
           className="block text-gray-800 text-md font-semibold mb-2.5">
             Configurações
-          </label>
+          </label> */}
 
-          <form className="flex flex-col">
+          {/* <form className="flex flex-col">
 
             <BoxMark id="none-options"
             value='0'
@@ -88,10 +89,10 @@ const Select = ({ onFilterChange, closeMenu, customclass }) => {
             text="Desempenho" 
             onSelect={handleConfigChange} />
 
-          </form>
+          </form> */}
 
-          <label htmlFor="price" 
-          className="block text-gray-800 text-md font-semibold my-2.5">
+          <label htmlFor="minmax_price" 
+          className="block text-gray-800 text-md font-semibold mb-2.5">
             Preço
           </label>
           
@@ -114,12 +115,16 @@ const Select = ({ onFilterChange, closeMenu, customclass }) => {
             text="Maior Preço"
             onSelect={handlePriceChange} />
 
-            <label htmlFor="price" 
+          </form>
+
+          <label htmlFor="price" 
             className="block text-gray-800 text-md font-semibold my-2.5">
               Faixa de preço
-            </label>
+          </label>
 
-            <BoxMark id="none-options"
+          <form className='flex flex-col'>
+
+            <BoxMark id="none-options2"
             value='0'
             text="Nenhuma das Opções"
             onSelect={handlePriceChange} />
@@ -142,7 +147,7 @@ const Select = ({ onFilterChange, closeMenu, customclass }) => {
             text="Menos de R$ 800,00" 
             onSelect={handlePriceChange} />
 
-            <BoxMark 
+            {/* <BoxMark 
             id="price-700" 
             value='700' 
             text="Menos de R$ 700,00" 
@@ -152,8 +157,7 @@ const Select = ({ onFilterChange, closeMenu, customclass }) => {
             id="price-600" 
             value='600' 
             text="Menos de R$ 600,00" 
-            onSelect={handlePriceChange} />
-
+            onSelect={handlePriceChange} /> */}
           </form>
 
 
@@ -176,6 +180,6 @@ const Select = ({ onFilterChange, closeMenu, customclass }) => {
       </Section>
     </menu>
   );
-};
+});
 
-export default Select;
+export default Select

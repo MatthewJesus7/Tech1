@@ -1,9 +1,9 @@
 import FilterButton from "../items/Buttons/FIlterButton"
 import Select from "../input/Select"
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, forwardRef } from "react";
 
-function FilterMenu({ onFilterChange }) {
+const FilterMenu = forwardRef(({ onFilterChange }, ref) => {
 
     const [isAnimating, setIsAnimating] = useState(false);
     const [aparecerMenu, setAparecerMenu] = useState(false);
@@ -76,11 +76,9 @@ function FilterMenu({ onFilterChange }) {
                 
             </FilterButton>
 
+            
             <Select
-
             onFilterChange={onFilterChange}
-            
-            
             closeMenu={closeMenu}
             ref={menuRef}
             customclass={`transform transition-all duration-1000 ${
@@ -96,7 +94,7 @@ function FilterMenu({ onFilterChange }) {
                 {selectedMenuItem === 'filter'}
             </Select>
         </>
-    )
-};
+    );
+});
 
 export default FilterMenu
