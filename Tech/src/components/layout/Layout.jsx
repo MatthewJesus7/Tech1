@@ -4,9 +4,9 @@ import LayoutMenu from "../layout/LayoutMenu"
 import Footer from "./Footer";
 import Search from "./MenuInner/Search";
 import Cart from "./MenuInner/Cart";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, forwardRef } from "react";
 
-function Layout({ children }) {
+const Layout = forwardRef(({ children }, ref) => {
 
     const [isAnimating, setIsAnimating] = useState(false);
     const [aparecerMenu, setAparecerMenu] = useState(false);
@@ -107,6 +107,6 @@ function Layout({ children }) {
         </div>
     </div>
     );
-};
+});
 
 export default Layout

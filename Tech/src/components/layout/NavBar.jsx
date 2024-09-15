@@ -1,5 +1,5 @@
 import Link from "../items/Link"
-
+import { forwardRef } from 'react';
 import Container from './Container'
 
 import { IoIosSearch } from "react-icons/io";
@@ -9,10 +9,11 @@ import { IoIosSearch } from "react-icons/io";
         window.location.href = url;
     }
 
-    function NavBar({ handleOnClickSearch, handleOnClickCart }) {
+    
 
-    return(
-        <nav className="fixed h-10 justify-center content-center border w-full glass z-50">
+    const NavBar = forwardRef(({ handleOnClickSearch, handleOnClickCart }, ref) => {
+      return (
+        <nav ref={ref} className="fixed h-10 justify-center content-center border w-full glass z-50">
 
             <Container customclass=" px-[5%] ">
 
@@ -49,7 +50,8 @@ import { IoIosSearch } from "react-icons/io";
                 </ul>
             </Container>
         </nav>
-    )
-}
+    );
+});
+
 
 export default NavBar
