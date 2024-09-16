@@ -19,6 +19,13 @@
         @apply text-gray-700;
     }
 
+    .card_hero {
+        @apply w-full;
+        @apply h-full;
+        @apply bg-green-500;
+        @apply flex-shrink-0;
+    }
+
     /* 270pixels é largura minima */
 
     .product {

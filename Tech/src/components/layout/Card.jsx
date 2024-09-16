@@ -12,7 +12,7 @@ const Card = ({ link, target, rel, type, customclass, customtitle, backgroundIma
   return (
     <a href={link} target={target || "_blank"} rel={rel}>
       <div
-        className={`${type} bg-white flex-col-reverse justify-end ${customclass}`}
+        className={` ${type} bg-white flex-col-reverse justify-end ${customclass}`}
         onClick={handleOnClick}
       >
 
