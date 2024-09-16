@@ -1,15 +1,32 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
-import Container from '../layout/Container';
-import Card from './Card';
+import Container from "./Container";
 import CarouselButton from "../items/Buttons/CarouselButton";
+import Card from "./Card";
 
-function Carousel({ items, type, customtitle, customclass }) {
-    const itemWidth = 256;
-    const marginWidth = 20;
+const HeroCarousel = ({ items, customtitle, customclass }) => {
+    const itemWidth = useWindowWidth();
+    const marginWidth = 0;
     const carouselRef = useRef(null);
     const [showButton, setShowButton] = useState(false);
+
+    function useWindowWidth() {
+        
+        const [width, setWidth] = useState(window.innerWidth);
+
+        useEffect(() => {
+          const handleResize = () => {
+            setWidth(window.innerWidth);
+          };
+          window.addEventListener('resize', handleResize);
+          return () => {
+            window.removeEventListener('resize', handleResize);
+          };
+        }, []);
+      
+        return width;
+      }
 
     const scrollByOneCard = (direction) => {
         const scrollAmount = direction === 'left' ? -(itemWidth + marginWidth) : (itemWidth + marginWidth);
@@ -25,27 +42,28 @@ function Carousel({ items, type, customtitle, customclass }) {
         setShowButton(false);
     }
 
-    const handleTouchStart = (e) => {
+    const handleTouchStart = () => {
         carouselRef.current.style.transition = 'none';
     };
 
     const handleTouchMove = () => {
-        // Adicione lógica se necessário para o movimento de toque
     };
 
     const handleTouchEnd = () => {
-        carouselRef.current.style.transition = ''; // Reaplica a transição após o swipe
+        carouselRef.current.style.transition = '';
     };
+
 
     return (
         <Container
-        customclass={` min-[1px]:w-[100vw] xl:w-[111%] -ml-2.5  overflow-x-hidden ${customclass}`}>
+        customclass={`absolute left-0 top-10 min-[1px]:w-[100vw] min-[1px]:h-[580px] overflow-x-hidden ${customclass}`}>
+            
             <div
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
-                className="w-full relative cursor-pointer">
+                className="w-full h-full relative">
                 <div
-                    className="flex transition-transform duration-500 p-2.5 pb-7 w-full
+                    className="flex transition-transform duration-10 w-full h-full
                     overflow-x-auto snap-x snap-mandatory carousel-hide-scrollbar"
                     ref={carouselRef}
                     onTouchStart={handleTouchStart}
@@ -53,10 +71,10 @@ function Carousel({ items, type, customtitle, customclass }) {
                     onTouchEnd={handleTouchEnd}
                 >
                     {items.map((item, index) => (
-                        <div key={index}>
+                        <div key={index} className='card_hero'>
                             <Card
-                                customclass='pb-24'
-                                type={type || item.type}
+                                customclass='pb-20'
+                                type={item.type}
                                 link={item.link}
                                 target={item.target}
                                 rel={item.rel}
@@ -79,7 +97,7 @@ function Carousel({ items, type, customtitle, customclass }) {
                         onLeft={() => scrollByOneCard('left')} />
 
                         <CarouselButton
-                        customclass=" right-12 md:right-20 cNext "
+                        customclass=" right-8 cNext "
                         text={<IoIosArrowForward />} onRight={() => scrollByOneCard('right')} />
                     </>
                 )}
@@ -87,5 +105,4 @@ function Carousel({ items, type, customtitle, customclass }) {
         </Container>
     );
 }
-
-export default Carousel;
+export default HeroCarousel
