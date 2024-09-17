@@ -8,8 +8,16 @@ import Card from "./Card";
 const HeroCarousel = ({ items, customtitle, customclass }) => {
     const itemWidth = useWindowWidth();
     const marginWidth = 0;
+
     const carouselRef = useRef(null);
     const [showButton, setShowButton] = useState(false);
+    const slidesContainerRef = useRef(null);
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [isDragging, setIsDragging] = useState(false);
+    const [startPos, setStartPos] = useState(0);
+    const [currentTranslate, setCurrentTranslate] = useState(0);
+    const [prevTranslate, setPrevTranslate] = useState(0);
+    const animationID = useRef(null);
 
     function useWindowWidth() {
         
@@ -42,16 +50,70 @@ const HeroCarousel = ({ items, customtitle, customclass }) => {
         setShowButton(false);
     }
 
-    const handleTouchStart = () => {
-        carouselRef.current.style.transition = 'none';
+  useEffect(() => {
+
+    const startDrag = (event) => {
+      setIsDragging(true);
+      setStartPos(getPositionX(event));
+      animationID.current = requestAnimationFrame(animation);
     };
 
-    const handleTouchMove = () => {
+    const endDrag = () => {
+      setIsDragging(false);
+      cancelAnimationFrame(animationID.current);
+
+      const movedBy = currentTranslate - prevTranslate;
+
+      if (movedBy < -itemWidth / 4 && currentIndex < itemWidth.length - 1) {
+        setCurrentIndex((prev) => prev + 1);
+      }
+
+      if (movedBy > itemWidth / 4 && currentIndex > 0) {
+        setCurrentIndex((prev) => prev - 1);
+      }
+
+      setPositionByIndex(itemWidth);
     };
 
-    const handleTouchEnd = () => {
-        carouselRef.current.style.transition = '';
+    const drag = (event) => {
+      if (isDragging) {
+        const currentPosition = getPositionX(event);
+        setCurrentTranslate(prevTranslate + currentPosition - startPos);
+      }
     };
+
+    const getPositionX = (event) => {
+      return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
+    };
+
+    const animation = () => {
+      setSliderPosition(carouselRef);
+      if (isDragging) requestAnimationFrame(animation);
+    };
+
+    const setSliderPosition = () => {
+        carouselRef.style.transform = `translateX(${currentTranslate}px)`;
+    //   activateDot(currentIndex, dots);
+    };
+
+    const setPositionByIndex = (itemWidth) => {
+      const newTranslate = currentIndex * -itemWidth;
+      setCurrentTranslate(newTranslate);
+      setPrevTranslate(newTranslate);
+      setSliderPosition(carouselRef);
+    };
+
+    // const activateDot = (currentIndex, dots) => {
+    //   dots.forEach((dot, index) => {
+    //     dot.style.background = index === currentIndex ? '#3c7ad8' : '#424242';
+    //   });
+    // };
+
+    window.addEventListener('resize', () => setPositionByIndex(itemWidth));
+
+    setPositionByIndex(itemWidth);
+});
+
 
 
     return (
@@ -66,9 +128,9 @@ const HeroCarousel = ({ items, customtitle, customclass }) => {
                     className="flex transition-transform duration-10 w-full h-full
                     overflow-x-auto snap-x snap-mandatory carousel-hide-scrollbar"
                     ref={carouselRef}
-                    onTouchStart={handleTouchStart}
-                    onTouchMove={handleTouchMove}
-                    onTouchEnd={handleTouchEnd}
+                    onTouchStart={startDrag}
+                    onTouchMove={drag}
+                    onTouchEnd={endDrag}
                 >
                     {items.map((item, index) => (
                         <div key={index} className='card_hero'>
