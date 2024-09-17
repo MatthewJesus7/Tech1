@@ -56,7 +56,7 @@ import { useEffect } from 'react';
                 <div>
                     <label htmlFor="iSearchBar">
                         <input
-                            className="bg-gray-100 w-full h-8 rounded-lg p-1 border border-gray-300 "
+                            className="bg-transparent w-full h-8 rounded-lg p-1 border border-gray-300 "
 
                             placeholder="Pesquisar..."
                             type="text"
