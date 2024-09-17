@@ -133,6 +133,28 @@
         }
     }
 
+    .animated{
+        @apply hover:scale-110;
+    }
+
+    .dark_button {
+        @apply bg-gray-950 hover:bg-gray-900;
+        @apply border-gray-950 hover:border-gray-900;
+        @apply text-white;
+    }
+
+    .transparent_button {
+        @apply bg-transparent hover:bg-white;
+        @apply border-white;
+        @apply text-white hover:text-black;
+    }
+
+    .transparent_dark_button {
+        @apply bg-transparent hover:bg-gray-950;
+        @apply border-gray-950;
+        @apply text-black hover:text-white;
+    }
+
     .small_card h3 {
         @apply mt-16;
         @apply text-sm;

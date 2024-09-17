@@ -4,6 +4,7 @@ import Container from "../layout/Container";
 import CarouselButton from "../items/Buttons/CarouselButton";
 import Card from "../layout/Card";
 import DotContainer from "../layout/DotContainer";
+import HeroCard from "../layout/HeroCard"
 
 const HeroCarousel = ({ items, customclass }) => {
     const carouselRef = useRef(null);
@@ -109,21 +110,19 @@ const HeroCarousel = ({ items, customclass }) => {
                     {items.map((item, index) => (
                         <div
                             key={index}
-                            className="carousel-item flex-shrink-0 card_hero"
+                            className="carousel-item flex-shrink-0 card_hero bg-white"
                             style={{ width: `${100 / items.length}%` }}
                         >
-                            <Card
-                                customclass='pb-20'
-                                type={item.type}
-                                link={item.link}
-                                target={item.target}
-                                rel={item.rel}
+                            <HeroCard
+                                customclass='bg-white'
                                 title={item.title}
-                                customtitle={item.customtitle}
-                                price={item.price}
-                                totalPrice={item.totalPrice}
-                                backgroundImage={item.backgroundImage}
-                                colors={item.colors}
+                                titleColor={item.titleColor}
+                                text={item.text}
+                                textColor={item.textColor}
+                                textButton={item.textButton}
+                                typeButton={item.typeButton}
+                                img={item.img}
+                                customImg={item.customImg}
                             />
                         </div>
                     ))}
