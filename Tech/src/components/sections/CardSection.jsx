@@ -32,7 +32,7 @@ function CardSection({ customclass, customclassinner}) {
       }, []);
 
     return( 
-        <Section customclass={` py-3 -mt-28 ${customclass}`}>
+        <Section customclass={` py-3 -mt-36 ${customclass}`}>
 
             <h2 className={`relative text-white lg:text-black pb-4 ${customclassinner}`}>Veja Nossos Favoritos</h2>
 

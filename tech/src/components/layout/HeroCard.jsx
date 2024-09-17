@@ -12,7 +12,7 @@ const HeroCard =({ customclass, title, titleColor, text, textColor, textButton, 
         <Section
         customclass={` flex flex-wrap lg:flex-nowrap h-[600px] ${customclass} `}>
 
-            <article className={` relative z-10 pt-[8%] lg:pr-[8%] bg-transparent  h-2/5 ${titleColor}`}>
+            <article className={` relative z-10 pt-[5%] lg:pr-[8%] bg-transparent  h-2/5 ${titleColor}`}>
 
                 <h1 className="text-4xl ">
                     {title}

@@ -90,7 +90,7 @@ const HeroCarousel = ({ items, customclass }) => {
     }
 
     return (
-        <Container customclass={`absolute left-0 top-10 min-[1px]:w-[100vw] min-[1px]:h-[580px] overflow-x-hidden ${customclass}`}>
+        <Container customclass={`absolute left-0 top-10 min-[1px]:w-[100vw] min-[1px]:h-[580px] overflow-hidden ${customclass}`}>
             <div
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}

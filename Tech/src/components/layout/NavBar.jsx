@@ -13,9 +13,9 @@ import { IoIosSearch } from "react-icons/io";
 
     const NavBar = forwardRef(({ handleOnClickSearch, handleOnClickCart }, ref) => {
       return (
-        <nav ref={ref} className="fixed h-10 justify-center content-center border w-full glass z-50">
+        <nav ref={ref} className="h-12 justify-around content-center w-full glass z-50">
 
-            <Container customclass=" px-[5%] ">
+            <Container customclass=" px-[3.5%] max-w-7xl ">
 
                 <ul className="flex justify-between w-full">
                     
@@ -25,7 +25,7 @@ import { IoIosSearch } from "react-icons/io";
                         ></Link>
                     </li>
 
-                    <div className='w-1/3 sm:w-1/2'></div>
+                    {/* <div className='w-1/3 sm:w-1/2'></div> */}
 
                     {/* <li>
                         <Link href="#" target="_blank" text={<FaInfo/>}

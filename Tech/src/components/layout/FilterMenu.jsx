@@ -84,8 +84,8 @@ const FilterMenu = forwardRef(({ onFilterChange }, ref) => {
             customclass={`transform transition-all duration-1000 ${
                 aparecerMenu
                     ? isAnimating
-                        ? 'translate-y-9 h-full'
-                        : 'translate-y-9'
+                        ? '-translate-y-1 h-full'
+                        : '-translate-y-1'
                     : isAnimating
                     ? 'h-10 border-none -translate-y-0'
                     : 'translate-y-full h-full border-none'
