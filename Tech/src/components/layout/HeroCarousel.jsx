@@ -1,117 +1,158 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import Container from "../layout/Container";
+import CarouselButton from "../items/Buttons/CarouselButton";
+import Card from "../layout/Card";
+import DotContainer from "../layout/DotContainer";
 
-const SimpleCarousel = ({ items }) => {
+const HeroCarousel = ({ items, customclass }) => {
     const carouselRef = useRef(null);
+    const [showButton, setShowButton] = useState(false);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isDragging, setIsDragging] = useState(false);
     const [startPos, setStartPos] = useState(0);
     const [currentTranslate, setCurrentTranslate] = useState(0);
     const [prevTranslate, setPrevTranslate] = useState(0);
     const [itemWidth, setItemWidth] = useState(0);
-
-    // Definindo o itemWidth com base no tamanho do primeiro item
     useEffect(() => {
-        if (carouselRef.current) {
-            setItemWidth(carouselRef.current.clientWidth / items.length);
-        }
+        const handleResize = () => {
+            if (carouselRef.current) {
+                setItemWidth(carouselRef.current.clientWidth / items.length);
+            }
+        };
+
+        handleResize(); // Atualiza o itemWidth inicialmente
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
     }, [items.length]);
 
-    // Função para navegar para o próximo ou anterior slide
+    useEffect(() => {
+        setPositionByIndex();
+    }, [currentIndex, itemWidth]);
+
     const scrollByOneCard = (direction) => {
-        const newIndex = direction === 'left' ? currentIndex - 1 : currentIndex + 1;
-        if (newIndex >= 0 && newIndex < items.length) {
-            setCurrentIndex(newIndex);
-            carouselRef.current.style.transform = `translateX(${-newIndex * itemWidth}px)`;
-        }
+        setCurrentIndex((prevIndex) => {
+            const newIndex = direction === 'left' ? prevIndex - 1 : prevIndex + 1;
+            return Math.max(0, Math.min(newIndex, items.length - 1));
+        });
     };
 
-    // Funções de arrastar
     const startDrag = (event) => {
         setIsDragging(true);
         setStartPos(getPositionX(event));
     };
 
-    const endDrag = () => {
-        setIsDragging(false);
-        const movedBy = currentTranslate - prevTranslate;
-
-        if (movedBy < -itemWidth / 4 && currentIndex < items.length - 1) {
-            setCurrentIndex((prev) => prev + 1);
-        }
-
-        if (movedBy > itemWidth / 4 && currentIndex > 0) {
-            setCurrentIndex((prev) => prev - 1);
-        }
-
-        setPositionByIndex();
-    };
-
     const drag = (event) => {
         if (isDragging) {
             const currentPosition = getPositionX(event);
-            setCurrentTranslate(prevTranslate + currentPosition - startPos);
+            const movedBy = currentPosition - startPos;
+            setCurrentTranslate(prevTranslate + movedBy);
         }
     };
+    
+    const endDrag = () => {
+        setIsDragging(false);
+        const movedBy = currentTranslate - prevTranslate;
+    
+        if (movedBy < -itemWidth / 4 && currentIndex < items.length - 1) {
+            setCurrentIndex(prevIndex => prevIndex + 1);
+        } else if (movedBy > itemWidth / 4 && currentIndex > 0) {
+            setCurrentIndex(prevIndex => prevIndex - 1);
+        }
+    
+        setPrevTranslate(currentTranslate);  // Atualiza prevTranslate para o valor atual de currentTranslate
+        setPositionByIndex();
+    };
+    
 
     const getPositionX = (event) => {
-        return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
+        return event.type.includes('mouse') ? event.pageX : (event.touches[0]?.clientX || 0);
     };
 
     const setPositionByIndex = () => {
         const newTranslate = currentIndex * -itemWidth;
         setCurrentTranslate(newTranslate);
-        setPrevTranslate(newTranslate);
-        carouselRef.current.style.transform = `translateX(${newTranslate}px)`;
+        if (carouselRef.current) {
+            carouselRef.current.style.transform = `translateX(${newTranslate}px)`;
+        }
     };
 
+    function handleMouseOver() {
+        setShowButton(true);
+    }
+
+    function handleMouseOut() {
+        setShowButton(false);
+    }
+
     return (
-        <div className="carousel-container relative w-full overflow-hidden">
-            {/* Botão para navegar para a esquerda */}
-            <button
-                className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-gray-200 rounded-full p-2"
-                onClick={() => scrollByOneCard('left')}
-            >
-                <IoIosArrowBack />
-            </button>
-
-            {/* Container do carrossel */}
+        <Container customclass={`absolute left-0 top-10 min-[1px]:w-[100vw] min-[1px]:h-[580px] overflow-x-hidden ${customclass}`}>
             <div
-                className="flex transition-transform duration-300 ease-in-out"
-                ref={carouselRef}
-                onMouseDown={startDrag}
-                onMouseMove={drag}
-                onMouseUp={endDrag}
-                onTouchStart={startDrag}
-                onTouchMove={drag}
-                onTouchEnd={endDrag}
-                style={{ width: `${items.length * 100}%` }} // Largura dinâmica com base no número de itens
+                onMouseOver={handleMouseOver}
+                onMouseOut={handleMouseOut}
+                className="carousel-container relative size-full"
             >
-                {/* Itens do carrossel */}
-                {items.map((item, index) => (
-                    <div
-                        key={index}
-                        className="carousel-item flex-shrink-0 w-full"
-                        style={{ width: `${100 / items.length}%` }} // Largura do item com base no número total
-                    >
-                        <img src={item.image} alt={item.title} className="w-full h-auto" />
-                        <div className="text-center p-4">
-                            <h3>{item.title}</h3>
-                            <p>{item.description}</p>
+                <div
+                    className="flex transition-transform duration-50 ease-in-out size-full"
+                    ref={carouselRef}
+                    onTouchStart={startDrag}
+                    onTouchMove={drag}
+                    onTouchEnd={endDrag}
+                    onMouseDown={startDrag}
+                    onMouseMove={drag}
+                    onMouseUp={endDrag}
+                    style={{ width: `${items.length * 100}%` }}
+                >
+                    {items.map((item, index) => (
+                        <div
+                            key={index}
+                            className="carousel-item flex-shrink-0 card_hero"
+                            style={{ width: `${100 / items.length}%` }}
+                        >
+                            <Card
+                                customclass='pb-20'
+                                type={item.type}
+                                link={item.link}
+                                target={item.target}
+                                rel={item.rel}
+                                title={item.title}
+                                customtitle={item.customtitle}
+                                price={item.price}
+                                totalPrice={item.totalPrice}
+                                backgroundImage={item.backgroundImage}
+                                colors={item.colors}
+                            />
                         </div>
-                    </div>
-                ))}
-            </div>
+                    ))}
+                </div>
 
-            {/* Botão para navegar para a direita */}
-            <button
-                className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-200 rounded-full p-2"
-                onClick={() => scrollByOneCard('right')}
-            >
-                <IoIosArrowForward />
-            </button>
-        </div>
+                
+                    <DotContainer
+                        dots={items}
+                        currentIndex={currentIndex}
+                    />
+                
+                
+                {showButton && (
+                    <>
+                        <CarouselButton
+                            customclass=" left-8 cPrev "
+                            text={<IoIosArrowBack />}
+                            onLeft={() => scrollByOneCard('left')}
+                        />
+                        <CarouselButton
+                            customclass=" right-8 cNext "
+                            text={<IoIosArrowForward />}
+                            onRight={() => scrollByOneCard('right')}
+                        />
+                    </>
+                )}
+            </div>
+        </Container>
     );
 };
 
-export default SimpleCarousel;
+export default HeroCarousel;
