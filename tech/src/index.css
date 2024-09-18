@@ -133,6 +133,112 @@
         }
     }
 
+    .loading_image {
+        @apply relative h-[490px] w-full p-[5%] max-w-7xl mx-auto;
+        @apply border rounded-sm;
+        @apply overflow-hidden;
+    }
+
+    .loading_image::before {
+        content: "";
+        @apply absolute;
+        @apply top-1/2;
+        @apply left-1/2;
+        @apply w-[200%];
+        @apply h-[200%];
+        @apply bg-[#ECECEC];
+        filter: blur(50px);
+        transform: translate(-50%, -50%);
+        animation: loading_image 2s infinite cubic-bezier(0.4, 0.0, 0.2, 1);
+        @apply overflow-hidden;
+    }
+
+    @keyframes loading_image {
+        0% {
+            left: -100%;
+        }
+        50% {
+            left: 200%;
+        }
+        100% {
+            left: -100%;
+        }
+    }
+
+    .loading_title {
+        @apply relative z-20;
+        @apply w-5/6 h-9 mb-1;
+        @apply border rounded-lg;
+        @apply overflow-hidden;
+    }
+
+    .mini {
+        @apply w-[30%] h-9;
+    }
+
+    .loading_title::before {
+        content: "";
+        @apply absolute;
+        @apply top-1/2;
+        @apply left-1/2;
+        @apply w-[200%];
+        @apply h-[200%];
+        @apply bg-gray-400;
+        filter: blur(50px);
+        transform: translate(-50%, -50%);
+        animation: loading_title 2s infinite cubic-bezier(0.4, 0.0, 0.2, 1);
+        @apply overflow-hidden;
+    }
+
+    @keyframes loading_title {
+        0% {
+            left: -100%;
+        }
+        50% {
+            left: 200%;
+        }
+        100% {
+            left: -100%;
+        }
+    }
+
+    .loading_text {
+        @apply relative z-20;
+        @apply w-5/6 h-6 mb-2;
+        @apply border rounded-lg;
+        @apply overflow-hidden;
+    }
+
+    .mini {
+        @apply w-[30%] h-9;
+    }
+
+    .loading_text::before {
+        content: "";
+        @apply absolute;
+        @apply top-1/2;
+        @apply left-1/2;
+        @apply w-[200%];
+        @apply h-[200%];
+        @apply bg-gray-400;
+        filter: blur(50px);
+        transform: translate(-50%, -50%);
+        animation: loading_title 2s infinite cubic-bezier(0.4, 0.0, 0.2, 1);
+        @apply overflow-hidden;
+    }
+
+    @keyframes loading_text {
+        0% {
+            left: -100%;
+        }
+        50% {
+            left: 200%;
+        }
+        100% {
+            left: -100%;
+        }
+    }
+
     .animated{
         @apply hover:scale-110;
     }
