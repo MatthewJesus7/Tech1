@@ -90,7 +90,8 @@
         @apply w-52;
         @apply h-72;
         @apply mr-1; 
-        @apply p-5;
+        @apply p-2;
+        @apply text-nowrap text-ellipsis overflow-hidden;
     }
 
 
