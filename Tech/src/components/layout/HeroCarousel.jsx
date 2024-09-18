@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import Container from "../layout/Container";
 import CarouselButton from "../items/Buttons/CarouselButton";
-import DotContainer from '../items/DotContainer';
+import FatherDot from './FatherDot';
 import HeroCard from "../layout/HeroCard"
 
 const HeroCarousel = ({ items, customclass }) => {
@@ -136,7 +136,7 @@ const HeroCarousel = ({ items, customclass }) => {
                 </div>
 
                 
-                    <DotContainer
+                    <FatherDot
                         dots={items}
                         currentIndex={currentIndex}
                     />
