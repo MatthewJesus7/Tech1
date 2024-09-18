@@ -1,10 +1,6 @@
-import Img from "../layout/Img";
 import Section from "./Section";
 import HeroCarousel from "../layout/HeroCarousel";
 
-function navigateTo(url) {
-    window.location.href = url;
-  }
 
 const teste = [
     {
