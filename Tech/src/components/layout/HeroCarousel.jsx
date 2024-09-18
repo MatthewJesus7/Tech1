@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import Container from "../layout/Container";
 import CarouselButton from "../items/Buttons/CarouselButton";
-import DotContainer from "../../../../tech/src/components/items/DotContainer";
+import DotContainer from '../items/DotContainer';
 import HeroCard from "../layout/HeroCard"
 
 const HeroCarousel = ({ items, customclass }) => {
