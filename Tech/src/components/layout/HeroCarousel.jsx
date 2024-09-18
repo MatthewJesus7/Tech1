@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from 'react';
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import Container from "../layout/Container";
 import CarouselButton from "../items/Buttons/CarouselButton";
-import Card from "../layout/Card";
 import DotContainer from "../layout/DotContainer";
 import HeroCard from "../layout/HeroCard"
 
@@ -126,7 +125,11 @@ const HeroCarousel = ({ items, customclass }) => {
                                 textButton={item.textButton}
                                 typeButton={item.typeButton}
                                 img={item.img}
+                                backgroundSize={item.backgroundSize}
                                 customImg={item.customImg}
+                                href={item.href}
+                                target={item.target}
+                                rel={item.rel}
                             />
                         </div>
                     ))}
