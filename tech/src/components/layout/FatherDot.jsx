@@ -1,4 +1,4 @@
-import DotBar from "./DotBar";
+import DotBar from "../items/DotBar";
 
 const FatherDot = ({dots, currentIndex}) => {
     return(
