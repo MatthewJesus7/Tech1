@@ -1,9 +1,10 @@
 import Section from "../sections/Section";
 import Img from "./Img";
 
-const HeroCard =({ customclass, title, titleColor, text, textColor, textButton, typeButton, img, customImg }) => {
+const HeroCard =({ customclass, title, titleColor, text, textColor, textButton, typeButton, img, customImg, href, target, rel, backgroundSize }) => {
 
     function navigateTo(url) {
+        if (href === '#')
         window.location.href = url;
     }
 
@@ -23,18 +24,21 @@ const HeroCard =({ customclass, title, titleColor, text, textColor, textButton, 
                     {text}
                 </p>
 
-                <button
-                className={`p-3 px-4 rounded-3xl border hover:ease-in-out hover:duration-300 ${typeButton}`}
-
-                    onClick={() => navigateTo('/about')}
-                    >
-                        <p>
-                            {textButton}
-                        </p>
+                <a href={href} target={target} rel={rel}>
+                    <button
+                    className={`p-3 px-4 rounded-3xl border hover:ease-in-out hover:duration-300 ${typeButton}`}
+                        onClick={() => navigateTo('/about')}
+                        >
+                            <p>
+                                {textButton}
+                            </p>
                     </button>
+                </a>
+
             </article>
             <aside className="size-full">
                 <Img
+                backgroundSize={backgroundSize}
                 custom={``}
                 customclass={customImg}
                 backgroundImage={img}>
