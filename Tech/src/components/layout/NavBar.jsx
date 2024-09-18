@@ -15,7 +15,7 @@ import { IoIosSearch } from "react-icons/io";
       return (
         <nav ref={ref} className="h-12 justify-around content-center w-full glass z-50">
 
-            <Container customclass=" px-[3.5%] max-w-7xl ">
+            <Container customclass=" px-[5%] max-w-7xl ">
 
                 <ul className="flex justify-between w-full">
                     

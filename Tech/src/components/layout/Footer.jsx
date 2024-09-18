@@ -1,11 +1,9 @@
 import Section from "../sections/Section";
-import Container from "./Container";
 
 function Footer() {
     return(
-        <footer className="bg-[#818284] text-white p-5">
+        <footer className="text-gray-800 py-10">
             <Section>
-                <Container >
                     <ul className=" flex justify-between flex-wrap w-full footer">
 
                         <li>
@@ -76,7 +74,6 @@ function Footer() {
                             </ul>
                         </li>
                     </ul>
-                </Container>
             </Section>
         </footer>
     )
