@@ -1,6 +1,6 @@
 import DotBar from "./DotBar";
 
-const DotsContainer = ({dots, currentIndex}) => {
+const DotContainer = ({dots, currentIndex}) => {
     return(
         <div className='flex absolute bottom-36
         left-1/2 -translate-x-1/2'>
@@ -11,4 +11,4 @@ const DotsContainer = ({dots, currentIndex}) => {
     )
 }
 
-export default DotsContainer;
+export default DotContainer;
