@@ -191,11 +191,8 @@
     } */
 
     .footer > li {
-        @apply p-2.5;
-    }
-
-    li {
-        @apply mx-2;
+        @apply pr-3;
+        @apply pb-5;
     }
 
     .menu {
