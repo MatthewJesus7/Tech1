@@ -1,4 +1,4 @@
-import DotBar from "../items/DotBar";
+import DotBar from "./DotBar";
 
 const DotContainer = ({dots, currentIndex}) => {
     return(
