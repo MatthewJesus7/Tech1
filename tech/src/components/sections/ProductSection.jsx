@@ -26,6 +26,7 @@ function ProductSection({ items, topCard, bottomCard }) {
                             totalPrice={item.totalPrice}
                             backgroundImage={item.backgroundImage}
                             colors={item.colors}
+                            customtitle=" text-nowrap text-ellipsis overflow-hidden "
                         />
                     </div>
                 ))}
