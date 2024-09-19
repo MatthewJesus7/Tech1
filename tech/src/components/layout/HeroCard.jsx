@@ -26,7 +26,7 @@ const HeroCard =({ customclass, title, titleColor, text, textColor, textButton, 
 
                 <a href={href} target={target} rel={rel}>
                     <button
-                    className={`p-3 px-4 rounded-3xl border hover:ease-in-out hover:duration-300 ${typeButton}`}
+                    className={`button ${typeButton}`}
                         onClick={() => navigateTo('/about')}
                         >
                             <p>

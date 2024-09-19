@@ -66,6 +66,11 @@ function Carousel({ items, type, customtitle, customclass }) {
                                 totalPrice={item.totalPrice}
                                 backgroundImage={item.backgroundImage}
                                 colors={item.colors}
+                                custo_beneficio={item.custo_beneficio}
+                                hardware={item.hardware}
+                                camera={item.camera}
+                                tela={item.tela}
+                                desempenho={item.desempenho}
                             />
                         </div>
                     ))}

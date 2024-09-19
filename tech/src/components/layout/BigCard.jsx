@@ -13,6 +13,12 @@ function BigCard({ item, customclass }) {
                             totalPrice={item.totalPrice}
                             backgroundImage={item.backgroundImage}
                             colors={item.colors}
+                            customtitle={item.customtitle}
+                            custo_beneficio={item.custo_beneficio}
+                            hardware={item.hardware}
+                            camera={item.camera}
+                            tela={item.tela}
+                            desempenho={item.desempenho}
                         />
                     </div>
     )
