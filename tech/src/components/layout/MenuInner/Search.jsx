@@ -78,7 +78,12 @@ import { useEffect } from 'react';
 
             <div className='flex'>
                 <Link onClick={() => navigateTo('/about')}
-                text="Sobre nós"
+                text="sobre nós"
+                textCustom="my-3 py-1 text-lg font-semibold pr-5"
+                ></Link>
+
+                <Link onClick={() => navigateTo('/TalkToUs')}
+                text="fale conosco"
                 textCustom="my-3 py-1 text-lg font-semibold"
                 ></Link>
             </div>
