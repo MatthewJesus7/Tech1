@@ -49,11 +49,11 @@ const teste = [
 function HeroSection({ customclass }) {
 
     return(
-        <Section customclass={`h-[600px] ${customclass}`}>
+        <section className={`h-[600px] ${customclass}`}>
 
             <HeroCarousel items={teste}></HeroCarousel>
 
-        </Section>
+        </section>
     )
 }
 

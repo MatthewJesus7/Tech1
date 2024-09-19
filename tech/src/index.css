@@ -244,6 +244,10 @@
         @apply hover:scale-110;
     }
 
+    .button {
+        @apply p-3 px-4 rounded-3xl border hover:ease-in-out hover:duration-300;
+    }
+
     .dark_button {
         @apply bg-gray-950 hover:bg-gray-900;
         @apply border-gray-950 hover:border-gray-900;

@@ -10,6 +10,45 @@ import Card from "../layout/Card";
 import ProductSection from "../sections/ProductSection";
 import FilterMenu from "../layout/FilterMenu";
 
+const falseCard = [
+  {
+    "link": "https://www.tudocelular.com/clickgo/?id=8966&pid=draznB0CRWQH7CK&nid=2170259575&area=12&prz=939&hash=217147e49c771ce1c23cf41a030ef24c",
+    "title": "Smartphone Samsung Galaxy A15 5G 128GB - Azul Escuro",
+    "price": "Em até 12x de R$ 87,64 com juros",
+    "totalPrice": "R$ 939,00",
+    "backgroundImage": "https://m.media-amazon.com/images/I/41Z4F6MNxlL._AC_SR38,50_.jpg",
+    "custo_beneficio": "10 ",
+    "hardware": "7.7 ",
+    "tela": "8.5 ",
+    "camera": "7.7 ",
+    "desempenho": "5.5 "
+},
+{
+    "link": "https://www.tudocelular.com/clickgo/?id=8965&pid=draznB0CRWL1WYP&nid=2170259575&area=12&prz=799&hash=e278e4b8ff3d8768badb0ae25c86cbe1",
+    "title": "Smartphone Samsung Galaxy A15 4G 128GB - Verde Claro",
+    "price": "ou R$ 888,88 em até 12x de R$ 74,11 sem juros",
+    "totalPrice": "R$ 799,99",
+    "backgroundImage": "https://m.media-amazon.com/images/I/419jOjM2pdL._AC_SR38,50_.jpg",
+    "custo_beneficio": "9.9 ",
+    "hardware": "7.5 ",
+    "tela": "8.5 ",
+    "camera": "7.7 ",
+    "desempenho": "4.9 "
+},
+{
+    "link": "https://www.tudocelular.com/clickgo/?id=8911&pid=draznB0CWVK9CY4&nid=2170259575&area=12&prz=738&hash=2758c67241c031d18cc5d360c9b856b2",
+    "title": "Smartphone Samsung Galaxy A05s 6,7 Tela Infinita 128GB + 6GB RAM Tela Infinita de 6.7\" 50MP + 2MP + 2MP, Processador Octa-Core, Bateria de longa duração - Preto",
+    "price": "ou R$ 821,00 em até 10x de R$ 82,10 sem juros",
+    "totalPrice": "R$ 738,90",
+    backgroundImage: "https://m.media-amazon.com/images/I/41XA6LryjPL._AC_SR38,50_.jpg",
+    "custo_beneficio": "9.8 ",
+    "hardware": "7.6 ",
+    "tela": "8.4 ",
+    "camera": "7.7 ",
+    "desempenho": "5.8 "
+},
+]
+
 function Product() {
 
   const [cards, setCards] = useState([]);
@@ -113,9 +152,12 @@ function Product() {
         
         {filteredCards.length > 0 ? (
           <ProductSection
-            items={filteredCards.slice(1, filteredCards.length - 1)}
-            topCard={filteredCards[0]}
-            bottomCard={filteredCards[filteredCards.length - 1]}
+          items={falseCard.slice(1, falseCard.length - 1)}
+            topCard={falseCard[0]}
+            bottomCard={falseCard[falseCard.length - 1]}
+            // items={filteredCards.slice(1, filteredCards.length - 1)}
+            // topCard={filteredCards[0]}
+            // bottomCard={filteredCards[filteredCards.length - 1]}
           />
         ) : (
           <Card type="card product loading_card" />
