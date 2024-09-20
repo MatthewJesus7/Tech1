@@ -32,7 +32,7 @@ const Card = ({ link, target, rel, type, customclass, customtitle, backgroundIma
         flex flex-col items-end
         text-sm'
         style={{ 
-          backgroundImage: backgroundImage, backgroundSize: 'contain',
+          backgroundImage: `url(${backgroundImage})`, backgroundSize: 'contain',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat' }}
         >
