@@ -14,20 +14,6 @@ const Card = ({ link, target, rel, type, customclass, customtitle, backgroundIma
     }
   };
 
-  // const openAndCloseMenu = (e) => {
-  //   e.preventDefault(); 
-  //   e.stopPropagation();
-  //   changeMenuValue()
-  // }
-
-//   const closeAnimated = () => {
-//     setIsAnimating(true);
-//     setTimeout(() => {
-//         setIsAnimating(false);
-//         changeMenuValue(false);
-//     }, 500);
-// };
-
   const toggleMenu = (e) => {
     e.preventDefault(); 
     e.stopPropagation();
