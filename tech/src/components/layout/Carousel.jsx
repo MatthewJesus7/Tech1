@@ -10,6 +10,7 @@ function Carousel({ items, type, customtitle, customclass }) {
     const marginWidth = 20;
     const carouselRef = useRef(null);
     const [showButton, setShowButton] = useState(false);
+    const [menuValue, setMenuValue] = useState(false);
 
     const scrollByOneCard = (direction) => {
         const scrollAmount = direction === 'left' ? -(itemWidth + marginWidth) : (itemWidth + marginWidth);
@@ -36,6 +37,17 @@ function Carousel({ items, type, customtitle, customclass }) {
     const handleTouchEnd = () => {
         carouselRef.current.style.transition = ''; // Reaplica a transição após o swipe
     };
+
+    const changeMenuValue = () => {
+        setMenuValue(true);
+        closeMenu();
+    }
+
+    const closeMenu = () => {
+        if (menuValue === true) {
+            setMenuValue(false);
+        };
+    }
 
     return (
         <Container
@@ -71,6 +83,8 @@ function Carousel({ items, type, customtitle, customclass }) {
                                 camera={item.camera}
                                 tela={item.tela}
                                 desempenho={item.desempenho}
+                                menuValue={menuValue}
+                                changeMenuValue={changeMenuValue}
                             />
                         </div>
                     ))}
