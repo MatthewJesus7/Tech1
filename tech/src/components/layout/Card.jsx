@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Colors from '../items/Colors'
 import Notes from '../items/Notes';
 
-const Card = ({ link, target, rel, type, customclass, customtitle, backgroundImage, title, price, totalPrice, colors, handleOnClick, custo_beneficio, hardware, camera, tela, desempenho, menuValue, changeMenuValue}) => {
+const Card = ({ link, target, rel, type, customclass, customtitle, image_url, title, price, total_price, colors, handleOnClick, custo_beneficio, hardware, camera, tela, desempenho, menuValue, changeMenuValue}) => {
 
   const [isAnimating, setIsAnimating] = useState(false);
 
@@ -47,7 +47,7 @@ const Card = ({ link, target, rel, type, customclass, customtitle, backgroundIma
 
             <p className="text-lg font-semibold text-gray-700">{price}</p>
             
-            <p className="text-sm text-gray-600 mb-1.5">{totalPrice}</p>
+            <p className="text-sm text-gray-600 mb-1.5">{total_price}</p>
         </div>
         
         <div 
@@ -55,7 +55,7 @@ const Card = ({ link, target, rel, type, customclass, customtitle, backgroundIma
         flex flex-col items-end
         text-sm `}
         style={{ 
-          backgroundImage: `url(${backgroundImage})`, backgroundSize: 'contain',
+          backgroundImage: `url(${image_url})`, backgroundSize: 'contain',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat' }}
         >

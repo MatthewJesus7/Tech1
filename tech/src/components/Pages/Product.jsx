@@ -10,45 +10,6 @@ import Card from "../layout/Card";
 import ProductSection from "../sections/ProductSection";
 import FilterMenu from "../layout/FilterMenu";
 
-const falseCard = [
-  {
-    "link": "https://www.tudocelular.com/clickgo/?id=8965&pid=draznB0CRWL1WYP&nid=2170259575&area=12&prz=809&hash=8a68274436968bf0024c34c7c1c657d3",
-    "title": "Smartphone Samsung Galaxy A15 4G 128GB - Verde Claro",
-    "price": "ou R$ 899,00 em até 12x de R$ 74,99 sem juros",
-    "totalPrice": "R$ 809,10",
-    "backgroundImage": "https://m.media-amazon.com/images/I/51SpxEnKrTL._AC_SX425_.jpg",
-    "custo_beneficio": "10 ",
-    "hardware": "7.5 ",
-    "tela": "8.5 ",
-    "camera": "7.7 ",
-    "desempenho": "4.9 "
-},
-{
-    "link": "https://www.tudocelular.com/clickgo/?id=9186&pid=draznB0CZ5JJRPP&nid=2170259575&area=12&prz=999&hash=a893d5836aaa82d5851ba752b99fe554",
-    "title": "Celular Samsung Galaxy M15 5G, 6.000mAh, Câmera Tripla até 50MP, 128GB (Azul Escuro)",
-    "price": "Em até 10x R$ 99,90 sem juros",
-    "totalPrice": "R$ 999,00",
-    "backgroundImage": "https://m.media-amazon.com/images/I/51Z0P8+CeQL._AC_SY450_.jpg",
-    "custo_beneficio": "9.8 ",
-    "hardware": "7.7 ",
-    "tela": "8.5 ",
-    "camera": "7.7 ",
-    "desempenho": "5.3 "
-},
-{
-    "link": "https://www.tudocelular.com/clickgo/?id=8966&pid=draznB0CRWQH7CK&nid=2170259575&area=12&prz=939&hash=217147e49c771ce1c23cf41a030ef24c",
-    "title": "Smartphone Samsung Galaxy A15 5G 128GB - Azul Escuro",
-    "price": "Em até 12x de R$ 87,64 com juros",
-    "totalPrice": "R$ 939,00",
-    "backgroundImage": "https://m.media-amazon.com/images/I/51gmiZg4ChL._AC_SX425_.jpg",
-    "custo_beneficio": "9.8 ",
-    "hardware": "7.7 ",
-    "tela": "8.5 ",
-    "camera": "7.7 ",
-    "desempenho": "5.3 "
-},
-]
-
 function Product() {
 
   const [cards, setCards] = useState([]);
@@ -76,20 +37,19 @@ function Product() {
 
   useEffect(() => {
     const applyFilters = () => {
-
       const filtered = cards.filter(card => {
+
         const totalPrice = parseFloat(
           card.totalPrice.replace(/[^\d,]/g, '').replace(',', '.').trim()
         );
         
         const matchesPrice = (() => {
 
-          // if (filters.config === 'custo-beneficio') return true
-          // if (filters.config === 'hardware') return filtered.sort((a, b) => a.hardware - b.hardware);
-          // // Segue no mesmo estilo acima
-          // if (filters.config === 'tela') return true;
-          // if (filters.config === 'camera') return true;
-          // if (filters.config === 'desempenho') return true;
+          if (filters.config === 'custo-beneficio') return true;
+          if (filters.config === 'hardware') return true;
+          if (filters.config === 'tela') return true;
+          if (filters.config === 'camera') return true;
+          if (filters.config === 'desempenho') return true;
           
           if (filters.totalPrice === 'low') return true;
           if (filters.totalPrice === 'high') return true;
@@ -110,10 +70,49 @@ function Product() {
         return matchesPrice && matchesBrand;
       });
 
+      // const sortLow = (item) => {
+      //   filtered.sort((a, b) =>
+      //     parseFloat(a.item.replace(/[^\d,]/g, '').replace(',', '.').trim()) 
+      //   - parseFloat(b.item.replace(/[^\d,]/g, '').replace(',', '.').trim()))
+      // }
+
+      if (filters.config === 'custo-beneficio') {
+        filtered.sort((a, b) =>
+          parseFloat(b.custo_beneficio.replace(/[^\d,]/g, '').replace(',', '.').trim()) 
+        - parseFloat(a.custo_beneficio.replace(/[^\d,]/g, '').replace(',', '.').trim()))
+      };
+
+      if (filters.config === 'hardware') {
+        filtered.sort((a, b) =>
+          parseFloat(b.hardware.replace(/[^\d,]/g, '').replace(',', '.').trim()) 
+        - parseFloat(a.hardware.replace(/[^\d,]/g, '').replace(',', '.').trim()))
+      };
+
+      if (filters.config === 'camera') {
+        filtered.sort((a, b) =>
+          parseFloat(b.camera.replace(/[^\d,]/g, '').replace(',', '.').trim()) 
+        - parseFloat(a.camera.replace(/[^\d,]/g, '').replace(',', '.').trim()))
+      };
+
+      if (filters.config === 'tela') {
+        filtered.sort((a, b) =>
+          parseFloat(b.tela.replace(/[^\d,]/g, '').replace(',', '.').trim()) 
+        - parseFloat(a.tela.replace(/[^\d,]/g, '').replace(',', '.').trim()))
+      };
+
+      if (filters.config === 'desempenho') {
+        filtered.sort((a, b) =>
+          parseFloat(b.desempenho.replace(/[^\d,]/g, '').replace(',', '.').trim()) 
+        - parseFloat(a.desempenho.replace(/[^\d,]/g, '').replace(',', '.').trim()))
+      };
+
       if (filters.totalPrice === 'low') {
-        filtered.sort((a, b) => parseFloat(a.totalPrice.replace(/[^\d,]/g, '').replace(',', '.').trim()) - parseFloat(b.totalPrice.replace(/[^\d,]/g, '').replace(',', '.').trim()));
-  
-      } else if (filters.totalPrice === 'high') {
+        filtered.sort((a, b) => 
+        parseFloat(a.totalPrice.replace(/[^\d,]/g, '').replace(',', '.').trim())
+      - parseFloat(b.totalPrice.replace(/[^\d,]/g, '').replace(',', '.').trim()));
+      }
+
+      if (filters.totalPrice === 'high') {
         filtered.sort((a, b) => parseFloat(b.totalPrice.replace(/[^\d,]/g, '').replace(',', '.').trim()) - parseFloat(a.totalPrice.replace(/[^\d,]/g, '').replace(',', '.').trim()));
       }
 
@@ -152,12 +151,9 @@ function Product() {
         
         {filteredCards.length > 0 ? (
           <ProductSection
-          items={falseCard.slice(1, falseCard.length - 1)}
-            topCard={falseCard[0]}
-            bottomCard={falseCard[falseCard.length - 1]}
-            // items={filteredCards.slice(1, filteredCards.length - 1)}
-            // topCard={filteredCards[0]}
-            // bottomCard={filteredCards[filteredCards.length - 1]}
+            items={filteredCards.slice(1, filteredCards.length - 1)}
+            topCard={filteredCards[0]}
+            bottomCard={filteredCards[filteredCards.length - 1]}
           />
         ) : (
           <Card type="card product loading_card" />

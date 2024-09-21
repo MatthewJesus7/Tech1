@@ -77,7 +77,7 @@
 
     .big_card {
         @apply p-2.5;
-        @apply pb-24;
+        @apply pb-[120px];
 
         @apply flex-grow;
         @apply flex-shrink;

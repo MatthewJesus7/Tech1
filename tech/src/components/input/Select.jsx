@@ -20,9 +20,9 @@ const Select = forwardRef(({ onFilterChange, closeMenu, customclass }, ref) => {
     setSelectedPrice(value);
   };
 
-  // const handleConfigChange = (value) => {
-  //   setSelectedConfig(value);
-  // };
+  const handleConfigChange = (value) => {
+    setSelectedConfig(value);
+  };
 
   // const handleBrandChange = (value) => {
   //   setSelectedBrand(value);
@@ -46,13 +46,13 @@ const Select = forwardRef(({ onFilterChange, closeMenu, customclass }, ref) => {
         </div>
 
         <div className="mb-14">
-{/* 
-          <label htmlFor="price"
+
+          <label htmlFor="config"
           className="block text-gray-800 text-md font-semibold mb-2.5">
             Configurações
-          </label> */}
+          </label>
 
-          {/* <form className="flex flex-col">
+          <form className="flex flex-col">
 
             <BoxMark id="none-options"
             value='0'
@@ -89,7 +89,7 @@ const Select = forwardRef(({ onFilterChange, closeMenu, customclass }, ref) => {
             text="Desempenho" 
             onSelect={handleConfigChange} />
 
-          </form> */}
+          </form>
 
           <label htmlFor="minmax_price" 
           className="block text-gray-800 text-md font-semibold mb-2.5">
@@ -159,11 +159,6 @@ const Select = forwardRef(({ onFilterChange, closeMenu, customclass }, ref) => {
             text="Menos de R$ 600,00" 
             onSelect={handlePriceChange} /> */}
           </form>
-
-
-          
-          
-          
 
            {/* <label className="block text-gray-800 text-md font-semibold mt-3" htmlFor="brand">
             Marca

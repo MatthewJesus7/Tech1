@@ -9,7 +9,6 @@ import { useState } from "react";
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../../firebaseConfig';
 
-
 function CardSection({ customclass, customclassinner}) {
 
     const [cards, setCards] = useState([]);
@@ -31,6 +30,10 @@ function CardSection({ customclass, customclassinner}) {
         fetchCards();
       }, []);
 
+      const lowCards = cards.sort((a, b) => 
+        parseFloat(a.totalPrice.replace(/[^\d,]/g, '').replace(',', '.').trim())
+      - parseFloat(b.totalPrice.replace(/[^\d,]/g, '').replace(',', '.').trim()));
+
     return(
         <Section customclass={` py-3 -mt-36 ${customclass}`}>
 
@@ -39,9 +42,7 @@ function CardSection({ customclass, customclassinner}) {
             { cards.length > 0 ? (
 
             <Carousel
-                items={
-                  cards.sort((a, b) => parseFloat(a.totalPrice.replace(/[^\d,]/g, '').replace(',', '.').trim()) - parseFloat(b.totalPrice.replace(/[^\d,]/g, '').replace(',', '.').trim()))
-                }
+                items={lowCards}
                 type="card medium_card"
                 customtitle="text-nowrap text-ellipsis overflow-hidden "
             ></Carousel>
