@@ -31,7 +31,7 @@ function CardSection({ customclass, customclassinner}) {
         fetchCards();
       }, []);
 
-    return( 
+    return(
         <Section customclass={` py-3 -mt-36 ${customclass}`}>
 
             <h2 className={`relative text-white lg:text-black pb-4 ${customclassinner}`}>Veja Nossos Favoritos</h2>

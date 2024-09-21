@@ -48,6 +48,25 @@
        
     }
 
+    .product_adapted {
+        @apply flex;
+        @apply flex-col;
+        @apply justify-end;
+
+        @apply flex-grow;
+        @apply flex-shrink-0;
+
+        @apply max-[440px]:h-[400px];
+
+        @apply basis-[190px];
+        @apply h-[400px];
+
+        @apply sm:basis-64;
+        @apply sm:h-96;
+
+        @apply p-2.5;
+    }
+
     .partner{
         @apply w-24; 
         @apply h-10; 
@@ -74,7 +93,7 @@
         @apply border rounded-xl; 
         @apply ease-out; 
         @apply duration-300; 
-        @apply hover:scale-105; 
+        @apply hover:scale-[1.025]; 
         @apply overflow-hidden;
     }
 
@@ -241,7 +260,7 @@
     }
 
     .animated{
-        @apply hover:scale-110;
+        @apply hover:scale-105;
     }
 
     .button {
