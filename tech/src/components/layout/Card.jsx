@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Colors from '../items/Colors'
 import Notes from '../items/Notes';
 
-const Card = ({ link, target, rel, type, customclass, customtitle, image_url, title, price, total_price, colors, handleOnClick, custo_beneficio, hardware, camera, tela, desempenho, menuValue, changeMenuValue}) => {
+const Card = ({ link, target, rel, type, customclass, customtitle, image_url, title, price, total_price, colors, handleOnClick, custo_beneficio, hardware, camera, tela, desempenho, menuValue, changeMenuValue }) => {
 
   const [isAnimating, setIsAnimating] = useState(false);
 
@@ -42,10 +42,12 @@ const Card = ({ link, target, rel, type, customclass, customtitle, image_url, ti
 
         <div>
             {typeInnerCard()}
-            <h3 className={`text-gray-700 -mb-0.5 ${customtitle}  `}>{title}</h3>
+            <h3 className={`text-gray-700 -mb-0.5 ${customtitle} `}
+            // data-first-wrap={title}
+            >{title}</h3>
             {/* text-nowrap text-ellipsis overflow-hidden */}
 
-            <p className="text-lg font-semibold text-gray-700">{price}</p>
+            <p className="text-lg font-semibold text-gray-700 price">{price}</p>
             
             <p className="text-sm text-gray-600 mb-1.5">{total_price}</p>
         </div>

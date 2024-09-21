@@ -9,6 +9,7 @@ import { useState } from "react";
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../../firebaseConfig';
 
+
 function CardSection({ customclass, customclassinner}) {
 
     const [cards, setCards] = useState([]);
@@ -31,8 +32,8 @@ function CardSection({ customclass, customclassinner}) {
       }, []);
 
       const lowCards = cards.sort((a, b) => 
-        parseFloat(a.totalPrice.replace(/[^\d,]/g, '').replace(',', '.').trim())
-      - parseFloat(b.totalPrice.replace(/[^\d,]/g, '').replace(',', '.').trim()));
+        parseFloat(a.total_price.replace(/[^\d,]/g, '').replace(',', '.').trim())
+      - parseFloat(b.total_price.replace(/[^\d,]/g, '').replace(',', '.').trim()));
 
     return(
         <Section customclass={` py-3 -mt-36 ${customclass}`}>

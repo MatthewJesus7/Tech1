@@ -16,6 +16,7 @@ function ProductSection({ items, topCard, bottomCard }) {
             setMenuValue(false);
         };
     }
+     
     return(
         <div className="flex flex-wrap"
         >
@@ -23,12 +24,11 @@ function ProductSection({ items, topCard, bottomCard }) {
             <BigCard
             item={topCard}
             customclass="lg:mr-5"
-            changeMenuValue={changeMenuValue}
             ></BigCard>
 
             {items.map((item, index) => (
                     <div key={index}
-                    className={`product p-0 mb-1 mr-1 sm:mr-5 sm:mb-5 
+                    className={`card product p-0 mb-1 mr-1 sm:mr-5 sm:mb-5 relative overflow-hidden rounded-xl
                         ${menuValue == true ?
                         'product_adapted'
                         : 'product'
@@ -48,7 +48,8 @@ function ProductSection({ items, topCard, bottomCard }) {
                             total_price={item.total_price}
                             image_url={item.image_url}
                             colors={item.colors}
-                            customtitle={item.customtitle}
+                            customtitle='product_elipsis'
+                            // customm_nowrap
                             custo_beneficio={item.custo_beneficio}
                             hardware={item.hardware}
                             camera={item.camera}
