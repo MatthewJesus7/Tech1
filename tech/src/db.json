@@ -1,89 +1,424 @@
 {
     "cards": [
         {
-            "link": "https://amzn.to/3ylNZPO",
-            "title": "Xiaomi Redmi Note 11",
-            "price": "12x R$ 78,86",
-            "totalPrice": "R$ 844,95",
-            "backgroundImage": "url('https://m.media-amazon.com/images/I/61sJSKeJExL._AC_SX569_.jpg')"
+            "link": "https://amzn.to/3ZDGi2J",
+            "title": "Smartphone Samsung Galaxy A15 4G 128GB - Azul Escuro",
+            "price": "Em até 12x de R$ 84,46 com juros",
+            "total_price": "R$ 905,00",
+            "image_url": "https://m.media-amazon.com/images/I/51+k18QX40L._AC_SX522_.jpg",
+            "custo_beneficio": "10 ",
+            "hardware": "7.5 ",
+            "tela": "8.5 ",
+            "camera": "7.7 ",
+            "desempenho": "4.9 "
         },
-
         {
-            "link": "https://amzn.to/4dmSl8a",
-            "title": "Motorola Moto G34",
-            "price": "10x R$ 94,80",
-            "totalPrice": "R$948,00",
-            "backgroundImage": "url('https://m.media-amazon.com/images/I/51ezdcOv0qL._AC_SX679_.jpg')"
+            "link": "https://amzn.to/3ZxenRK",
+            "title": "Celular Samsung Galaxy M15 5G, 6.000mAh, Câmera Tripla até 50MP, 128GB (Azul Escuro)",
+            "price": "Em até 10x R$ 99,90 sem juros",
+            "total_price": "R$ 999,00",
+            "image_url": "https://m.media-amazon.com/images/I/51Z0P8+CeQL._AC_SX425_.jpg",
+            "custo_beneficio": "9.8 ",
+            "hardware": "7.7 ",
+            "tela": "8.5 ",
+            "camera": "7.7 ",
+            "desempenho": "5.3 "
         },
-
         {
-            "link": "https://amzn.to/4cvQblu",
-            "title": "Motorola Moto G53 5G",
-            "price": "12x R$ 93,24",
-            "totalPrice": "R$999,00",
-            "backgroundImage": "url('https://m.media-amazon.com/images/I/51WS97L4FUL._AC_SX522_.jpg')"
+            "link": "https://amzn.to/3XBvhvR",
+            "title": "Smartphone Samsung Galaxy A15 5G 128GB - Azul Escuro",
+            "price": "Em até 12x de R$ 87,64 com juros",
+            "total_price": "R$ 939,00",
+            "image_url": "https://m.media-amazon.com/images/I/51gmiZg4ChL._AC_SX522_.jpg",
+            "custo_beneficio": "9.8 ",
+            "hardware": "7.7 ",
+            "tela": "8.5 ",
+            "camera": "7.7 ",
+            "desempenho": "5.3 "
         },
-
         {
-            "link": "https://amzn.to/3LKfrcY",
-            "title": "Samsung Galaxy A05s",
-            "price": "12x R$ 90,44",
-            "totalPrice": "R$999,00",
-            "backgroundImage": "url('https://m.media-amazon.com/images/I/51oQc-4fAeL.__AC_SX300_SY300_QL70_ML2_.jpg')"
+            "link": "https://amzn.to/3ZA1lTO",
+            "title": "Smartphone Samsung Galaxy A05s 6,7 Tela Infinita 128GB + 6GB RAM Tela Infinita de 6.7\" 50MP + 2MP + 2MP, Processador Octa-Core, Bateria de longa duração - Preto",
+            "price": "ou R$ 882,22 em até 10x de R$ 88,24 sem juros",
+            "total_price": "R$ 793,99",
+            "image_url": "https://m.media-amazon.com/images/I/61YRRa3fGcL._AC_SX569_.jpg",
+            "custo_beneficio": "9.7 ",
+            "hardware": "7.6 ",
+            "tela": "8.4 ",
+            "camera": "7.7 ",
+            "desempenho": "5.8 "
         },
-
         {
-            "link": "https://amzn.to/3LLC3K1",
-            "title": "Samsung Galaxy A14 5G",
-            "price": "10x R$ 101,20",
-            "totalPrice":"R$ 1.012,00", 
-            "backgroundImage": "url('https://m.media-amazon.com/images/I/61ezr50FpsL._AC_SX569_.jpg')"
+            "link": "https://amzn.to/3MSLiZp",
+            "title": "Smartphone Xiaomi Redmi Note 13 4G 8+256 GB, preto",
+            "price": "Em até 12x de R$ 98,00 com juros",
+            "total_price": "R$ 1.050,00",
+            "image_url": "https://m.media-amazon.com/images/I/61sab12r6ML._AC_SX425_.jpg",
+            "custo_beneficio": "9.7 ",
+            "hardware": "7.8 ",
+            "tela": "8.4 ",
+            "camera": "8 ",
+            "desempenho": "6.1 "
         },
-
         {
-            "link": "https://amzn.to/3Sui0DD",
-            "title": "Redmi Note 12",
-            "price": "12x R$ 95,66",
-            "totalPrice": "R$ 1.024,95",
-            "backgroundImage": "url('https://m.media-amazon.com/images/I/516d7C9LrtL._AC_SX569_.jpg')"
+            "link": "https://amzn.to/3MVocle",
+            "title": "Smartphone Motorola Moto G04s - 128GB 8GB Ram Boost Camera 16MP com sensor Moto AI FPS lateral Grafite",
+            "price": "ou R$ 691,90 em até 12x de R$ 57,75 sem juros",
+            "total_price": "R$ 622,74",
+            "image_url": "https://m.media-amazon.com/images/I/51J5poXTtpL._AC_SX569_.jpg",
+            "custo_beneficio": "9.5 ",
+            "hardware": "6.3 ",
+            "tela": "5.3 ",
+            "camera": "7.6 ",
+            "desempenho": "3.8 "
         },
-
         {
-            "link": "https://amzn.to/3YwZZs6",
-            "title": "Redmi Note 13 4G",
-            "price": "12x R$ 111,01",
-            "totalPrice": "R$1.189,39",
-            "backgroundImage": "url('https://m.media-amazon.com/images/I/41zK0DZZNRL._AC_SX569_.jpg')"
+            "link": "https://amzn.to/4dldG1c",
+            "title": "Smartphone Xiaomi Redmi Note 13 6GB+128GB Powerful Snapdragon® performance 120Hz FHD+ AMOLED display 33W fast charging with 5000mAh battery (Black)",
+            "price": "Em até 12x de R$ 89,97 com juros",
+            "total_price": "R$ 964,00",
+            "image_url": "https://m.media-amazon.com/images/I/51xVA2FUBDL._AC_SX425_.jpg",
+            "custo_beneficio": "9.5 ",
+            "hardware": "7.7 ",
+            "tela": "8.4 ",
+            "camera": "8 ",
+            "desempenho": "5.4 "
         },
-
         {
-            "link": "https://amzn.to/3zNe6PL",
-            "title": "Sansung Galaxy A25 5G",
-            "price": "10x R$ 119,90",
-            "totalPrice": "R$ 1.199,00",
-            "colors":[
-                "[#23232D]", "[#F7F8B4]"
-            ],
-            "backgroundImage": "url('https://m.media-amazon.com/images/I/51oC7szmO8L._AC_SX569_.jpg')"
+            "link": "https://amzn.to/3zwaiCP",
+            "title": "Smartphone Moto G14 128GB 4GB RAM Grafite",
+            "price": "Em até 12x de R$ 70,84 com juros",
+            "total_price": "R$ 759,00",
+            "image_url": "https://m.media-amazon.com/images/I/51qNEJ3WETL._AC_SX522_.jpg",
+            "custo_beneficio": "9.5 ",
+            "hardware": "7.2 ",
+            "tela": "8.5 ",
+            "camera": "7.2 ",
+            "desempenho": "4.2 "
         },
-
         {
-            "link": "https://amzn.to/3WtLIKc",
-            "title": "Samsung Galaxy A25 5G",
-            "price": "12x R$ 133,37",
-            "totalPrice": "R$1.429,00",
-            "colors":[
-                "[#23232D]", "[#F7F8B4]"
-            ],
-            "backgroundImage": "url('https://m.media-amazon.com/images/I/51Cc4iXUumL._AC_SX679_.jpg')"
+            "link": "https://amzn.to/3TC1rWY",
+            "title": "Smartphone Realme Note 50 RMX3834 3 GB de RAM/64 GB/Tela 6.74\"/Dual Sim LTE - Azul celeste",
+            "price": "Em até 12x de R$ 57,68 com juros",
+            "total_price": "R$ 618,00",
+            "image_url": "https://m.media-amazon.com/images/I/71j4AHAC4UL._AC_SX425_.jpg",
+            "custo_beneficio": "9.2 ",
+            "hardware": "6.1 ",
+            "tela": "5.3 ",
+            "camera": "6.3 ",
+            "desempenho": "4.1 "
         },
-
         {
-            "link": "https://amzn.to/3A6Vcnm",
-            "title": "Redmi Note 12 Pro 4G",
-            "price": "12x R$ 124,61",
-            "totalPrice": "R$1.335,15",
-            "backgroundImage": "url('https://m.media-amazon.com/images/I/5142s1BuATL._AC_SX569_.jpg')"
+            "link": "https://amzn.to/3TDhljM",
+            "title": "Smartphone Motorola Moto G34 5G 8GB RAM Boost* 128GB Preto",
+            "price": "ou R$ 868,80 em até 12x de R$ 72,40 sem juros",
+            "total_price": "R$ 799,00",
+            "image_url": "https://m.media-amazon.com/images/I/51ezdcOv0qL._AC_SX522_.jpg",
+            "custo_beneficio": "9.1 ",
+            "hardware": "6.8 ",
+            "tela": "5.5 ",
+            "camera": "7.7 ",
+            "desempenho": "5.1 "
+        },
+        {
+            "link": "https://amzn.to/3zwalP1",
+            "title": "Smartphone Moto G54 5G 256GB 8GB RAM Azul - Vegan Leather",
+            "price": "ou R$ 1.196,00 em até 12x de R$ 99,74 sem juros",
+            "total_price": "R$ 1.076,40",
+            "image_url": "https://m.media-amazon.com/images/I/51FfH8HlqPL._AC_SX522_.jpg",
+            "custo_beneficio": "9 ",
+            "hardware": "7.8 ",
+            "tela": "8.5 ",
+            "camera": "8 ",
+            "desempenho": "5.7 "
+        },
+        {
+            "link": "https://amzn.to/3Bc9J1r",
+            "title": "Smartphone Motorola Moto G24 8GB RAM Boost* 128GB Grafite",
+            "price": "ou R$ 751,34 em até 12x de R$ 62,63 sem juros",
+            "total_price": "R$ 679,00",
+            "image_url": "https://m.media-amazon.com/images/I/51PBH2nM83L._AC_SX522_.jpg",
+            "custo_beneficio": "9 ",
+            "hardware": "6.3 ",
+            "tela": "5.3 ",
+            "camera": "7.6 ",
+            "desempenho": "3.7 "
+        },
+        {
+            "link": "https://amzn.to/3B7mLxa",
+            "title": "Celular Realme C67 128 GB Dual Sim 8 GB RAM Preto",
+            "price": "Em até 12x de R$ 110,04 com juros",
+            "total_price": "R$ 1.179,00",
+            "image_url": "https://m.media-amazon.com/images/I/61MlLt5iMTL._AC_SX425_.jpg",
+            "custo_beneficio": "8.9 ",
+            "hardware": "7.6 ",
+            "tela": "8.4 ",
+            "camera": "7.6 ",
+            "desempenho": "5.3 "
+        },
+        {
+            "link": "https://amzn.to/4gBKyWy",
+            "title": "Celular Samsung Galaxy A25 5G 128GB, 6GB RAM, Tela Infinita de 6.5\" Azul Escuro",
+            "price": "Em até 12x de R$ 127,77 com juros",
+            "total_price": "R$ 1.369,00",
+            "image_url": "https://m.media-amazon.com/images/I/51Cc4iXUumL._AC_SX522_.jpg",
+            "custo_beneficio": "8.7 ",
+            "hardware": "7.8 ",
+            "tela": "8.5 ",
+            "camera": "8.4 ",
+            "desempenho": "5.2 "
+        },
+        {
+            "link": "https://amzn.to/4ePHxAf",
+            "title": "Samsung Galaxy A14 4G, Prateado, 64 GB",
+            "price": "Em até 10x R$ 119,90 sem juros",
+            "total_price": "R$ 1.199,00",
+            "image_url": "https://m.media-amazon.com/images/I/61gy23XsVjL._AC_SX425_.jpg",
+            "custo_beneficio": "8.7 ",
+            "hardware": "6.7 ",
+            "tela": "8.4 ",
+            "camera": "7 ",
+            "desempenho": "3 "
+        },
+        {
+            "link": "https://amzn.to/3ZtgQwE",
+            "title": "Smartphone Xiaomi Redmi 13C 128GB Tela 6.74\" 4G Wi-Fi Dual Chip 4GB RAM Câmera Dupla + Selfie 8MP - Preto",
+            "price": "Em até 12x de R$ 72,70 com juros",
+            "total_price": "R$ 779,00",
+            "image_url": "https://m.media-amazon.com/images/I/41Lo5ne-3SL._AC_SX569_.jpg",
+            "custo_beneficio": "8.7 ",
+            "hardware": "6.2 ",
+            "tela": "5.3 ",
+            "camera": "7.6 ",
+            "desempenho": "3.7 "
+        },
+        {
+            "link": "https://amzn.to/3BgwcdR",
+            "title": "Smartphone Motorola Moto G04 8GB RAM Boost* 128GB Coral",
+            "price": "Em até 12x de R$ 83,90 com juros",
+            "total_price": "R$ 899,00",
+            "image_url": "https://m.media-amazon.com/images/I/610xndQ2Q0L._AC_SX522_.jpg",
+            "custo_beneficio": "8.6 ",
+            "hardware": "6.1 ",
+            "tela": "5.3 ",
+            "camera": "6.7 ",
+            "desempenho": "3.8 "
+        },
+        {
+            "link": "https://amzn.to/4gsaILf",
+            "title": "Smartphone Xiaomi Redmi Note 12 4G 128 GB, 4 GB de RAM, verde menta",
+            "price": "Em até 12x de R$ 91,28 com juros",
+            "total_price": "R$ 978,00",
+            "image_url": "https://m.media-amazon.com/images/I/61cGJAJXcmL._AC_SX522_.jpg",
+            "custo_beneficio": "8.6 ",
+            "hardware": "7.6 ",
+            "tela": "8.4 ",
+            "camera": "7.3 ",
+            "desempenho": "6 "
+        },
+        {
+            "link": "https://amzn.to/3BdC3AE",
+            "title": "Smartphone Xiaomi POCO C65 6GB+128GB MediaTek Helio G85 Octa Core 5000mAh 6.74\" 90Hz HD+ display 50MP Camera NFC",
+            "price": "Em até 12x de R$ 75,50 com juros",
+            "total_price": "R$ 809,00",
+            "image_url": "https://m.media-amazon.com/images/I/51LJGA-d8sL._AC_SX425_.jpg",
+            "custo_beneficio": "8.6 ",
+            "hardware": "6.3 ",
+            "tela": "5.3 ",
+            "camera": "7.6 ",
+            "desempenho": "3.7 "
+        },
+        {
+            "link": "https://amzn.to/4decVqK",
+            "title": "Samsung, Smartphone Samsung Galaxy A05 128GB/4GB RAM, Tela 6,7\" Preto",
+            "price": "Em até 10x R$ 69,50 sem juros",
+            "total_price": "R$ 695,00",
+            "image_url": "https://m.media-amazon.com/images/I/517RnD277kL._AC_SX569_.jpg",
+            "custo_beneficio": "8.5 ",
+            "hardware": "6.2 ",
+            "tela": "5.3 ",
+            "camera": "7.6 ",
+            "desempenho": "3.7 "
+        },
+        {
+            "link": "https://amzn.to/4dcEe4F",
+            "title": "Smartphone Xiaomi Redmi Note 12 128GB - 4GB Ram - (Onyx Gray)(M7)",
+            "price": "Em até 12x de R$ 92,96 com juros",
+            "total_price": "R$ 996,00",
+            "image_url": "https://m.media-amazon.com/images/I/61p79A67kPL._AC_SX425_.jpg",
+            "custo_beneficio": "8.4 ",
+            "hardware": "7.4 ",
+            "tela": "8.4 ",
+            "camera": "7 ",
+            "desempenho": "5.1 "
+        },
+        {
+            "link": "https://amzn.to/3MYlHhG",
+            "title": "Samsung Galaxy M55 5G, Câmera Tripla Traseira de até 50MP, Selfie de 50MP, Nightography, Apagador de objetos, Tela Super AMOLED + de 6.7\" 120Hz Vision Booster, 256 GB, 8GB de RAM - Verde Claro",
+            "price": "Em até 10x R$ 187,60 sem juros",
+            "total_price": "R$ 1.876,00",
+            "image_url": "https://m.media-amazon.com/images/I/51bF0-qMZrL._AC_SX425_.jpg",
+            "custo_beneficio": "8.4 ",
+            "hardware": "8.1 ",
+            "tela": "8.4 ",
+            "camera": "8.7 ",
+            "desempenho": "6.3 "
+        },
+        {
+            "link": "https://amzn.to/3NeX5lj",
+            "title": "Smartphone Xiaomi POCO X6 5G 8GB+256GB NFC Snapdragon 7s Gen 2 Smartphone 120Hz FioW AMOLED 64MP Câmera tripla com OIS (preto)",
+            "price": "Em até 12x de R$ 145,60 com juros",
+            "total_price": "R$ 1.560,00",
+            "image_url": "https://m.media-amazon.com/images/I/61thL+4B4QL._AC_SX425_.jpg",
+            "custo_beneficio": "8.3 ",
+            "hardware": "8 ",
+            "tela": "8.5 ",
+            "camera": "8.1 ",
+            "desempenho": "6.6 "
+        },
+        {
+            "link": "https://amzn.to/3N0uQGx",
+            "title": "Smartphone Redmi Note 11 4 GB RAM 128 GB ROM Star Blue",
+            "price": "Em até 12x de R$ 74,57 com juros",
+            "total_price": "R$ 799,00",
+            "image_url": "https://m.media-amazon.com/images/I/61sFZSpV3ZL._AC_SX425_.jpg",
+            "custo_beneficio": "8.3 ",
+            "hardware": "7.4 ",
+            "tela": "8.5 ",
+            "camera": "6.8 ",
+            "desempenho": "5.7 "
+        },
+        {
+            "link": "https://amzn.to/3XSChGm",
+            "title": "Samsung Galaxy A35 5G, Câmera Tripla Traseira de até 50MP, Selfie de 13MP, Nightography, Apagador de objetos, Design em vidro e IP67, Tela Super AMOLED de 6.6\" 120Hz Vision Booster, 128GB - Azul Claro",
+            "price": "ou R$ 1.499,00 em até 12x de R$ 124,99 sem juros",
+            "total_price": "R$ 1.349,10",
+            "image_url": "https://m.media-amazon.com/images/I/51CjR2NeBDL._AC_SX522_.jpg",
+            "custo_beneficio": "8.3 ",
+            "hardware": "7.8 ",
+            "tela": "8.4 ",
+            "camera": "8.1 ",
+            "desempenho": "5.4 "
+        },
+        {
+            "link": "https://amzn.to/3BeVPf9",
+            "title": "Celular Samsung Galaxy A06, 128GB, 4GB RAM, Tela 6.7\", Câm. Traseira 50+2MP, Frontal 8MP (Branco)",
+            "price": "Em até 12x de R$ 83,90 com juros",
+            "total_price": "R$ 899,00",
+            "image_url": "https://m.media-amazon.com/images/I/51pTVw031CL._AC_SX425_.jpg",
+            "custo_beneficio": "8.2 ",
+            "hardware": "6.3 ",
+            "tela": "5.3 ",
+            "camera": "7.6 ",
+            "desempenho": "3.7 "
+        },
+        {
+            "link": "https://amzn.to/3BgwoK7",
+            "title": "Samsung Galaxy S23 FE 5G 128 GB Câmera Tripla Traseira de 50MP +12MP + 10MP, Selfie de 10MP, Tela infinita 6.4\" 60-120Hz, 128GB, 8GB, Processador Exynos 2200, Dual Chip, e-SIM - Grafite",
+            "price": "ou R$ 2.599,00 em até 12x de R$ 216,62 sem juros",
+            "total_price": "R$ 2.339,10",
+            "image_url": "https://m.media-amazon.com/images/I/616KvAi+nrL._AC_SX679_.jpg",
+            "custo_beneficio": "8.2 ",
+            "hardware": "8.4 ",
+            "tela": "8.5 ",
+            "camera": "8.4 ",
+            "desempenho": "7.7 "
+        },
+        {
+            "link": "https://amzn.to/3XxaREl",
+            "title": "Samsung Galaxy M35 5G, Câmera Tripla Traseira de até 50MP, Selfie de 13MP, Nightography, Apagador de objetos, Tela Super AMOLED + de 6.6\" 120Hz Vision Booster, 256 GB, 8GB de RAM",
+            "price": "Em até 10x R$ 144,90 sem juros",
+            "total_price": "R$ 1.449,00",
+            "image_url": "https://m.media-amazon.com/images/I/51-LOUJmLWL._AC_SX425_.jpg",
+            "custo_beneficio": "8 ",
+            "hardware": "7.8 ",
+            "tela": "8.4 ",
+            "camera": "8.1 ",
+            "desempenho": "5.5 "
+        },
+        {
+            "link": "https://amzn.to/4e9NLLi",
+            "title": "Smartphone Samsung Galaxy A04s 64GB Octa-Core Câmera Tripla Traseira Dual Chip",
+            "price": "Em até 10x R$ 99,90 sem juros",
+            "total_price": "R$ 999,00",
+            "image_url": "https://m.media-amazon.com/images/I/51XLsaalvDL._AC_SX522_.jpg",
+            "custo_beneficio": "8 ",
+            "hardware": "6.4 ",
+            "tela": "5.5 ",
+            "camera": "6.7 ",
+            "desempenho": "4.9 "
+        },
+        {
+            "link": "https://amzn.to/4ebQxQ6",
+            "title": "Smartphone Motorola Edge 40 Neo 256GB 8GB RAM Black Beauty",
+            "price": "ou R$ 1.899,00 em até 12x de R$ 158,25 sem juros",
+            "total_price": "R$ 1.709,10",
+            "image_url": "https://m.media-amazon.com/images/I/51rB2U+NQIL._AC_SX569_.jpg",
+            "custo_beneficio": "8 ",
+            "hardware": "8 ",
+            "tela": "8.4 ",
+            "camera": "8.5 ",
+            "desempenho": "6 "
+        },
+        {
+            "link": "https://amzn.to/4ebGUAK",
+            "title": "Smartphone Xiaomi Redmi Note 13 Pro 5G 256 GB/8 GB Azul Ocean Teal [modelo 2312DRA50G] (2312DRA50G)",
+            "price": "Em até 12x de R$ 175,46 com juros",
+            "total_price": "R$ 1.879,99",
+            "image_url": "https://m.media-amazon.com/images/I/51xNtG7WRYL._AC_SX522_.jpg",
+            "custo_beneficio": "8 ",
+            "hardware": "8.2 ",
+            "tela": "8.5 ",
+            "camera": "9 ",
+            "desempenho": "6.6 "
+        },
+        {
+            "link": "https://amzn.to/3B97pZ0",
+            "title": "Smartphone Xiaomi POCO X6 Pro 5G 8GB+256GB NFC Dimensity 8300-Ultra 64MP câmera tripla 67W 120Hz AMOLED (Amarelo)",
+            "price": "Em até 12x de R$ 178,26 com juros",
+            "total_price": "R$ 1.909,99",
+            "image_url": "https://m.media-amazon.com/images/I/713E1KM6QoL._AC_SX425_.jpg",
+            "custo_beneficio": "7.9 ",
+            "hardware": "8.1 ",
+            "tela": "8.5 ",
+            "camera": "8.1 ",
+            "desempenho": "6.8 "
+        },
+        {
+            "link": "https://amzn.to/4evI5uS",
+            "title": "Apple iPhone 15 (128 GB) — Azul",
+            "price": "ou R$ 5.310,00 em até 12x de R$ 442,50 sem juros",
+            "total_price": "R$ 4.779,00",
+            "image_url": "https://m.media-amazon.com/images/I/41+jLq6yJKL._AC_SX522_.jpg",
+            "custo_beneficio": "7.9 ",
+            "hardware": "9.2 ",
+            "tela": "8.7 ",
+            "camera": "9.6 ",
+            "desempenho": "8.8 "
+        },
+        {
+            "link": "https://amzn.to/47I66g4",
+            "title": "Smartphone Xiaomi Redmi Note 11s Dual Sim 128gb Rom 6GB Ram - Cor Cinza",
+            "price": "Em até 12x de R$ 88,62 com juros",
+            "total_price": "R$ 949,53",
+            "image_url": "https://m.media-amazon.com/images/I/51UhkQTNxmL._AC_SX522_.jpg",
+            "custo_beneficio": "7.8 ",
+            "hardware": "7.1 ",
+            "tela": "8.5 ",
+            "camera": "7 ",
+            "desempenho": "4.5 "
+        },
+        {
+            "link": "https://amzn.to/3XAUG8Z",
+            "title": "Smartphone Realme C51 Dual Sim LTE 6,74\" 4 GB/128 GB de carbono preto",
+            "price": "Em até 12x de R$ 71,77 com juros",
+            "total_price": "R$ 769,00",
+            "image_url": "https://m.media-amazon.com/images/I/51BzYmSxObL._AC_SX466_.jpg",
+            "custo_beneficio": "7.8 ",
+            "hardware": "6.3 ",
+            "tela": "5.3 ",
+            "camera": "7.2 ",
+            "desempenho": "4.1 "
         }
     ]
   }

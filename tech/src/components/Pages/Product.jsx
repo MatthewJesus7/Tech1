@@ -14,7 +14,7 @@ function Product() {
 
   const [cards, setCards] = useState([]);
 
-  const [filters, setFilters] = useState({ totalPrice: '', brand: '' });
+  const [filters, setFilters] = useState({ total_price: '', brand: '' });
   const [filteredCards, setFilteredCards] = useState([]);
 
 
@@ -39,8 +39,8 @@ function Product() {
     const applyFilters = () => {
       const filtered = cards.filter(card => {
 
-        const totalPrice = parseFloat(
-          card.totalPrice.replace(/[^\d,]/g, '').replace(',', '.').trim()
+        const total_price = parseFloat(
+          card.total_price.replace(/[^\d,]/g, '').replace(',', '.').trim()
         );
         
         const matchesPrice = (() => {
@@ -51,16 +51,16 @@ function Product() {
           if (filters.config === 'camera') return true;
           if (filters.config === 'desempenho') return true;
           
-          if (filters.totalPrice === 'low') return true;
-          if (filters.totalPrice === 'high') return true;
+          if (filters.total_price === 'low') return true;
+          if (filters.total_price === 'high') return true;
 
-          if (filters.totalPrice === '1000') return totalPrice <= 1000;
-          if (filters.totalPrice === '900') return totalPrice <= 900;
-          if (filters.totalPrice === '800') return totalPrice <= 800;
-          // if (filters.totalPrice === '700') return totalPrice <= 700;
-          // if (filters.totalPrice === '600') return totalPrice <= 600;
+          if (filters.total_price === '1000') return total_price <= 1000;
+          if (filters.total_price === '900') return total_price <= 900;
+          if (filters.total_price === '800') return total_price <= 800;
+          if (filters.total_price === '700') return total_price <= 700;
+          if (filters.total_price === '600') return total_price <= 600;
 
-          if (filters.totalPrice === '0') return true;
+          if (filters.total_price === '0') return true;
           return true;
         })();
 
@@ -106,13 +106,13 @@ function Product() {
         - parseFloat(a.desempenho.replace(/[^\d,]/g, '').replace(',', '.').trim()))
       };
 
-      if (filters.totalPrice === 'low') {
+      if (filters.total_price === 'low') {
         filtered.sort((a, b) => 
-        parseFloat(a.totalPrice.replace(/[^\d,]/g, '').replace(',', '.').trim())
-      - parseFloat(b.totalPrice.replace(/[^\d,]/g, '').replace(',', '.').trim()));
+        parseFloat(a.totalPrice.replace(/[^\d,]/g, '').replace(',', '.').trim()) 
+        - parseFloat(b.totalPrice.replace(/[^\d,]/g, '').replace(',', '.').trim()));
       }
 
-      if (filters.totalPrice === 'high') {
+      if (filters.total_price === 'high') {
         filtered.sort((a, b) => parseFloat(b.totalPrice.replace(/[^\d,]/g, '').replace(',', '.').trim()) - parseFloat(a.totalPrice.replace(/[^\d,]/g, '').replace(',', '.').trim()));
       }
 
@@ -149,7 +149,7 @@ function Product() {
           <FilterMenu onFilterChange={handleFilterChange} />
         </div>
         
-        {filteredCards.length > 0 ? (
+        {cards.length > 0 ? (
           <ProductSection
             items={filteredCards.slice(1, filteredCards.length - 1)}
             topCard={filteredCards[0]}

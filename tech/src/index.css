@@ -45,7 +45,11 @@
         @apply sm:h-96;
 
         @apply p-2.5;
-       
+    }
+
+    .product > div > .price {
+        @apply text-base;
+        @apply sm:text-lg;
     }
 
     .product_adapted {
@@ -65,6 +69,23 @@
         @apply sm:h-96;
 
         @apply p-2.5;
+    }
+
+    .product_elipsis {
+        @apply text-ellipsis overflow-hidden text-nowrap;
+    }
+    
+    .custom_nowrap {
+        white-space: nowrap;
+        overflow: hidden;
+        display: inline-block;
+    }
+    
+    .custom_nowrap::before {
+        content: attr(data-first-wrap);
+        white-space: normal;
+        display: inline;
+        overflow: visible; 
     }
 
     .partner{
