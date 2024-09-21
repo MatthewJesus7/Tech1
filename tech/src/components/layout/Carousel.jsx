@@ -67,7 +67,7 @@ function Carousel({ items, type, customtitle, customclass }) {
                     {items.map((item, index) => (
                         <div key={index}>
                             <Card
-                                customclass='pb-24'
+                                customclass='pb-[120px]'
                                 type={type || item.type}
                                 link={item.link}
                                 target={item.target}
@@ -75,8 +75,8 @@ function Carousel({ items, type, customtitle, customclass }) {
                                 title={item.title}
                                 customtitle={customtitle}
                                 price={item.price}
-                                totalPrice={item.totalPrice}
-                                backgroundImage={item.backgroundImage}
+                                total_price={item.total_price}
+                                image_url={item.image_url}
                                 colors={item.colors}
                                 custo_beneficio={item.custo_beneficio}
                                 hardware={item.hardware}

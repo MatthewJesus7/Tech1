@@ -25,8 +25,8 @@ function BigCard({ item, customclass }) {
                             rel={item.rel}
                             title={item.title}
                             price={item.price}
-                            totalPrice={item.totalPrice}
-                            backgroundImage={item.backgroundImage}
+                            total_price={item.total_price}
+                            image_url={item.image_url}
                             colors={item.colors}
                             customtitle={item.customtitle}
                             custo_beneficio={item.custo_beneficio}
