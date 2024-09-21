@@ -1,8 +1,12 @@
-import React from 'react';
+import { useState } from 'react';
 import Colors from '../items/Colors'
 import Notes from '../items/Notes';
 
-const Card = ({ link, target, rel, type, customclass, customtitle, backgroundImage, title, price, totalPrice, colors, handleOnClick, custo_beneficio, hardware, camera, tela, desempenho }) => {
+const Card = ({ link, target, rel, type, customclass, customtitle, backgroundImage, title, price, totalPrice, colors, handleOnClick, custo_beneficio, hardware, camera, tela, desempenho, menuValue, changeMenuValue}) => {
+
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  const menuIsOpen = menuValue;
 
   const typeInnerCard = () => {
     if (type === 'product') {
@@ -10,10 +14,43 @@ const Card = ({ link, target, rel, type, customclass, customtitle, backgroundIma
     }
   };
 
+  // const openAndCloseMenu = (e) => {
+  //   e.preventDefault(); 
+  //   e.stopPropagation();
+  //   changeMenuValue()
+  // }
+
+//   const closeAnimated = () => {
+//     setIsAnimating(true);
+//     setTimeout(() => {
+//         setIsAnimating(false);
+//         changeMenuValue(false);
+//     }, 500);
+// };
+
+  const toggleMenu = (e) => {
+    e.preventDefault(); 
+    e.stopPropagation();
+      if (menuValue) {
+          setIsAnimating(true);
+          setTimeout(() => {
+              setIsAnimating(false);
+              changeMenuValue(false);
+          }, 500);
+      } else {
+        changeMenuValue(true);
+          setTimeout(() => {
+              setIsAnimating(true);
+          }, 0);
+      }
+  }
+
   return (
     <a href={link} target={target || "_blank"} rel={rel}>
       <div
-        className={` ${type} bg-white flex-col-reverse justify-end ${customclass}`}
+        className={` ${type} bg-white flex-col-reverse justify-end ${customclass}
+        transform transition-all duration-500
+        `}
         onClick={handleOnClick}
       >
 
@@ -28,22 +65,39 @@ const Card = ({ link, target, rel, type, customclass, customtitle, backgroundIma
         </div>
         
         <div 
-        className=' w-full h-full 
+        className={` w-full h-full 
         flex flex-col items-end
-        text-sm'
+        text-sm `}
         style={{ 
           backgroundImage: `url(${backgroundImage})`, backgroundSize: 'contain',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat' }}
         >
           <button 
-          className='dark_button button animated
+          onClick={toggleMenu}
+          className={`dark_button button animated
           p-0.5 px-1.5 mb-1
-          -mt-8'>
+          relative
+          transform transition-all duration-1000
+          ${menuIsOpen == true ?
+           '-mt-9'
+           : 'mt-0'}`
+           }>
             Notas
           </button>
+
           <Notes 
-          customclass="w-[105px]"
+          customclass={`w-[160px]
+            transform transition-all duration-1000 ${
+            menuIsOpen
+                ? isAnimating
+                    ? 'translate-y-1 h-[103%]'
+                    : 'translate-y-1 h-[103%]'
+                : isAnimating
+                ? '-translate-y-1 h-[0px]'
+                : '-translate-y-1 h-[0px] border-none'
+          }`}
+          handleOnClick={toggleMenu}
           custo_beneficio={custo_beneficio}
           hardware={hardware}
           camera={camera}
