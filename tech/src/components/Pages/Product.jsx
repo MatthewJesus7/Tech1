@@ -49,12 +49,10 @@ function Product() {
           return true;
         })();
 
-        // Verifica se a marca se encaixa nos filtros
         const matchesBrand = filters.brand ? card.brand === filters.brand : true;
 
-        // Verifica se o `config` se encaixa nos filtros (selecionando múltiplos ao mesmo tempo)
         const matchesConfig = (() => {
-          if (!filters.config.length) return true; // Sem filtros aplicados, retorna todos
+          if (!filters.config.length) return true; 
             if (filters.config === 'custo-beneficio') return true;
             if (filters.config === 'hardware') return true;
             if (filters.config === 'camera') return true;
