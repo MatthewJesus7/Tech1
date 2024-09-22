@@ -38,7 +38,8 @@ function CardSection({ customclass, customclassinner}) {
     return(
         <Section customclass={` py-3 -mt-36 ${customclass}`}>
 
-            <h2 className={`relative text-white lg:text-black pb-4 ${customclassinner}`}>Veja Nossos Favoritos</h2>
+            <h2 
+            className={`relative text-white pb-4 mix-blend-difference ${customclassinner}`}>Veja Nossos Favoritos</h2>
 
             { cards.length > 0 ? (
 

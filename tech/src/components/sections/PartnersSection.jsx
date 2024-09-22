@@ -1,8 +1,5 @@
 import Section from "./Section";
-
-import Container from "../layout/Container";
 import Carousel from "../layout/Carousel"
-import Card from "../layout/Card";
 
 function PartnersSection() {
 
