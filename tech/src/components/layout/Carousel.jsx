@@ -38,14 +38,22 @@ function Carousel({ items, type, customtitle, customclass }) {
         carouselRef.current.style.transition = ''; // Reaplica a transição após o swipe
     };
 
-    const changeMenuValue = () => {
-        setMenuValue(true);
-        closeMenu();
+    // Cria um array de estados para cada item do menu
+    const [menuValues, setMenuValues] = useState(Array(items.length).fill(false));
+
+    const changeMenuValue = (index) => {
+        // Atualiza o estado de um card específico
+        const updatedMenuValues = [...menuValues];
+        updatedMenuValues[index] = true;
+        setMenuValues(updatedMenuValues);
+        closeMenu(index);
     }
 
-    const closeMenu = () => {
-        if (menuValue === true) {
-            setMenuValue(false);
+    const closeMenu = (index) => {
+        if (menuValues[index] === true) {
+            const updatedMenuValues = [...menuValues];
+            updatedMenuValues[index] = false;
+            setMenuValues(updatedMenuValues);
         };
     }
 
@@ -83,8 +91,8 @@ function Carousel({ items, type, customtitle, customclass }) {
                                 camera={item.camera}
                                 tela={item.tela}
                                 desempenho={item.desempenho}
-                                menuValue={menuValue}
-                                changeMenuValue={changeMenuValue}
+                                menuValue={menuValues[index]}
+                                changeMenuValue={() => changeMenuValue(index)}
                             />
                         </div>
                     ))}
