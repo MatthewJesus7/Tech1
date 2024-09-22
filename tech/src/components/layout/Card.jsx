@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Colors from '../items/Colors'
 import Notes from '../items/Notes';
 
-const Card = ({ link, target, rel, type, customclass, customtitle, image_url, title, price, total_price, colors, handleOnClick, custo_beneficio, hardware, camera, tela, desempenho, menuValue, changeMenuValue }) => {
+const Card = ({ link, target, rel, type, customclass, customtitle, image_url, title, price, total_price, colors, handleOnClick, custo_beneficio, hardware, camera, tela, desempenho, menuValue, changeMenuValue, brand }) => {
 
   const [isAnimating, setIsAnimating] = useState(false);
 
@@ -54,45 +54,49 @@ const Card = ({ link, target, rel, type, customclass, customtitle, image_url, ti
         
         <div 
         className={` w-full h-full 
-        flex flex-col items-end
-        text-sm `}
+        flex justify-between `}
         style={{ 
           backgroundImage: `url(${image_url})`, backgroundSize: 'contain',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat' }}
         >
-          <button 
-          onClick={toggleMenu}
-          className={`dark_button button animated
-          p-0.5 px-1.5 mb-1
-          relative
-          transform transition-all duration-1000
-          ${menuIsOpen == true ?
-           '-mt-9'
-           : 'mt-0'}`
-           }>
-            Notas
-          </button>
+          <p className=' price relative text-gray-300 mix-blend-difference w-0'>
+            {brand}</p>
 
-          <Notes 
-          customclass={`w-[160px]
-            transform transition-all duration-1000 ${
-            menuIsOpen
-                ? isAnimating
-                    ? 'translate-y-1 h-[103%]'
-                    : 'translate-y-1 h-[103%]'
-                : isAnimating
-                ? '-translate-y-1 h-[0px]'
-                : '-translate-y-1 h-[0px] border-none'
-          }`}
-          handleOnClick={toggleMenu}
-          custo_beneficio={custo_beneficio}
-          hardware={hardware}
-          camera={camera}
-          tela={tela}
-          desempenho={desempenho}
-          ></Notes>
-        </div>
+          <div className='flex flex-col items-end
+        text-sm'>
+            <button
+            onClick={toggleMenu}
+            className={`dark_button button animated
+            p-0.5 px-1.5 mb-1
+            relative
+            transform transition-all duration-1000
+            ${menuIsOpen === true ?
+             '-mt-9'
+             : 'mt-0'}`
+             }>
+              Notas
+            </button>
+            <Notes
+            customclass={`w-[160px]
+              transform transition-all duration-1000 ${
+              menuIsOpen
+                  ? isAnimating
+                      ? 'translate-y-1 h-[103%]'
+                      : 'translate-y-1 h-[103%]'
+                  : isAnimating
+                  ? '-translate-y-1 h-[0px]'
+                  : '-translate-y-1 h-[0px] border-none'
+              }`}
+              handleOnClick={toggleMenu}
+              custo_beneficio={custo_beneficio}
+              hardware={hardware}
+              camera={camera}
+              tela={tela}
+              desempenho={desempenho}
+              ></Notes>
+            </div>
+          </div>
 
       </div>
     </a>
