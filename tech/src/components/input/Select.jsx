@@ -1,7 +1,5 @@
 import React, { useState, useEffect, forwardRef } from 'react';
 import Section from '../sections/Section';
-import Container from '../layout/Container';
-import Card from '../layout/Card';
 import XButton from '../items/Buttons/XButton';
 import BoxMark from './BoxMark';
 
@@ -12,7 +10,7 @@ const Select = forwardRef(({ onFilterChange, closeMenu, customclass }, ref) => {
   
 
   useEffect(() => {
-    onFilterChange({ totalPrice: selectedPrice, brand: selectedBrand, config: selectedConfig });
+    onFilterChange({ total_price: selectedPrice, brand: selectedBrand, config: selectedConfig });
 
   }, [selectedPrice, selectedBrand, selectedConfig, onFilterChange]);
 
@@ -147,17 +145,11 @@ const Select = forwardRef(({ onFilterChange, closeMenu, customclass }, ref) => {
             text="Menos de R$ 800,00" 
             onSelect={handlePriceChange} />
 
-            {/* <BoxMark 
+            <BoxMark 
             id="price-700" 
             value='700' 
             text="Menos de R$ 700,00" 
             onSelect={handlePriceChange} />
-
-            <BoxMark 
-            id="price-600" 
-            value='600' 
-            text="Menos de R$ 600,00" 
-            onSelect={handlePriceChange} /> */}
           </form>
 
            {/* <label className="block text-gray-800 text-md font-semibold mt-3" htmlFor="brand">
