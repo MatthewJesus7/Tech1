@@ -10,6 +10,7 @@ function Carousel({ items, type, customtitle, customclass }) {
     const marginWidth = 20;
     const carouselRef = useRef(null);
     const [showButton, setShowButton] = useState(false);
+    const [menuValue, setMenuValue] = useState(false);
 
     const scrollByOneCard = (direction) => {
         const scrollAmount = direction === 'left' ? -(itemWidth + marginWidth) : (itemWidth + marginWidth);
@@ -92,7 +93,6 @@ function Carousel({ items, type, customtitle, customclass }) {
                                 desempenho={item.desempenho}
                                 menuValue={menuValues[index]}
                                 changeMenuValue={() => changeMenuValue(index)}
-                                brand={item.brand}
                             />
                         </div>
                     ))}
