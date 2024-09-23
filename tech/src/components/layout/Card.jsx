@@ -2,7 +2,15 @@ import { useState } from 'react';
 import Colors from '../items/Colors'
 import Notes from '../items/Notes';
 
-const Card = ({ link, target, rel, type, customclass, customtitle, image_url, title, price, total_price, colors, handleOnClick, custo_beneficio, hardware, camera, tela, desempenho, menuValue, changeMenuValue, brand }) => {
+const Card = ({ link, target, rel, type, customclass, customtitle, image_url, title, price, total_price, colors, handleOnClick, custo_beneficio, hardware, camera, tela, desempenho, menuValue, changeMenuValue, brand, showNotes }) => {
+
+  const [notes, setNotes] = useState(showNotes || true);
+
+  const toggleNotes = () => {
+    setNotes(!notes); // Alterna o estado de `notes`
+  }
+
+  
 
   const [isAnimating, setIsAnimating] = useState(false);
 
@@ -61,14 +69,15 @@ const Card = ({ link, target, rel, type, customclass, customtitle, image_url, ti
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat' }}
         >
-            <p className='text-gray-300 price mix-blend-difference'>{brand}</p>
+            <p className='text-base sm:text-lg w-1 text-gray-300 price mix-blend-difference'>{brand}</p>
 
-          <div className='flex flex-col items-end '>
+          { notes &&
+            <div className='flex flex-col items-end '>
 
             <button
             onClick={toggleMenu}
             className={`dark_button button animated
-            p-0.5 px-1.5 w-14
+            p-0.5 px-1.5
             relative
             transform transition-all duration-1000
             ${menuIsOpen == true ?
@@ -95,7 +104,7 @@ const Card = ({ link, target, rel, type, customclass, customtitle, image_url, ti
             tela={tela}
             desempenho={desempenho}
             ></Notes>
-          </div>
+          </div>}
         </div>
 
       </div>

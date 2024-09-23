@@ -7,6 +7,7 @@ import App from './App';
 import About from "./components/Pages/About";
 import Product from "./components/Pages/Product";
 import TalkToUs from "./components/Pages/TalkToUs";
+import Compare from "./components/Pages/Compare"
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
@@ -26,7 +27,11 @@ const router = createBrowserRouter([
     {
       path: "TalkToUs",
       element: <TalkToUs/>,
-  }
+    },
+    {
+      path: "Compare",
+      element: <Compare/>,
+    },
 ]
 }
 ]);

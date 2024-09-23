@@ -22,9 +22,9 @@ const Select = forwardRef(({ onFilterChange, closeMenu, customclass }, ref) => {
     setSelectedConfig(value);
   };
 
-  // const handleBrandChange = (value) => {
-  //   setSelectedBrand(value);
-  // };
+  const handleBrandChange = (value) => {
+    setSelectedBrand(value);
+  };
 
 
   return (
@@ -96,7 +96,7 @@ const Select = forwardRef(({ onFilterChange, closeMenu, customclass }, ref) => {
           
           <form className="flex flex-col">
 
-            <BoxMark id="none-options"
+            <BoxMark id="none-options2"
             value='0'
             text="Nenhuma das Opções"
             onSelect={handlePriceChange} />
@@ -122,7 +122,7 @@ const Select = forwardRef(({ onFilterChange, closeMenu, customclass }, ref) => {
 
           <form className='flex flex-col'>
 
-            <BoxMark id="none-options2"
+            <BoxMark id="none-options3"
             value='0'
             text="Nenhuma das Opções"
             onSelect={handlePriceChange} />
@@ -156,11 +156,13 @@ const Select = forwardRef(({ onFilterChange, closeMenu, customclass }, ref) => {
             Marca
           </label>
           <form className="flex flex-col">
-            <BoxMark id="brand-xiaomi" value="xiaomi" text="Xiaomi" onSelect={handleBrandChange} />
+            <BoxMark id="brand-apple" value="Apple" text="Apple" onSelect={handleBrandChange} />
 
-            <BoxMark id="brand-samsung" value="samsung" text="Samsung" onSelect={handleBrandChange} />
+            <BoxMark id="brand-xiaomi" value="Xiaomi" text="Xiaomi" onSelect={handleBrandChange} />
 
-            <BoxMark id="brand-motorola" value="motorola" text="Motorola" onSelect={handleBrandChange} />
+            <BoxMark id="brand-samsung" value="Samsung" text="Samsung" onSelect={handleBrandChange} />
+
+            <BoxMark id="brand-motorola" value="Motorola" text="Motorola" onSelect={handleBrandChange} />
           </form> */}
         </div>
 
