@@ -1,21 +1,19 @@
 import React, { useState } from 'react';
 
 import { IoIosSearch } from "react-icons/io";
-import Link from "../../items/Link"
-import Carousel from '../Carousel';
-import Card from '../Card';
+import Card from '../layout/Card';
 
 import { useEffect } from 'react';
 
+import { collection, getDocs } from 'firebase/firestore';
+import { db } from '../../firebaseConfig'; 
 
-  import { collection, getDocs } from 'firebase/firestore';
-  import { db } from '../../../firebaseConfig'; 
-
-  function navigateTo(url) {
+function navigateTo(url) {
     window.location.href = url;
-  }
+}
 
-  function Search() {
+  const Compare = () => {
+
     const [items, setItems] = useState([]);
   
     useEffect(() => {
@@ -74,42 +72,16 @@ import { useEffect } from 'react';
                         />
                     </span>
                 </div>
-            </form>
+            </form>            
 
-            <div className='flex my-3 py-1 text-lg font-semibold flex-wrap'>
-                <Link onClick={() => navigateTo('/about')}
-                text="sobre nós"
-                textCustom="pr-5"
-                ></Link>
-
-                <Link onClick={() => navigateTo('/TalkToUs')}
-                text="fale conosco"
-                textCustom="pr-5"
-                ></Link>
-
-                <Link onClick={() => navigateTo('/Compare')}
-                text="Comparar Smartphones"
-                textCustom=""
-                ></Link>
-            </div>
-            
-            <h2>Talvez você esteja procurando:</h2>
-
-            <Carousel
-            items={filteredItems}
-            type="card search_card pb-28"
-            ></Carousel>
-
-            
-
-            <div className="cards-container">
-                {filteredItems.map((item, key) => (
-                    <Card
+            {/* <div className="cards-container">
+                {items.map((item, key) => (
+                    <Card showNotes={false}
                     />
                 ))}
-            </div>
+            </div> */}
         </>
     );
 }
 
-export default Search;
+export default Compare;

@@ -12,26 +12,28 @@ function CardSection({ customclass, customclassinner}) {
 
   const [cards, setCards] = useState([]);
 
-    useEffect(() => {
-        const fetchCards = async () => {
-          try {
-            const querySnapshot = await getDocs(collection(db, 'cards'));
-            const cardsData = querySnapshot.docs.map(doc => ({
-              id: doc.id,
-              ...doc.data()
-            }));
-            setCards(cardsData);
-          } catch (error) {
-            console.error('Erro ao buscar dados: ', error);
-          }
-        };
-    
-        fetchCards();
-      }, []);
-
-      const lowCards = cards.sort((a, b) => 
-        parseFloat(a.total_price.replace(/[^\d,]/g, '').replace(',', '.').trim())
-      - parseFloat(b.total_price.replace(/[^\d,]/g, '').replace(',', '.').trim()));
+  useEffect(() => {
+    const fetchCards = async () => {
+      try {
+        // Ordena por total_price em ordem ascendente e limita a 8 itens
+        const cardsQuery = query(
+          collection(db, 'cards'),
+          orderBy('custo_beneficio', 'asc'), // Ordena os itens por preço (ascendente)
+          limit(8) // Limita a 8 itens
+        );
+        const querySnapshot = await getDocs(cardsQuery);
+        const cardsData = querySnapshot.docs.map(doc => ({
+          id: doc.id,
+          ...doc.data()
+        }));
+        setCards(cardsData);
+      } catch (error) {
+        console.error('Erro ao buscar dados: ', error);
+      }
+    };
+  
+    fetchCards();
+  }, []);
 
     return(
         <Section customclass={` py-3 -mt-36 ${customclass}`}>
@@ -42,7 +44,7 @@ function CardSection({ customclass, customclassinner}) {
             { cards.length > 0 ? (
 
             <Carousel
-                items={lowCards}
+                items={cards}
                 type="card medium_card"
                 customtitle="text-nowrap text-ellipsis overflow-hidden "
             ></Carousel>
