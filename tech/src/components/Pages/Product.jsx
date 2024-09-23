@@ -8,6 +8,7 @@ import PartnersSection from "../sections/PartnersSection";
 import Section from "../sections/Section";
 import ProductSection from "../sections/ProductSection";
 import FilterMenu from "../layout/FilterMenu";
+import Card from "../layout/Card";
 
 function Product() {
   const [cards, setCards] = useState([]);
@@ -144,7 +145,7 @@ function Product() {
             bottomCard={filteredCards[filteredCards.length - 1]}
           />
         ) : (
-          <div>Carregando...</div>
+          <Card className='card partner loading_card'/>
         )}
       </Section>
 
