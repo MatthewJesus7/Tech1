@@ -6,15 +6,15 @@ import HeroSection from "../sections/HeroSection";
 import CardSection from "../sections/CardSection";
 import PartnersSection from "../sections/PartnersSection";
 import Section from "../sections/Section";
-import Card from "../layout/Card";
 import ProductSection from "../sections/ProductSection";
 import FilterMenu from "../layout/FilterMenu";
 
 function Product() {
   const [cards, setCards] = useState([]);
-  const [filters, setFilters] = useState({ total_price: '', brand: '', config: [] }); // config como array
+  const [filters, setFilters] = useState({ total_price: '', brand: '', config: [] });
   const [filteredCards, setFilteredCards] = useState([]);
 
+  // Fetch cards from Firestore
   useEffect(() => {
     const fetchCards = async () => {
       try {
@@ -39,8 +39,8 @@ function Product() {
 
         // Verifica se o preço se encaixa nos filtros
         const matchesPrice = (() => {
-          if (filters.total_price === 'low') return true; // Lógica desejada
-          if (filters.total_price === 'high') return true; // Lógica desejada
+          if (filters.total_price === 'low') return true;
+          if (filters.total_price === 'high') return true;
           if (filters.total_price === '1000') return total_price <= 1000;
           if (filters.total_price === '900') return total_price <= 900;
           if (filters.total_price === '800') return total_price <= 800;
@@ -51,36 +51,62 @@ function Product() {
 
         const matchesBrand = filters.brand ? card.brand === filters.brand : true;
 
-        const matchesConfig = filters.config.length > 0
-
-          ? filters.config.some(config => card[config] !== undefined && card[config])
-          : true;
-
+        const matchesConfig = (() => {
+          if (!filters.config.length) return true; 
+            if (filters.config === 'custo-beneficio') return true;
+            if (filters.config === 'hardware') return true;
+            if (filters.config === 'camera') return true;
+            if (filters.config === 'tela') return true;
+            if (filters.config === 'desempenho') return true;
+        })();
 
         return matchesPrice && matchesBrand && matchesConfig;
       });
 
-      // Ordenação condicional por configuração
-      filters.config.forEach(config => {
-        if (config) {
-          filtered.sort((a, b) =>
-            parseFloat(b[config].replace(/[^\d,]/g, '').replace(',', '.').trim()) -
-            parseFloat(a[config].replace(/[^\d,]/g, '').replace(',', '.').trim())
-          );
-        }
-      });
-
-      // Ordenação por preço
-      if (filters.total_price === 'low') {
+      // Ordenação condicional se algum filtro de `config` estiver selecionado
+      if (filters.config.includes('custo-beneficio')) {
         filtered.sort((a, b) =>
-          parseFloat(a.total_price.replace(/[^\d,]/g, '').replace(',', '.').trim()) -
-          parseFloat(b.total_price.replace(/[^\d,]/g, '').replace(',', '.').trim()));
+          parseFloat(b.custo_beneficio.replace(/[^\d,]/g, '').replace(',', '.').trim()) -
+          parseFloat(a.custo_beneficio.replace(/[^\d,]/g, '').replace(',', '.').trim())
+        );
+      }
+
+      if (filters.config.includes('hardware')) {
+        filtered.sort((a, b) =>
+          parseFloat(b.hardware.replace(/[^\d,]/g, '').replace(',', '.').trim()) -
+          parseFloat(a.hardware.replace(/[^\d,]/g, '').replace(',', '.').trim())
+        );
+      }
+
+      if (filters.config.includes('camera')) {
+        filtered.sort((a, b) =>
+          parseFloat(b.camera.replace(/[^\d,]/g, '').replace(',', '.').trim()) -
+          parseFloat(a.camera.replace(/[^\d,]/g, '').replace(',', '.').trim())
+        );
+      }
+
+      if (filters.config.includes('tela')) {
+        filtered.sort((a, b) =>
+          parseFloat(b.tela.replace(/[^\d,]/g, '').replace(',', '.').trim()) -
+          parseFloat(a.tela.replace(/[^\d,]/g, '').replace(',', '.').trim())
+        );
+      }
+
+      if (filters.config.includes('desempenho')) {
+        filtered.sort((a, b) =>
+          parseFloat(b.desempenho.replace(/[^\d,]/g, '').replace(',', '.').trim()) -
+          parseFloat(a.desempenho.replace(/[^\d,]/g, '').replace(',', '.').trim())
+        );
+      }
+
+      if (filters.total_price === 'low') {
+        filtered.sort((a, b) => 
+        parseFloat(a.total_price.replace(/[^\d,]/g, '').replace(',', '.').trim()) 
+        - parseFloat(b.total_price.replace(/[^\d,]/g, '').replace(',', '.').trim()));
       }
 
       if (filters.total_price === 'high') {
-        filtered.sort((a, b) =>
-          parseFloat(b.total_price.replace(/[^\d,]/g, '').replace(',', '.').trim()) -
-          parseFloat(a.total_price.replace(/[^\d,]/g, '').replace(',', '.').trim()));
+        filtered.sort((a, b) => parseFloat(b.total_price.replace(/[^\d,]/g, '').replace(',', '.').trim()) - parseFloat(a.total_price.replace(/[^\d,]/g, '').replace(',', '.').trim()));
       }
 
       // Use a função setFilteredCards somente se os resultados filtrados forem diferentes
@@ -93,19 +119,18 @@ function Product() {
   }, [cards, filters]);
 
   const handleFilterChange = (newFilters) => {
+    // Verifique se os novos filtros são diferentes dos atuais
     if (JSON.stringify(newFilters) !== JSON.stringify(filters)) {
-      setFilters(prevFilters => ({
-        ...prevFilters,
-        ...newFilters,
-        config: newFilters.config ? Array.isArray(newFilters.config) ? newFilters.config : [newFilters.config] : []
-      }));
+      setFilters(newFilters);
     }
   };
 
   return (
     <div className="bg-gray-50">
       <HeroSection />
+
       <CardSection />
+
       <Section id="product_section">
         <div className="flex justify-between">
           <h2>Selecionados a Dedo</h2>
@@ -119,7 +144,7 @@ function Product() {
             bottomCard={filteredCards[filteredCards.length - 1]}
           />
         ) : (
-          <Card type="card product loading_card" />
+          <div>Carregando...</div>
         )}
       </Section>
 

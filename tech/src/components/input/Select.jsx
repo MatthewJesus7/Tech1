@@ -1,92 +1,172 @@
-import { forwardRef, useState, useEffect } from "react";
-import Section from "../sections/Section";
-import XButton from "../items/Buttons/XButton";
-import BoxMark from "../input/BoxMark";
+import React, { useState, useEffect, forwardRef } from 'react';
+import Section from '../sections/Section';
+import XButton from '../items/Buttons/XButton';
+import BoxMark from './BoxMark';
 
 const Select = forwardRef(({ onFilterChange, closeMenu, customclass }, ref) => {
   const [selectedPrice, setSelectedPrice] = useState('');
-  const [selectedConfig, setSelectedConfig] = useState(''); // Mantém a seleção única de configuração
+  const [selectedConfig, setSelectedConfig] = useState('');
   const [selectedBrand, setSelectedBrand] = useState('');
+  
 
   useEffect(() => {
     onFilterChange({ total_price: selectedPrice, brand: selectedBrand, config: selectedConfig });
+
   }, [selectedPrice, selectedBrand, selectedConfig, onFilterChange]);
 
   const handlePriceChange = (value) => {
     setSelectedPrice(value);
   };
 
-  const handleBrandChange = (value) => {
-    setSelectedBrand(value);
+  const handleConfigChange = (value) => {
+    setSelectedConfig(value);
   };
 
-  const handleConfigChange = (value) => {
-    setSelectedConfig(prevConfig => prevConfig === value ? '' : value); // Permite apenas uma configuração por vez
-  };
+  // const handleBrandChange = (value) => {
+  //   setSelectedBrand(value);
+  // };
+
 
   return (
     <menu ref={ref} className={`menu ${customclass}`}>
       <Section>
+        {/* <Container>
+          //   <Card 
+          //   type="partner rounded-md mb-2 shadow-sm hover:shadow-md pt-3"
+          //   totalPrice=""
+          // />
+        </Container> */}
+        
         <div className="flex justify-between">
           <h3>Filtrar Por:</h3>
           <XButton handleOnClick={closeMenu} customclass="-mt-2.5" />
+          
         </div>
 
         <div className="mb-14">
-          <label htmlFor="config" className="block text-gray-800 text-md font-semibold mb-2.5">
+
+          <label htmlFor="config"
+          className="block text-gray-800 text-md font-semibold mb-2.5">
             Configurações
           </label>
-          <form className="flex flex-col">
-            <BoxMark id="none-options" value='0' text="Nenhuma das Opções" onSelect={handlePriceChange} />
 
-            {['custo_beneficio', 'hardware', 'tela', 'camera', 'desempenho'].map(config => (
-              <BoxMark
-                key={config}
-                id={config}
-                value={config}
-                text={config.charAt(0).toUpperCase() + config.slice(1)}
-                onSelect={handleConfigChange}
-                selected={selectedConfig === config} // Indica qual está selecionado
-              />
-            ))}
+          <form className="flex flex-col">
+
+            <BoxMark id="none-options"
+            value='0'
+            text="Nenhuma das Opções"
+            onSelect={handlePriceChange} />
+
+            <BoxMark 
+            id="custo-beneficio" 
+            value='custo-beneficio' 
+            text="Custo-beneficio" 
+            onSelect={handleConfigChange} />
+
+            <BoxMark 
+            id="hardware" 
+            value='hardware' 
+            text="Hardware" 
+            onSelect={handleConfigChange} />
+
+            <BoxMark 
+            id="tela" 
+            value='tela' 
+            text="Tela" 
+            onSelect={handleConfigChange} />
+
+            <BoxMark 
+            id="camera" 
+            value='camera' 
+            text="Camera" 
+            onSelect={handleConfigChange} />
+
+            <BoxMark 
+            id="desempenho" 
+            value='desempenho' 
+            text="Desempenho" 
+            onSelect={handleConfigChange} />
+
           </form>
 
-          {/* Preço (mantido como está) */}
-          <label htmlFor="minmax_price" className="block text-gray-800 text-md font-semibold mb-2.5">
+          <label htmlFor="minmax_price" 
+          className="block text-gray-800 text-md font-semibold mb-2.5">
             Preço
           </label>
+          
           <form className="flex flex-col">
-            <BoxMark id="none-options2" value='0' text="Nenhuma das Opções" onSelect={handlePriceChange} />
-            <BoxMark id="low-price" value='low' text="Menor Preço" onSelect={handlePriceChange} />
-            <BoxMark id="high-price" value='high' text="Maior Preço" onSelect={handlePriceChange} />
+
+            <BoxMark id="none-options"
+            value='0'
+            text="Nenhuma das Opções"
+            onSelect={handlePriceChange} />
+
+            <BoxMark 
+            id="low-price"
+            value='low'
+            text="Menor Preço"
+            onSelect={handlePriceChange} />
+
+            <BoxMark
+            id="high-price"
+            value='high'
+            text="Maior Preço"
+            onSelect={handlePriceChange} />
+
           </form>
 
-          <label htmlFor="price" className="block text-gray-800 text-md font-semibold my-2.5">
-            Faixa de preço
+          <label htmlFor="price" 
+            className="block text-gray-800 text-md font-semibold my-2.5">
+              Faixa de preço
           </label>
+
           <form className='flex flex-col'>
-            <BoxMark id="none-options3" value='0' text="Nenhuma das Opções" onSelect={handlePriceChange} />
-            {['1000', '900', '800', '700'].map(price => (
-              <BoxMark
-                key={price}
-                id={`price-${price}`}
-                value={price}
-                text={`Menos de R$ ${price},00`}
-                onSelect={handlePriceChange}
-              />
-            ))}
+
+            <BoxMark id="none-options2"
+            value='0'
+            text="Nenhuma das Opções"
+            onSelect={handlePriceChange} />
+
+            <BoxMark 
+            id="price-1000" 
+            value='1000' 
+            text="Menos de R$ 1000,00" 
+            onSelect={handlePriceChange} />
+
+            <BoxMark 
+            id="price-900" 
+            value='900' 
+            text="Menos de R$ 900,00" 
+            onSelect={handlePriceChange} />
+
+            <BoxMark 
+            id="price-800" 
+            value='800' 
+            text="Menos de R$ 800,00" 
+            onSelect={handlePriceChange} />
+
+            <BoxMark 
+            id="price-700" 
+            value='700' 
+            text="Menos de R$ 700,00" 
+            onSelect={handlePriceChange} />
           </form>
 
-          <label className="block text-gray-800 text-md font-semibold mt-3" htmlFor="brand">Marca</label>
+           {/* <label className="block text-gray-800 text-md font-semibold mt-3" htmlFor="brand">
+            Marca
+          </label>
           <form className="flex flex-col">
-            {['Xiaomi', 'Samsung', 'Motorola', 'Apple'].map(brand => (
-              <BoxMark key={brand} id={`brand-${brand}`} value={brand} text={brand.charAt(0).toUpperCase() + brand.slice(1)} onSelect={handleBrandChange} />
-            ))}
-          </form>
+            <BoxMark id="brand-xiaomi" value="xiaomi" text="Xiaomi" onSelect={handleBrandChange} />
+
+            <BoxMark id="brand-samsung" value="samsung" text="Samsung" onSelect={handleBrandChange} />
+
+            <BoxMark id="brand-motorola" value="motorola" text="Motorola" onSelect={handleBrandChange} />
+          </form> */}
         </div>
+
       </Section>
     </menu>
   );
 });
 
-export default Select;
+export default Select

@@ -36,7 +36,6 @@ function BigCard({ item = [], customclass }) {
                 desempenho={item.desempenho}
                 menuValue={menuValue}
                 changeMenuValue={changeMenuValue}
-                brand={item.brand}
             />
         </div>
     )
