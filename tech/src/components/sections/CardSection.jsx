@@ -3,16 +3,14 @@ import Container from "../layout/Container";
 import Carousel from "../layout/Carousel";
 import Card from "../layout/Card";
 
-import { useEffect } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../../firebaseConfig';
-
+import { collection, getDocs, query, orderBy, limit  } from 'firebase/firestore'; 
 
 function CardSection({ customclass, customclassinner}) {
 
-    const [cards, setCards] = useState([]);
+  const [cards, setCards] = useState([]);
 
     useEffect(() => {
         const fetchCards = async () => {
