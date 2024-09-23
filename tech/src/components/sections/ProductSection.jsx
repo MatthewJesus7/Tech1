@@ -55,6 +55,7 @@ function ProductSection({ items, topCard, bottomCard }) {
                         desempenho={item.desempenho}
                         menuValue={menuValues[index]}
                         changeMenuValue={() => changeMenuValue(index)}
+                        brand={item.brand}
                     />
                 </div>
             ))}

@@ -93,6 +93,7 @@ function Carousel({ items, type, customtitle, customclass }) {
                                 desempenho={item.desempenho}
                                 menuValue={menuValues[index]}
                                 changeMenuValue={() => changeMenuValue(index)}
+                                brand={item.brand}
                             />
                         </div>
                     ))}
