@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Colors from '../items/Colors'
 import Notes from '../items/Notes';
 
-const Card = ({ link, target, rel, type, customclass, customtitle, image_url, title, price, total_price, colors, handleOnClick, custo_beneficio, hardware, camera, tela, desempenho, menuValue, changeMenuValue, brand, showNotes }) => {
+const Card = ({ link, target, rel, type, customclass, customtitle, image_url, title, price, total_price, colors, onClick, custo_beneficio, hardware, camera, tela, desempenho, menuValue, changeMenuValue, brand, showNotes }) => {
 
   const [notes, setNotes] = useState(showNotes || true);
 
@@ -42,13 +42,13 @@ const Card = ({ link, target, rel, type, customclass, customtitle, image_url, ti
   return (
     <a href={link} target={target || "_blank"} rel={rel}>
       <div
-        className={` ${type} bg-white flex-col-reverse justify-end ${customclass}
+        className={` ${type} bg-white  ${customclass}
         transform transition-all duration-500
         `}
-        onClick={handleOnClick}
+        onClick={onClick}
       >
 
-        <div>
+        <div id='info'>
             {typeInnerCard()}
             <h3 className={`text-gray-700 -mb-0.5 ${customtitle} `}
             // data-first-wrap={title}
@@ -60,7 +60,7 @@ const Card = ({ link, target, rel, type, customclass, customtitle, image_url, ti
             <p className="text-sm text-gray-600 mb-1.5">{total_price}</p>
         </div>
         
-        <div 
+        <div id='image_notes'
         className={` w-full h-full 
         flex justify-between
         text-sm `}
@@ -72,7 +72,8 @@ const Card = ({ link, target, rel, type, customclass, customtitle, image_url, ti
             <p className='text-base sm:text-lg w-1 text-gray-300 price mix-blend-difference'>{brand}</p>
 
           { notes &&
-            <div className='flex flex-col items-end '>
+            <div id="notes"
+            className='flex flex-col items-end '>
 
             <button
             onClick={toggleMenu}
@@ -86,7 +87,7 @@ const Card = ({ link, target, rel, type, customclass, customtitle, image_url, ti
              }>
               Notas
             </button>
-            <Notes
+            <Notes 
             customclass={`w-[160px]
               transform transition-all duration-1000 ${
               menuIsOpen

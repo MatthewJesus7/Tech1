@@ -30,7 +30,7 @@
 
     .product {
         @apply flex;
-        @apply flex-col;
+        @apply flex-col-reverse;
         @apply justify-end;
 
         @apply flex-grow;
@@ -47,14 +47,14 @@
         @apply p-2.5;
     }
 
-    .product > div > .price {
+    .product, .search_card, .list_card > div > .price {
         @apply text-base;
         @apply sm:text-lg;
     }
 
     .product_adapted {
         @apply flex;
-        @apply flex-col;
+        @apply flex-col-reverse;
         @apply justify-end;
 
         @apply flex-grow;
@@ -131,7 +131,6 @@
         @apply h-72;
         @apply mr-1; 
         @apply p-2;
-        @apply text-nowrap text-ellipsis overflow-hidden;
     }
 
 
@@ -143,6 +142,27 @@
         @apply mb-5;
         @apply p-px;
     }
+
+    .list_card {
+        @apply min-w-full h-32;
+        @apply mt-1 mb-2.5 p-2;
+        @apply flex flex-row-reverse;
+        @apply hover:cursor-pointer;
+    }
+
+    .list_card > #image_notes {
+        @apply size-28;
+    }
+
+    .list_card > #image_notes > #notes {
+        @apply hidden;
+    }
+
+    .list_card > #info {
+        @apply h-10;
+        @apply  w-[78%] md:w-[85%] lg:w-[90%];
+    }
+
 
     .loading_card {
         @apply relative z-10 mb-5

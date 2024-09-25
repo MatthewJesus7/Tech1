@@ -19,7 +19,10 @@ function PartnersSection() {
 
             <h2>Nossas Afiliações</h2>
 
-            <Carousel items={partnersCards}></Carousel>
+            <Carousel
+            items={partnersCards}
+            showNotes={false}
+            ></Carousel>
 
         </Section>
     )
