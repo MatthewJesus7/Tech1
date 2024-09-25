@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { IoIosSearch } from "react-icons/io";
 import Link from "../../items/Link"
 import Carousel from '../Carousel';
-import Card from '../Card';
 
 import { useEffect } from 'react';
 
@@ -35,28 +34,31 @@ import { useEffect } from 'react';
       fetchCards();
     }, []);
     
-    const [searchTerm, setSearchTerm] = useState('');
-    const [filteredItems, setFilteredItems] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [filteredItems, setFilteredItems] = useState([]);
 
-    function submit(e) {
-        e.preventDefault();
-        searchItem();
-    }
+  function submit(e) {
+      e.preventDefault();
+      searchItem();
+  }
 
-    function searchItem() {
-        const results = items.filter(item =>
-            item.title.toLowerCase().includes(searchTerm.toLowerCase())
-        );
-        setFilteredItems(results)
-    }
+  function searchItem() {
+    const results = items.filter(item => {
+        const combinedText = `${item.brand || ''} ${item.title || ''}`.toLowerCase();
+        return combinedText.includes(searchTerm.toLowerCase());
+    });
+    setFilteredItems(results);
+}
+
+
 
     return (
         <>
-            <form onSubmit={submit} className='w-2/3'>
+            <form onChange={submit} className='w-2/3'>
                 <div>
                     <label htmlFor="iSearchBar">
                         <input
-                            className="bg-transparent w-full h-8 rounded-lg p-1 border border-gray-300 "
+                            className="bg-transparent w-full h-8 p-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-gray-400 "
 
                             placeholder="Pesquisar..."
                             type="text"
@@ -97,17 +99,9 @@ import { useEffect } from 'react';
 
             <Carousel
             items={filteredItems}
-            type="card search_card pb-28"
+            type="card search_card pb-[114px]"
+            customtitle=" text-nowrap text-ellipsis overflow-hidden "
             ></Carousel>
-
-            
-
-            <div className="cards-container">
-                {filteredItems.map((item, key) => (
-                    <Card
-                    />
-                ))}
-            </div>
         </>
     );
 }

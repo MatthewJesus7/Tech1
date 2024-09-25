@@ -5,7 +5,7 @@ import Container from '../layout/Container';
 import Card from './Card';
 import CarouselButton from "../items/Buttons/CarouselButton";
 
-function Carousel({ items, type, customtitle, customclass }) {
+function Carousel({ items, type, showNotes, customtitle, customclass }) {
     const itemWidth = 256;
     const marginWidth = 20;
     const carouselRef = useRef(null);
@@ -94,6 +94,7 @@ function Carousel({ items, type, customtitle, customclass }) {
                                 menuValue={menuValues[index]}
                                 changeMenuValue={() => changeMenuValue(index)}
                                 brand={item.brand}
+                                showNotes={ showNotes ||item.showNotes}
                             />
                         </div>
                     ))}

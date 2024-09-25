@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 
 import { IoIosSearch } from "react-icons/io";
 import Card from '../layout/Card';
+import ListCards from '../layout/ListCards';
+import Section from '../sections/Section'
 
 import { useEffect } from 'react';
 
@@ -41,45 +43,48 @@ function navigateTo(url) {
         searchItem();
     }
 
-    function searchItem() {
-        const results = items.filter(item =>
-            item.title.toLowerCase().includes(searchTerm.toLowerCase())
-        );
-        setFilteredItems(results)
-    }
+   
+  function searchItem() {
+    const results = items.filter(item => {
+        const combinedText = `${item.brand || ''} ${item.title || ''}`.toLowerCase();
+        return combinedText.includes(searchTerm.toLowerCase());
+    });
+    setFilteredItems(results);
+}
 
     return (
         <>
-            <form onSubmit={submit} className='w-2/3'>
-                <div>
-                    <label htmlFor="iSearchBar">
-                        <input
-                            className="bg-transparent w-full h-8 rounded-lg p-1 border border-gray-300 "
+            <Section>
+                <form onChange={submit} className='w-full'>
+                    <div>
+                        <label htmlFor="iSearchBar">
+                            <input
+                                className="bg-transparent w-full h-8 rounded-lg p-1 border border-gray-300 "
+                                placeholder="Pesquisar..."
+                                type="text"
+                                name="searchBar"
+                                id="iSearchBar"
+                                value={searchTerm}
+                                onChange={(e) => setSearchTerm(e.target.value)}
+                            />
+                        </label>
+                        <span className="absolute -ml-7 mt-2 text-gray-500">
+                            <IoIosSearch
+                            className='cursor-pointer'
+                            onClick={searchItem}
+                            />
+                        </span>
+                    </div>
+                </form>
 
-                            placeholder="Pesquisar..."
-                            type="text"
-                            name="searchBar"
-                            id="iSearchBar"
-                            value={searchTerm}
-                            onChange={(e) => setSearchTerm(e.target.value)}
-                        />
-                    </label>
+                <ListCards
+                items={filteredItems}
+                onClick={() => console.log("clicado -> selectCard")}
+                ></ListCards>
 
-                    <span className="absolute -ml-7 mt-2 text-gray-500">
-                        <IoIosSearch
-                        className='cursor-pointer'
-                        onClick={searchItem}
-                        />
-                    </span>
-                </div>
-            </form>            
+            </Section>
 
-            {/* <div className="cards-container">
-                {items.map((item, key) => (
-                    <Card showNotes={false}
-                    />
-                ))}
-            </div> */}
+            {/* SelectedCard */}
         </>
     );
 }
