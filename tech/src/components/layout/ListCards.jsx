@@ -1,15 +1,20 @@
 import Card from "./Card"
 
-const ListCards = ({ items, onClick}) => {
+const ListCards = ({ items, onClick, customclass}) => {
+
+    const handleClick = (item) => {
+        onClick(item);
+    };
+
     return(
-        <div className="min-w-full min-h-full">
+        <div className={`min-w-full min-h-full ${customclass}`}>
             {items.map((item, index) => (
                 <div key={index}
                     className={`h-32 w-full`}
+                    // (item)
                 >
                     <Card
                         type={`card list_card`}
-                        onClick={onClick}
                         // link={item.link}
                         target={item.target}
                         rel={item.rel}
@@ -27,6 +32,7 @@ const ListCards = ({ items, onClick}) => {
                         menuValue={false}
                         changeMenuValue={item.changeMenuValue}
                         brand={item.brand}
+                        onClick={() => handleClick(item)}
                     />
                 </div>
             ))}
