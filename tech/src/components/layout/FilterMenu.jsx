@@ -1,4 +1,4 @@
-import FilterButton from "../items/Buttons/FIlterButton"
+import FilterButton from "../items/Buttons/FilterButton"
 import Select from "../input/Select"
 
 import { useState, useEffect, useRef, forwardRef } from "react";
