@@ -1,23 +1,17 @@
-import React, { useState } from 'react';
-
 import { IoIosSearch } from "react-icons/io";
-import Card from '../layout/Card';
+import Menu from '../layout/Menu'
 import ListCards from '../layout/ListCards';
 import SelectedCard from '../layout/SelectedCard';
 import Section from '../sections/Section'
 import XButton from '../items/Buttons/XButton';
-import FilterButton from '../items/Buttons/FilterButton'
  
-import { useEffect } from 'react';
+import { useState, useRef, useEffect, forwardRef } from "react";
 
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../../firebaseConfig'; 
 
-function navigateTo(url) {
-    window.location.href = url;
-}
-
-const Compare = () => {
+const Compare = forwardRef((ref)  => {
+  
   const [changeValue, setChangeValue] = useState(false);
   const [items, setItems] = useState([]);
   const [filteredItems, setFilteredItems] = useState([]);
@@ -53,13 +47,63 @@ const Compare = () => {
     e.preventDefault();
     searchItem();
     setChangeValue(true);
+    openMenu('listCards')
   };
 
   const selectCard = (item) => {
-    setCardSelected(item);
-    console.log('Card Selecionado:', item);
-    console.log('Card que vai aparecer:', cardSelected)
+    setCardSelected((prevSelected) => {
+
+      if (prevSelected.length === 0) {
+        return [item];
+
+      } else if (prevSelected.length === 1) {
+        return [...prevSelected, item];
+
+      } else {
+        return [prevSelected[1], item];
+      }
+    });
+    closeMenu()
+    // console.log('Card Selecionado:', item);
   };
+
+  
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [aparecerMenu, setAparecerMenu] = useState(false);
+  const [selectedMenuItem, setSelectedMenuItem] = useState(null);
+  const menuRef = useRef(null);
+
+  const openMenu = (menuItem) => {
+    setSelectedMenuItem(menuItem);
+    setAparecerMenu(true);
+    setTimeout(() => {
+        setIsAnimating(true);
+    }, 0);
+};
+
+const closeMenu = () => {
+    setIsAnimating(true);
+    setTimeout(() => {
+        setIsAnimating(false);
+        setAparecerMenu(false);
+        setSelectedMenuItem(null);
+    }, 500);
+};
+
+const toggleMenu = (menuItem) => {
+    if (selectedMenuItem === menuItem) {
+        closeMenu();
+    } else {
+        if (aparecerMenu) {
+            closeMenu();
+            setTimeout(() => {
+                openMenu(menuItem);
+            }, 500);
+        } else {
+            openMenu(menuItem);
+        }
+    }
+};
 
   return (
       <>
@@ -83,26 +127,39 @@ const Compare = () => {
                   </div>
               </form>
 
-              <div className='flex justify-between'>
-                  <FilterButton />
-                  <XButton customclass="-mt-2" />
+              <div className='flex justify-end'>
+                  <XButton customclass="-mt-2" 
+                  handleOnClick={closeMenu}
+                  />
               </div>
 
-              <ListCards
-                  customclass="relative z-10"
-                  items={filteredItems}
-                  onClick={selectCard}
-              />
+              <Menu
+                ref={menuRef}
+                handleOnClick={closeMenu}
+                customclass={`transform transition-all duration-1000 overflow-y-auto compare_menu ${
+                    aparecerMenu
+                        ? isAnimating
+                            ? 'translate-y-[100px] glass h-[77%]'
+                            : 'translate-y-[100px] h-[77%]'
+                        : isAnimating
+                        ? 'h-0 border-none translate-y-[90px]'
+                        : 'translate-y-[90px] glass h-0 border-none'
+                }`}
+            >
+                 <ListCards
+                 customclass=""
+                 items={filteredItems}
+                 onClick={selectCard}
+             />
+            </Menu>
 
-                  <SelectedCard
-                      items={cardSelected
-                      ? [cardSelected] 
-                      : []}
-                      onCheckChange={changeValue}
-                  />
+              <SelectedCard
+                  items={cardSelected}
+                  onCheckChange={changeValue}
+              />
           </Section>
       </>
   );
-}
+});
 
 export default Compare;

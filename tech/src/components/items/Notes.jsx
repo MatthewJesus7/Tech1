@@ -9,7 +9,8 @@ const Notes = ({custo_beneficio, hardware, camera, tela, desempenho, customclass
             <XButton 
             customclass="-mr-2 -mt-2 h-14 text-2xl
             text-white mix-blend-difference
-            animated hover:ease-in-out hover:duration-300"
+            animated hover:ease-in-out hover:duration-300
+            x_button"
             handleOnClick={handleOnClick}>
             </XButton>
 

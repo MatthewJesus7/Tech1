@@ -2,7 +2,7 @@ import Section from "./Section";
 import HeroCarousel from "../layout/HeroCarousel";
 
 
-const teste = [
+const heroCarouselData = [
     {
         title: "A melhor qualidade pelo menor preço",
         titleColor: "",
@@ -49,9 +49,12 @@ const teste = [
 function HeroSection({ customclass }) {
 
     return(
-        <section className={`h-[600px] ${customclass}`}>
+        <section className={`h-[600px] bg-white ${customclass}`}>
 
-            <HeroCarousel items={teste}></HeroCarousel>
+            <HeroCarousel 
+            items={heroCarouselData}
+
+            ></HeroCarousel>
 
         </section>
     )
