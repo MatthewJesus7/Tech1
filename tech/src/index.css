@@ -169,7 +169,11 @@
 
 
     .loading_card {
-        @apply relative z-10 mb-5
+        @apply relative z-10 mb-5;
+    }
+
+    .loading_card > #image_notes > #notes {
+        @apply hidden;
     }
 
     .loading_card::before {
