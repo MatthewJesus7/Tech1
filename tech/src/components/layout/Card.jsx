@@ -81,7 +81,7 @@ const Card = ({ link, target, rel, type, customclass, customtitle, image_url, ti
             p-0.5 px-1.5
             relative
             transform transition-all duration-1000
-            ${menuIsOpen == true ?
+            ${menuIsOpen === true ?
              '-mt-9'
              : 'mt-0'}`
              }>

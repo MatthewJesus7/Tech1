@@ -152,7 +152,7 @@ const Select = forwardRef(({ onFilterChange, closeMenu, customclass }, ref) => {
             onSelect={handlePriceChange} />
           </form>
 
-           {/* <label className="block text-gray-800 text-md font-semibold mt-3" htmlFor="brand">
+           <label className="block text-gray-800 text-md font-semibold mt-3" htmlFor="brand">
             Marca
           </label>
           <form className="flex flex-col">
@@ -163,7 +163,7 @@ const Select = forwardRef(({ onFilterChange, closeMenu, customclass }, ref) => {
             <BoxMark id="brand-samsung" value="Samsung" text="Samsung" onSelect={handleBrandChange} />
 
             <BoxMark id="brand-motorola" value="Motorola" text="Motorola" onSelect={handleBrandChange} />
-          </form> */}
+          </form>
         </div>
 
       </Section>
