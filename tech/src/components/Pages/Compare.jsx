@@ -91,20 +91,20 @@ const closeMenu = () => {
     }, 500);
 };
 
-const toggleMenu = (menuItem) => {
-    if (selectedMenuItem === menuItem) {
-        closeMenu();
-    } else {
-        if (aparecerMenu) {
-            closeMenu();
-            setTimeout(() => {
-                openMenu(menuItem);
-            }, 500);
-        } else {
-            openMenu(menuItem);
-        }
-    }
-};
+// const toggleMenu = (menuItem) => {
+//     if (selectedMenuItem === menuItem) {
+//         closeMenu();
+//     } else {
+//         if (aparecerMenu) {
+//             closeMenu();
+//             setTimeout(() => {
+//                 openMenu(menuItem);
+//             }, 500);
+//         } else {
+//             openMenu(menuItem);
+//         }
+//     }
+// };
 
   return (
       <main className='bg-gray-50 pb-10'>

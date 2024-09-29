@@ -10,7 +10,7 @@ function Carousel({ items, type, showNotes, customtitle, customclass }) {
     const marginWidth = 20;
     const carouselRef = useRef(null);
     const [showButton, setShowButton] = useState(false);
-    const [menuValue, setMenuValue] = useState(false);
+    // const [menuValue, setMenuValue] = useState(false);
 
     const scrollByOneCard = (direction) => {
         const scrollAmount = direction === 'left' ? -(itemWidth + marginWidth) : (itemWidth + marginWidth);

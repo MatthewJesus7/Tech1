@@ -1,5 +1,4 @@
-import Card from "./Card"
-import Select from "../input/Select";
+import Card from "./Card";
 
 const ListCards = ({ items, onClick, customclass}) => {
 
