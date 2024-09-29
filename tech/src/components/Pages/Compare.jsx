@@ -4,6 +4,7 @@ import ListCards from '../layout/ListCards';
 import SelectedCard from '../layout/SelectedCard';
 import Section from '../sections/Section'
 import XButton from '../items/Buttons/XButton';
+import HalfHeroSection from "../sections/HalfHeroSection";
  
 import { useState, useRef, useEffect, forwardRef } from "react";
 
@@ -106,9 +107,11 @@ const toggleMenu = (menuItem) => {
 };
 
   return (
-      <>
+      <main className='bg-gray-50 pb-10'>
+          <HalfHeroSection></HalfHeroSection>
+
           <Section>
-              <form onChange={submit} className='w-full mb-2.5'>
+              <form onChange={submit} className='w-full mb-2.5 mt-10'>
                   <div>
                       <label htmlFor="iSearchBar">
                           <input
@@ -158,7 +161,7 @@ const toggleMenu = (menuItem) => {
                   onCheckChange={changeValue}
               />
           </Section>
-      </>
+      </main>
   );
 });
 
