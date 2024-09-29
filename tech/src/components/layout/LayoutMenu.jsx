@@ -45,32 +45,32 @@ function LayoutMenu({}) {
     };
 
 
-    function toggleMenu(menuItem) {
-        if (selectedMenuItem === menuItem) {
-            closeMenu();
-        } else {
-            if (aparecerMenu) {
-                setIsAnimating(true);
-                setTimeout(() => {
-                    setIsAnimating(false);
-                    setAparecerMenu(false);
-                    setTimeout(() => {
-                        setSelectedMenuItem(menuItem);
-                        setAparecerMenu(true);
-                        setTimeout(() => {
-                            setIsAnimating(true);
-                        }, 0);
-                    }, 500);
-                }, 500);
-            } else {
-                setSelectedMenuItem(menuItem);
-                setAparecerMenu(true);
-                setTimeout(() => {
-                    setIsAnimating(true);
-                }, 0);
-            }
-        }
-    };
+    // function toggleMenu(menuItem) {
+    //     if (selectedMenuItem === menuItem) {
+    //         closeMenu();
+    //     } else {
+    //         if (aparecerMenu) {
+    //             setIsAnimating(true);
+    //             setTimeout(() => {
+    //                 setIsAnimating(false);
+    //                 setAparecerMenu(false);
+    //                 setTimeout(() => {
+    //                     setSelectedMenuItem(menuItem);
+    //                     setAparecerMenu(true);
+    //                     setTimeout(() => {
+    //                         setIsAnimating(true);
+    //                     }, 0);
+    //                 }, 500);
+    //             }, 500);
+    //         } else {
+    //             setSelectedMenuItem(menuItem);
+    //             setAparecerMenu(true);
+    //             setTimeout(() => {
+    //                 setIsAnimating(true);
+    //             }, 0);
+    //         }
+    //     }
+    // };
 
     return(
 

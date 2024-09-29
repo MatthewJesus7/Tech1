@@ -1,6 +1,5 @@
 import NavBar from "./NavBar";
 import Menu from "./Menu";
-import LayoutMenu from "../layout/LayoutMenu"
 import Footer from "./Footer";
 import Search from "./MenuInner/Search";
 import Cart from "./MenuInner/Cart";

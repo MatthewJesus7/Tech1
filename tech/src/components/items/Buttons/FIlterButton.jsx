@@ -9,4 +9,4 @@ function FilterButton({ handleOnClick }) {
     )
 }
 
-export default FilterButton
+export default FilterButton;

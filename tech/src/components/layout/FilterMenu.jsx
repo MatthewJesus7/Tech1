@@ -1,4 +1,4 @@
-import FilterButton from "../items/Buttons/FilterButton"
+import FilterButton from "../items/Buttons/FilterButton.jsx"
 import Select from "../input/Select"
 
 import { useState, useEffect, useRef, forwardRef } from "react";
@@ -32,7 +32,7 @@ const FilterMenu = forwardRef(({ onFilterChange }, ref) => {
         return () => {
             document.removeEventListener('click', handleDocumentClick);
         };
-    }, [aparecerMenu]);
+    }, [aparecerMenu, handleDocumentClick]);
 
     const closeMenu = () => {
         setIsAnimating(true);
@@ -97,4 +97,4 @@ const FilterMenu = forwardRef(({ onFilterChange }, ref) => {
     );
 });
 
-export default FilterMenu
+export default FilterMenu;
