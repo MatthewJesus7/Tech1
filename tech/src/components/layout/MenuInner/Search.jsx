@@ -81,16 +81,16 @@ import { useEffect } from 'react';
             <div className='flex my-3 py-1 text-lg font-semibold flex-wrap'>
                 <Link onClick={() => navigateTo('/about')}
                 text="sobre nós"
-                textCustom="pr-5"
+                textCustom="pr-10 pb-1"
                 ></Link>
 
                 <Link onClick={() => navigateTo('/TalkToUs')}
                 text="fale conosco"
-                textCustom="pr-5"
+                textCustom="pr-10 pb-1"
                 ></Link>
 
                 <Link onClick={() => navigateTo('/Compare')}
-                text="Comparar Smartphones"
+                text="comparar smartphones"
                 textCustom=""
                 ></Link>
             </div>
