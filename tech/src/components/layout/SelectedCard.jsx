@@ -1,27 +1,30 @@
-import { IoIosSearch } from "react-icons/io";
+
 import Card from "./Card";
+import Notes from "../items/Notes"
+import SelectOrFind from "./MenuInner/SelectOrFind";
 
 const SelectedCard = ({ onCheckChange, items = [] }) => {
-    // Verifique se items é um array
+
     const isItemsArray = Array.isArray(items) && items.length > 0;
 
     return (
-        <div className="border rounded-lg w-full h-96 relative z-0">
+        <div 
+        className={`border rounded-t-xl rounded-b-lg w-full mt-1 
+        ${items.length > 0
+            ? 'h-[670px]'
+            : 'h-96'
+        }
+        `}>
             {items.length === 0 && !onCheckChange ? (
-                <div className="px-5">
-                    <IoIosSearch className="text-7xl text-gray-300 mx-auto mt-32" />
-                    <p className="text-center text-gray-500">
-                        Parece que você ainda não pesquisou nenhum item, faça uma pesquisa para comparar os itens!
-                    </p>
-                </div>
+                <SelectOrFind/>
             ) : (
-                <div>
-                    {/* Verifica se items é um array válido antes de chamar .map */}
-                    {isItemsArray ? (
+                <div className="size-full flex justify-between">
+                    {isItemsArray && items.length > 0 ? (
                         items.map((item, index) => (
-                            <div key={index} className={`h-32 w-full `}>
+                            <div key={index} className="h-1/2 w-[49.5%] ">
+                                {/* Renderizando o Card */}
                                 <Card
-                                    type={`card product_adapted`}
+                                    type="card product_adapted notes_false"
                                     link={item.link}
                                     target={item.target}
                                     rel={item.rel}
@@ -29,23 +32,25 @@ const SelectedCard = ({ onCheckChange, items = [] }) => {
                                     price={item.price}
                                     total_price={item.total_price}
                                     image_url={item.image_url}
-                                    colors={item.colors}
                                     customtitle="product_elipsis"
+                                    menuValue={false}
+                                    changeMenuValue={item.changeMenuValue}
+                                    brand={item.brand}
+                                />
+                                
+                                {/* Renderizando o Notes */}
+                                <Notes
+                                    customclass='compare_notes'
                                     custo_beneficio={item.custo_beneficio}
                                     hardware={item.hardware}
                                     camera={item.camera}
                                     tela={item.tela}
                                     desempenho={item.desempenho}
-                                    menuValue={false}
-                                    changeMenuValue={item.changeMenuValue}
-                                    brand={item.brand}
                                 />
                             </div>
                         ))
                     ) : (
-                        <p className="text-center text-gray-500">
-                            Nenhum item foi selecionado ou encontrado.
-                        </p>
+                        <SelectOrFind/>
                     )}
                 </div>
             )}

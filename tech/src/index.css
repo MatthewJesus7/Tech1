@@ -96,6 +96,10 @@
         @apply cursor-pointer;
     }
 
+    .partner > #image_notes > #notes {
+        @apply hidden;
+    }
+
     .big_card {
         @apply p-2.5;
         @apply pb-[120px];
@@ -329,6 +333,38 @@
     .small_card h3 {
         @apply mt-16;
         @apply text-sm;
+    }
+
+    .compare_notes {
+       
+    }
+
+    .compare_notes > ul {
+        @apply w-full;
+        @apply text-left;
+        @apply rounded-lg;
+    }
+
+    .compare_notes > ul > li {
+        @apply px-2;
+        @apply w-full;
+        @apply border;
+    }
+
+    .compare_notes > .x_button {
+        @apply hidden;
+    }
+
+    .x_button {
+
+    }
+
+    .compare_menu > div > .x_button {
+        @apply hidden;
+    }
+
+    .notes_false > #image_notes > #notes {
+        @apply hidden;
     }
 
     h2 {

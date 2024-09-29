@@ -1,4 +1,5 @@
 import Card from "./Card"
+import Select from "../input/Select";
 
 const ListCards = ({ items, onClick, customclass}) => {
 
@@ -7,11 +8,11 @@ const ListCards = ({ items, onClick, customclass}) => {
     };
 
     return(
-        <div className={`min-w-full min-h-full ${customclass}`}>
+        <div className={`w-full min-h-full ${customclass}`}>
+
             {items.map((item, index) => (
                 <div key={index}
                     className={`h-32 w-full`}
-                    // (item)
                 >
                     <Card
                         type={`card list_card`}
