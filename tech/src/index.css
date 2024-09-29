@@ -367,6 +367,15 @@
         @apply hidden;
     }
 
+    .hero_section > div  {
+        @apply h-[300px];
+        @apply -mt-5;
+    }
+
+    .hero_section .father_dot {
+        @apply bottom-10;
+    }
+
     h2 {
         @apply pb-5;
         @apply text-3xl;
