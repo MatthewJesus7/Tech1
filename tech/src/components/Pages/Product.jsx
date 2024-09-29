@@ -117,7 +117,7 @@ function Product() {
     };
 
     applyFilters();
-  }, [cards, filters]);
+  }, [cards, filters, filteredCards]);
 
   const handleFilterChange = (newFilters) => {
     // Verifique se os novos filtros são diferentes dos atuais

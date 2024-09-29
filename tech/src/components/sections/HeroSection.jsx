@@ -1,4 +1,3 @@
-import Section from "./Section";
 import HeroCarousel from "../layout/HeroCarousel";
 
 
