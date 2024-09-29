@@ -4,7 +4,7 @@ function HalfHeroSection({ customclass }) {
     return(
         <>
             <HeroSection
-            customclass="max-h-[300px] overflow-hidden hero_section "
+            customclass="max-h-[300px] overflow-hidden hero_section"
             ></HeroSection>
         </>
     )

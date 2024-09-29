@@ -111,11 +111,17 @@ const closeMenu = () => {
           <HalfHeroSection></HalfHeroSection>
 
           <Section>
-              <form onChange={submit} className='w-full mb-2.5 mt-10'>
+              <h2 className="pb-3 pt-5"
+              >Comparar Smartphones</h2>
+
+              <form onSelect={submit} onChange={submit} className='w-full mb-2.5 mt-5'>
                   <div>
                       <label htmlFor="iSearchBar">
                           <input
-                              className="bg-transparent w-full h-8 rounded-lg p-1 border border-gray-300"
+                              className="bg-transparent w-full h-8 rounded-lg p-1 border border-gray-300
+                              focus:outline-none focus:ring-2
+                              focus:ring-gray-400
+                              "
                               placeholder="Pesquisar..."
                               type="text"
                               name="searchBar"
@@ -125,7 +131,7 @@ const closeMenu = () => {
                           />
                       </label>
                       <span className="absolute -ml-7 mt-2 text-gray-500">
-                          <IoIosSearch className='cursor-pointer' onClick={searchItem} />
+                          <IoIosSearch className='cursor-pointer' onClick={submit} />
                       </span>
                   </div>
               </form>
@@ -139,23 +145,22 @@ const closeMenu = () => {
               <Menu
                 ref={menuRef}
                 handleOnClick={closeMenu}
-                customclass={`transform transition-all duration-1000 overflow-y-auto compare_menu ${
+                customclass={`transform transition-all duration-1000 overflow-y-auto compare_menu
+                absolute bg-gray-50 ${
                     aparecerMenu
                         ? isAnimating
-                            ? 'translate-y-[100px] glass h-[77%]'
-                            : 'translate-y-[100px] h-[77%]'
+                            ? 'top-[534px] glass h-full'
+                            : 'top-[534px] h-full'
                         : isAnimating
-                        ? 'h-0 border-none translate-y-[90px]'
-                        : 'translate-y-[90px] glass h-0 border-none'
+                        ? 'top-[520px] h-0 border-none '
+                        : 'top-[520px] glass h-0 border-none'
                 }`}
             >
                  <ListCards
-                 customclass=""
                  items={filteredItems}
                  onClick={selectCard}
              />
             </Menu>
-
               <SelectedCard
                   items={cardSelected}
                   onCheckChange={changeValue}

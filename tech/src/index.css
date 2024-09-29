@@ -150,12 +150,12 @@
     .list_card {
         @apply min-w-full h-32;
         @apply mt-1 mb-2.5 p-2;
-        @apply flex flex-row-reverse;
+        @apply flex flex-row-reverse justify-between;
         @apply hover:cursor-pointer;
     }
 
     .list_card > #image_notes {
-        @apply size-28;
+        @apply size-28 pr-5 flex-shrink-0;
     }
 
     .list_card > #image_notes > #notes {
@@ -164,7 +164,7 @@
 
     .list_card > #info {
         @apply h-10;
-        @apply  w-[78%] md:w-[85%] lg:w-[90%];
+        @apply flex-grow w-[70%];
     }
 
 
@@ -362,6 +362,10 @@
     .x_button {
 
     }
+/* 
+    .compare_menu {
+       @apply sticky ;
+    } */
 
     .compare_menu > div > .x_button {
         @apply hidden;
@@ -377,7 +381,7 @@
     }
 
     .hero_section .father_dot {
-        @apply bottom-10;
+        @apply bottom-5;
     }
 
     h2 {
