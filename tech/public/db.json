@@ -1,0 +1,90 @@
+{
+    "cards": [
+        {
+            "link": "https://amzn.to/3ylNZPO",
+            "title": "Xiaomi Redmi Note 11",
+            "price": "12x R$ 78,86",
+            "totalPrice": "R$ 844,95",
+            "backgroundImage": "url('https://m.media-amazon.com/images/I/61sJSKeJExL._AC_SX569_.jpg')"
+        },
+
+        {
+            "link": "https://amzn.to/4dmSl8a",
+            "title": "Motorola Moto G34",
+            "price": "10x R$ 94,80",
+            "totalPrice": "R$948,00",
+            "backgroundImage": "url('https://m.media-amazon.com/images/I/51ezdcOv0qL._AC_SX679_.jpg')"
+        },
+
+        {
+            "link": "https://amzn.to/4cvQblu",
+            "title": "Motorola Moto G53 5G",
+            "price": "12x R$ 93,24",
+            "totalPrice": "R$999,00",
+            "backgroundImage": "url('https://m.media-amazon.com/images/I/51WS97L4FUL._AC_SX522_.jpg')"
+        },
+
+        {
+            "link": "https://amzn.to/3LKfrcY",
+            "title": "Samsung Galaxy A05s",
+            "price": "12x R$ 90,44",
+            "totalPrice": "R$999,00",
+            "backgroundImage": "url('https://m.media-amazon.com/images/I/51oQc-4fAeL.__AC_SX300_SY300_QL70_ML2_.jpg')"
+        },
+
+        {
+            "link": "https://amzn.to/3LLC3K1",
+            "title": "Samsung Galaxy A14 5G",
+            "price": "10x R$ 101,20",
+            "totalPrice":"R$ 1.012,00", 
+            "backgroundImage": "url('https://m.media-amazon.com/images/I/61ezr50FpsL._AC_SX569_.jpg')"
+        },
+
+        {
+            "link": "https://amzn.to/3Sui0DD",
+            "title": "Redmi Note 12",
+            "price": "12x R$ 95,66",
+            "totalPrice": "R$ 1.024,95",
+            "backgroundImage": "url('https://m.media-amazon.com/images/I/516d7C9LrtL._AC_SX569_.jpg')"
+        },
+
+        {
+            "link": "https://amzn.to/3YwZZs6",
+            "title": "Redmi Note 13 4G",
+            "price": "12x R$ 111,01",
+            "totalPrice": "R$1.189,39",
+            "backgroundImage": "url('https://m.media-amazon.com/images/I/41zK0DZZNRL._AC_SX569_.jpg')"
+        },
+
+        {
+            "link": "https://amzn.to/3zNe6PL",
+            "title": "Sansung Galaxy A25 5G",
+            "price": "10x R$ 119,90",
+            "totalPrice": "R$ 1.199,00",
+            "colors":[
+                "[#23232D]", "[#F7F8B4]"
+            ],
+            "backgroundImage": "url('https://m.media-amazon.com/images/I/51oC7szmO8L._AC_SX569_.jpg')"
+        },
+
+        {
+            "link": "https://amzn.to/3WtLIKc",
+            "title": "Samsung Galaxy A25 5G",
+            "price": "12x R$ 133,37",
+            "totalPrice": "R$1.429,00",
+            "colors":[
+                "[#23232D]", "[#F7F8B4]"
+            ],
+            "backgroundImage": "url('https://m.media-amazon.com/images/I/51Cc4iXUumL._AC_SX679_.jpg')"
+        },
+
+        {
+            "link": "https://amzn.to/3A6Vcnm",
+            "title": "Redmi Note 12 Pro 4G",
+            "price": "12x R$ 124,61",
+            "totalPrice": "R$1.335,15",
+            "backgroundImage": "url('https://m.media-amazon.com/images/I/5142s1BuATL._AC_SX569_.jpg')"
+        }
+    ]
+  }
+
