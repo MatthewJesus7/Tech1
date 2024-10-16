@@ -55,31 +55,31 @@ function Footer() {
                         <li>
                             <ul>
                                 <li>
-                                    <a href="#" 
+                                    <button
                                     onClick={() => navigateTo('/')}>
                                         <h3>Home</h3>
-                                    </a>
+                                    </button>
                                 </li>
 
                                 <li>
-                                    <a href="#" 
+                                <button
                                     onClick={() => navigateTo('/TalkToUs')}>
                                         <h3>Fale Conosco</h3>
-                                    </a>
+                                </button>
                                 </li>
 
                                 <li>
-                                    <a href="#" 
+                                <button
                                     onClick={() => navigateTo('/Compare')}>
                                         <h3>Comparar Smartphones</h3>
-                                    </a>
+                                </button>
                                 </li>
 
                                 <li>
-                                    <a href="#" 
+                                <button
                                     onClick={() => navigateTo('/about')}>
                                         <h3>Sobre Nós</h3>
-                                    </a>
+                                </button>
                                 </li>
                             </ul>
                         </li>
