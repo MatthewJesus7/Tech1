@@ -5,7 +5,7 @@ import CarouselButton from "../items/Buttons/CarouselButton";
 import FatherDot from './FatherDot';
 import HeroCard from "../layout/HeroCard"
 
-const HeroCarousel = ({ items, customclass }) => {
+const HeroCarousel = ({ items, customclass, customCarousel }) => {
     const carouselRef = useRef(null);
     const [showButton, setShowButton] = useState(false);
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -91,15 +91,15 @@ const HeroCarousel = ({ items, customclass }) => {
     return (
         <Container
         customclass={`
-        min-[1px]:w-[97vw]
-        min-[1px]:h-[580px] overflow-hidden ${customclass}`}>
+        min-[1px]:w-[100vw]
+        min-[1px]:h-[540px] md:h-[460px] lg:h-96 overflow-hidden ${customclass}`}>
             <div
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
-                className="carousel-container relative size-full"
+                className="carousel-container relative size-full "
             >
                 <div
-                    className="flex transition-transform duration-50 ease-in-out size-full"
+                    className="flex transition-transform duration-50 ease-in-out size-full "
                     ref={carouselRef}
                     onTouchStart={startDrag}
                     onTouchMove={drag}
@@ -112,15 +112,14 @@ const HeroCarousel = ({ items, customclass }) => {
                     {items.map((item, index) => (
                         <div
                             key={index}
-                            className="carousel-item flex-shrink-0 card_hero bg-white"
+                            className="carousel-item flex-shrink-0 card_hero"
                             style={{ width: `${100 / items.length}%` }}
                         >
                             <HeroCard
-                                customclass='bg-white'
+                                customclass={customCarousel}
                                 title={item.title}
                                 titleColor={item.titleColor}
                                 text={item.text}
-                                textColor={item.textColor}
                                 textButton={item.textButton}
                                 typeButton={item.typeButton}
                                 img={item.img}
@@ -129,6 +128,10 @@ const HeroCarousel = ({ items, customclass }) => {
                                 href={item.href}
                                 target={item.target}
                                 rel={item.rel}
+                                backgroundPosition={item.backgroundPosition}
+                                backgroundColor={item.backgroundColor}
+                                textStyle={item.textStyle}
+                                imgSize={item.imgSize}
                             />
                         </div>
                     ))}

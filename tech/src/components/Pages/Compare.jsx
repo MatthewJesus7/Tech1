@@ -161,10 +161,13 @@ const closeMenu = () => {
                  onClick={selectCard}
              />
             </Menu>
-              <SelectedCard
-                  items={cardSelected}
-                  onCheckChange={changeValue}
-              />
+
+            <SelectedCard
+                items={cardSelected}
+                onCheckChange={changeValue}
+            />
+
+              
           </Section>
       </main>
   );

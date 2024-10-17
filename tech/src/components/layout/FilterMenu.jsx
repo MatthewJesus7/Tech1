@@ -87,8 +87,8 @@ const FilterMenu = forwardRef(({ onFilterChange }, ref) => {
                         ? '-translate-y-1 h-full'
                         : '-translate-y-1'
                     : isAnimating
-                    ? 'h-10 border-none -translate-y-0'
-                    : 'translate-y-full h-full border-none'
+                    ? 'h-0 border-none -translate-y-0'
+                    : 'translate-y-[110%] h-full border-none'
             }`}
             >
                 {selectedMenuItem === 'filter'}

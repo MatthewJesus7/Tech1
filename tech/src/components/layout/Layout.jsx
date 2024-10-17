@@ -71,6 +71,25 @@ const Layout = forwardRef(({ children }, ref) => {
             }
         }
     };
+
+    const handleClickOutside = (event) => {
+
+    if (
+        menuRef.current && !menuRef.current.contains(event.target) &&
+        navBarRef.current && !navBarRef.current.contains(event.target)
+      ) {
+        closeMenu();
+      }
+    };
+  
+    useEffect(() => {
+
+      document.addEventListener('mousedown', handleClickOutside);
+
+      return () => {
+        document.removeEventListener('mousedown', handleClickOutside);
+      };
+    }, []);
     
     return(
         <div className={`overflow-x-hidden ${aparecerMenu ? 'blur-background' : ''} `}>
@@ -85,13 +104,13 @@ const Layout = forwardRef(({ children }, ref) => {
             <Menu
                 ref={menuRef}
                 handleOnClick={closeMenu}
-                customclass={`transform transition-all duration-1000 ${
+                customclass={`transform transition-all absolute duration-1000 ${
                     aparecerMenu
                         ? isAnimating
                             ? 'translate-y-0 glass h-full sm:h-[500px]'
                             : 'translate-y-0 h-[500px]'
                         : isAnimating
-                        ? 'h-10 border-none -translate-y-1'
+                        ? 'border-none -translate-y-1 h-0'
                         : '-translate-y-1 glass h-0 border-none'
                 }`}
             >

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Colors from '../items/Colors'
 import Notes from '../items/Notes';
 
-const Card = ({ link, target, rel, type, customclass, customtitle, image_url, title, price, total_price, colors, onClick, custo_beneficio, hardware, camera, tela, desempenho, menuValue, changeMenuValue, brand, showNotes }) => {
+const Card = ({ link, target, rel, type, customclass, customtitle, image_url, title, price, total_price, colors, onClick, custo_beneficio, hardware, camera, tela, desempenho, menuValue, changeMenuValue, brand, label, showNotes }) => {
 
   const [notes, setNotes] = useState(showNotes || true);
 
@@ -49,15 +49,19 @@ const Card = ({ link, target, rel, type, customclass, customtitle, image_url, ti
       >
 
         <div id='info'>
-            {typeInnerCard()}
-            <h3 className={`text-gray-700 -mb-0.5 ${customtitle} `}
-            // data-first-wrap={title}
-            >{title}</h3>
-            {/* text-nowrap text-ellipsis overflow-hidden */}
 
-            <p className="text-lg font-semibold text-gray-700 price">{price}</p>
+            {label && <div className="card_label">
+              <p>{label}</p>
+            </div>}
+
+            {typeInnerCard()}
+            <h3 className={`text-gray-800 ${customtitle} text-nowrap text-ellipsis overflow-hidden`}
+            >{title}</h3>
             
-            <p className="text-sm text-gray-600 mb-1.5">{total_price}</p>
+
+            <p className="text-base font-semibold text-gray-700 price">{price}</p>
+            
+            <p className="text-sm text-gray-600 mb-1.5 total_price ">{total_price}</p>
         </div>
         
         <div id='image_notes'
@@ -69,7 +73,7 @@ const Card = ({ link, target, rel, type, customclass, customtitle, image_url, ti
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat' }}
         >
-            <p className='text-base sm:text-lg w-1 text-gray-300 price mix-blend-difference'>{brand}</p>
+            <p className='text-base sm:text-lg w-1 h-5 text-gray-300 price mix-blend-difference brand'>{brand}</p>
 
           { notes &&
             <div id="notes"

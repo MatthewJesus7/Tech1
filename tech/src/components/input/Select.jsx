@@ -55,7 +55,7 @@ const Select = forwardRef(({ onFilterChange, closeMenu, customclass }, ref) => {
             <BoxMark id="none-options"
             value='0'
             text="Nenhuma das Opções"
-            onSelect={handlePriceChange} />
+            onSelect={handleConfigChange} />
 
             <BoxMark 
             id="custo-beneficio" 
@@ -128,6 +128,42 @@ const Select = forwardRef(({ onFilterChange, closeMenu, customclass }, ref) => {
             onSelect={handlePriceChange} />
 
             <BoxMark 
+            id="price-1600" 
+            value='1600' 
+            text="Menos de R$ 1600,00" 
+            onSelect={handlePriceChange} />
+
+            <BoxMark 
+            id="price-1500" 
+            value='1500' 
+            text="Menos de R$ 1500,00" 
+            onSelect={handlePriceChange} />
+
+            <BoxMark 
+            id="price-1400" 
+            value='1400' 
+            text="Menos de R$ 1400,00" 
+            onSelect={handlePriceChange} />
+
+            <BoxMark 
+            id="price-1300" 
+            value='1300' 
+            text="Menos de R$ 1300,00" 
+            onSelect={handlePriceChange} />
+
+            <BoxMark 
+            id="price-1200" 
+            value='1200' 
+            text="Menos de R$ 1200,00" 
+            onSelect={handlePriceChange} />
+
+            <BoxMark 
+            id="price-1100" 
+            value='1100' 
+            text="Menos de R$ 1100,00" 
+            onSelect={handlePriceChange} />
+
+            <BoxMark 
             id="price-1000" 
             value='1000' 
             text="Menos de R$ 1000,00" 
@@ -156,6 +192,12 @@ const Select = forwardRef(({ onFilterChange, closeMenu, customclass }, ref) => {
             Marca
           </label>
           <form className="flex flex-col">
+
+            <BoxMark id="none-options4"
+            value='0'
+            text="Nenhuma das Opções"
+            onSelect={handleBrandChange} />
+
             <BoxMark id="brand-apple" value="Apple" text="Apple" onSelect={handleBrandChange} />
 
             <BoxMark id="brand-xiaomi" value="Xiaomi" text="Xiaomi" onSelect={handleBrandChange} />
