@@ -1,6 +1,6 @@
-const LoadingAbout = () => {
+const LoadingAbout = ({customclass}) => {
     return(
-        <div className="loading_image">
+        <div className={`loading_image ${customclass}`}>
 
             <div className="loading_title"></div>
             <div className="loading_title mini sm:hidden"></div>

@@ -6,7 +6,19 @@ import Card from './Card';
 import CarouselButton from "../items/Buttons/CarouselButton";
 
 function Carousel({ items, type, showNotes, customtitle, customclass }) {
-    const itemWidth = 256;
+    let itemWidth = 256;
+
+    function updateItemWidth() {
+    if (window.matchMedia("(min-width: 440px)").matches) {
+        itemWidth = 394;
+    } else {
+        itemWidth = 256;
+    }
+    }
+
+    updateItemWidth();
+
+    window.addEventListener('resize', updateItemWidth);
     const marginWidth = 20;
     const carouselRef = useRef(null);
     const [showButton, setShowButton] = useState(false);
@@ -59,13 +71,13 @@ function Carousel({ items, type, showNotes, customtitle, customclass }) {
 
     return (
         <Container
-        customclass={` min-[1px]:w-[100vw] xl:w-[111%] -ml-2.5  overflow-x-hidden ${customclass}`}>
+        customclass={` min-[1px]:w-[110vw] -ml-[10vw] overflow-x-hidden  ${customclass}`}>
             <div
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
                 className="w-full relative cursor-pointer">
                 <div
-                    className="flex transition-transform duration-500 p-2.5 pb-7 w-full
+                    className="flex transition-transform duration-500 p-2.5 pl-[10vw] pr-[8vw] pb-7 w-full
                     overflow-x-auto snap-x snap-mandatory carousel-hide-scrollbar"
                     ref={carouselRef}
                     onTouchStart={handleTouchStart}
@@ -75,7 +87,6 @@ function Carousel({ items, type, showNotes, customtitle, customclass }) {
                     {items.map((item, index) => (
                         <div key={index}>
                             <Card
-                                customclass='pb-[120px]'
                                 type={type || item.type}
                                 link={item.link}
                                 target={item.target}
@@ -95,6 +106,7 @@ function Carousel({ items, type, showNotes, customtitle, customclass }) {
                                 changeMenuValue={() => changeMenuValue(index)}
                                 brand={item.brand}
                                 showNotes={ showNotes ||item.showNotes}
+                                label={item.label}
                             />
                         </div>
                     ))}
@@ -103,12 +115,12 @@ function Carousel({ items, type, showNotes, customtitle, customclass }) {
                 {showButton && (
                     <>
                         <CarouselButton
-                        customclass=" left-8 cPrev "
+                        customclass=" left-[10%] cPrev "
                         text={<IoIosArrowBack />}
                         onLeft={() => scrollByOneCard('left')} />
 
                         <CarouselButton
-                        customclass=" right-12 md:right-20 cNext "
+                        customclass=" right-[10%] cNext "
                         text={<IoIosArrowForward />} onRight={() => scrollByOneCard('right')} />
                     </>
                 )}

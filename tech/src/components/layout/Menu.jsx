@@ -9,8 +9,10 @@ const Menu = forwardRef(({ handleOnClick, customclass, children }, ref) => {
             <menu ref={ref} className={`fixed top-11 left-0 w-full z-50 border shadow-xl overflow-hidden ${customclass}`}>
                 <Section customclass=" ">
 
-                    <div className=" flex justify-end w-full -mb-11 x_button">
-                        <XButton handleOnClick={handleOnClick}>
+                    <div className=" flex justify-end p-0 -mb-11 x_button">
+                        <XButton handleOnClick={handleOnClick}
+                        customclass='-mr-[18px]'
+                        >
                         </XButton>
                     </div>
 

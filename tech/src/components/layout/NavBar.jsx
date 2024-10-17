@@ -26,12 +26,6 @@ import { IoIosSearch } from "react-icons/io";
                     </li>
 
                     {/* <div className='w-1/3 sm:w-1/2'></div> */}
-
-                    {/* <li>
-                        <Link href="#" target="_blank" text={<FaInfo/>}
-                        textCustom=" text-lg pt-0.5 "
-                        ></Link>
-                    </li> */}
                     
                     {/* <li>
                         <Link onClick={handleOnClickCart}
@@ -44,7 +38,7 @@ import { IoIosSearch } from "react-icons/io";
                     <li>
                         <Link onClick={handleOnClickSearch}
                         text={<IoIosSearch/>}
-                        textCustom=" text-lg pt-1 "
+                        textCustom=" text-lg pt-1 pr-0.5"
                         ></Link>
                     </li>
                 </ul>

@@ -37,11 +37,16 @@ function Product() {
     const applyFilters = () => {
       const filtered = cards.filter(card => {
         const total_price = parseFloat(card.total_price.replace(/[^\d,]/g, '').replace(',', '.').trim());
-
-        // Verifica se o preço se encaixa nos filtros
+  
         const matchesPrice = (() => {
           if (filters.total_price === 'low') return true;
           if (filters.total_price === 'high') return true;
+          if (filters.total_price === '1600') return total_price <= 1600;
+          if (filters.total_price === '1500') return total_price <= 1500;
+          if (filters.total_price === '1400') return total_price <= 1400;
+          if (filters.total_price === '1300') return total_price <= 1300;
+          if (filters.total_price === '1200') return total_price <= 1200;
+          if (filters.total_price === '1100') return total_price <= 1100;
           if (filters.total_price === '1000') return total_price <= 1000;
           if (filters.total_price === '900') return total_price <= 900;
           if (filters.total_price === '800') return total_price <= 800;
@@ -49,75 +54,74 @@ function Product() {
           if (filters.total_price === '0') return true;
           return true;
         })();
-
+  
         const matchesBrand = filters.brand ? card.brand === filters.brand : true;
-
+  
         const matchesConfig = (() => {
-          if (!filters.config.length) return true; 
-            if (filters.config === 'custo-beneficio') return true;
-            if (filters.config === 'hardware') return true;
-            if (filters.config === 'camera') return true;
-            if (filters.config === 'tela') return true;
-            if (filters.config === 'desempenho') return true;
+          if (!filters.config.length) return true;
+          return true;  // Sempre valida, pois será ordenado no `sort`.
         })();
-
+  
         return matchesPrice && matchesBrand && matchesConfig;
       });
-
-      // Ordenação condicional se algum filtro de `config` estiver selecionado
-      if (filters.config.includes('custo-beneficio')) {
-        filtered.sort((a, b) =>
-          parseFloat(b.custo_beneficio.replace(/[^\d,]/g, '').replace(',', '.').trim()) -
-          parseFloat(a.custo_beneficio.replace(/[^\d,]/g, '').replace(',', '.').trim())
-        );
-      }
-
-      if (filters.config.includes('hardware')) {
-        filtered.sort((a, b) =>
-          parseFloat(b.hardware.replace(/[^\d,]/g, '').replace(',', '.').trim()) -
-          parseFloat(a.hardware.replace(/[^\d,]/g, '').replace(',', '.').trim())
-        );
-      }
-
-      if (filters.config.includes('camera')) {
-        filtered.sort((a, b) =>
-          parseFloat(b.camera.replace(/[^\d,]/g, '').replace(',', '.').trim()) -
-          parseFloat(a.camera.replace(/[^\d,]/g, '').replace(',', '.').trim())
-        );
-      }
-
-      if (filters.config.includes('tela')) {
-        filtered.sort((a, b) =>
-          parseFloat(b.tela.replace(/[^\d,]/g, '').replace(',', '.').trim()) -
-          parseFloat(a.tela.replace(/[^\d,]/g, '').replace(',', '.').trim())
-        );
-      }
-
-      if (filters.config.includes('desempenho')) {
-        filtered.sort((a, b) =>
-          parseFloat(b.desempenho.replace(/[^\d,]/g, '').replace(',', '.').trim()) -
-          parseFloat(a.desempenho.replace(/[^\d,]/g, '').replace(',', '.').trim())
-        );
-      }
-
-      if (filters.total_price === 'low') {
-        filtered.sort((a, b) => 
-        parseFloat(a.total_price.replace(/[^\d,]/g, '').replace(',', '.').trim()) 
-        - parseFloat(b.total_price.replace(/[^\d,]/g, '').replace(',', '.').trim()));
-      }
-
-      if (filters.total_price === 'high') {
-        filtered.sort((a, b) => parseFloat(b.total_price.replace(/[^\d,]/g, '').replace(',', '.').trim()) - parseFloat(a.total_price.replace(/[^\d,]/g, '').replace(',', '.').trim()));
-      }
-
-      // Use a função setFilteredCards somente se os resultados filtrados forem diferentes
+  
+      // Função combinada de ordenação
+      filtered.sort((a, b) => {
+        // Ordenar por custo-benefício se estiver incluído
+        if (filters.config.includes('custo-beneficio')) {
+          const custoBeneficioDiff = parseFloat(b.custo_beneficio.replace(/[^\d,]/g, '').replace(',', '.').trim()) - 
+            parseFloat(a.custo_beneficio.replace(/[^\d,]/g, '').replace(',', '.').trim());
+          if (custoBeneficioDiff !== 0) return custoBeneficioDiff;
+        }
+  
+        // Ordenar por hardware
+        if (filters.config.includes('hardware')) {
+          const hardwareDiff = parseFloat(b.hardware.replace(/[^\d,]/g, '').replace(',', '.').trim()) - 
+            parseFloat(a.hardware.replace(/[^\d,]/g, '').replace(',', '.').trim());
+          if (hardwareDiff !== 0) return hardwareDiff;
+        }
+  
+        // Ordenar por câmera
+        if (filters.config.includes('camera')) {
+          const cameraDiff = parseFloat(b.camera.replace(/[^\d,]/g, '').replace(',', '.').trim()) - 
+            parseFloat(a.camera.replace(/[^\d,]/g, '').replace(',', '.').trim());
+          if (cameraDiff !== 0) return cameraDiff;
+        }
+  
+        // Ordenar por tela
+        if (filters.config.includes('tela')) {
+          const telaDiff = parseFloat(b.tela.replace(/[^\d,]/g, '').replace(',', '.').trim()) - 
+            parseFloat(a.tela.replace(/[^\d,]/g, '').replace(',', '.').trim());
+          if (telaDiff !== 0) return telaDiff;
+        }
+  
+        // Ordenar por desempenho
+        if (filters.config.includes('desempenho')) {
+          const desempenhoDiff = parseFloat(b.desempenho.replace(/[^\d,]/g, '').replace(',', '.').trim()) - 
+            parseFloat(a.desempenho.replace(/[^\d,]/g, '').replace(',', '.').trim());
+          if (desempenhoDiff !== 0) return desempenhoDiff;
+        }
+  
+        // Se nenhuma diferença foi encontrada, ordenar pelo preço
+        if (filters.total_price === 'low') {
+          return parseFloat(a.total_price.replace(/[^\d,]/g, '').replace(',', '.').trim()) -
+            parseFloat(b.total_price.replace(/[^\d,]/g, '').replace(',', '.').trim());
+        } else if (filters.total_price === 'high') {
+          return parseFloat(b.total_price.replace(/[^\d,]/g, '').replace(',', '.').trim()) -
+            parseFloat(a.total_price.replace(/[^\d,]/g, '').replace(',', '.').trim());
+        }
+  
+        return 0; // Nenhuma diferença, manter a ordem original
+      });
+  
       if (JSON.stringify(filtered) !== JSON.stringify(filteredCards)) {
         setFilteredCards(filtered);
       }
     };
-
+  
     applyFilters();
   }, [cards, filters, filteredCards]);
+  
 
   const handleFilterChange = (newFilters) => {
     // Verifique se os novos filtros são diferentes dos atuais
@@ -132,7 +136,7 @@ function Product() {
 
       <CardSection />
 
-      <Section id="product_section">
+      <Section id="product_section" customclass="lg:pt-[5%] md:pt-[8%] pt-[10%]">
         <div className="flex justify-between">
           <h2>Selecionados a Dedo</h2>
           <FilterMenu onFilterChange={handleFilterChange} />

@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { IoIosSearch } from "react-icons/io";
 import Link from "../../items/Link"
 import Carousel from '../Carousel';
+import TouchCarousel from '../TouchCarousel';
 
 import { useEffect } from 'react';
 
@@ -50,8 +51,6 @@ import { useEffect } from 'react';
     setFilteredItems(results);
 }
 
-
-
     return (
         <>
             <form onChange={submit} className='w-2/3'>
@@ -78,29 +77,32 @@ import { useEffect } from 'react';
                 </div>
             </form>
 
-            <div className='flex my-3 py-1 text-lg font-semibold flex-wrap'>
-                <Link onClick={() => navigateTo('/about')}
+            <TouchCarousel
+            customclass='-mt-2 py-5 sm:pb-0 text-lg font-semibold text-nowrap'
+            >
+              <Link onClick={() => navigateTo('/about')}
                 text="sobre nós"
-                textCustom="pr-10 pb-1"
+                textCustom="pr-10"
                 ></Link>
 
                 <Link onClick={() => navigateTo('/TalkToUs')}
                 text="fale conosco"
-                textCustom="pr-10 pb-1"
+                textCustom="pr-10"
                 ></Link>
 
                 <Link onClick={() => navigateTo('/Compare')}
                 text="comparar smartphones"
                 textCustom=""
                 ></Link>
-            </div>
+            </TouchCarousel>
             
-            <h2>Talvez você esteja procurando:</h2>
+            <h2 className='sm:py-0 pb-5'>
+              Talvez você esteja procurando:
+            </h2>
 
             <Carousel
             items={filteredItems}
-            type="card search_card pb-[114px]"
-            customtitle=" text-nowrap text-ellipsis overflow-hidden "
+            type={`card search_card h-[350px]`}
             ></Carousel>
         </>
     );

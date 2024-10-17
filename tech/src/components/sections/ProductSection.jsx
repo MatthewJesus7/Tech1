@@ -33,12 +33,10 @@ function ProductSection({ items, topCard, bottomCard }) {
 
             {items.map((item, index) => (
                 <div key={index}
-                    className={`card product p-0 mb-1 mr-1 sm:mr-5 sm:mb-5 relative overflow-hidden rounded-xl
-                        ${menuValues[index] ? 'product_adapted' : 'product'}`}
+                    className='card product p-0 mb-1 mr-1 sm:mr-5 sm:mb-5 relative overflow-hidden rounded-xl'
                 >
                     <Card
-                        type={`card
-                            ${menuValues[index] ? 'product_adapted' : 'product'}`}
+                        type='card product'
                         link={item.link}
                         target={item.target}
                         rel={item.rel}
